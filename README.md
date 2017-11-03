@@ -25,4 +25,9 @@ Things you may want to cover:
 
 * Testing for initial collaborators push
 
-* CONFLICT THIS SHITsdsds
+
+* hello conflict
+
+* CONFLICT THIS SHIT
+
+* Adding additional field

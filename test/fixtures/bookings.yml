@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  restaurant: one
+  pax: 1
+  time: MyString
+  data: MyString
+  comments: MyString
+
+two:
+  user: two
+  restaurant: two
+  pax: 1
+  time: MyString
+  data: MyString
+  comments: MyString

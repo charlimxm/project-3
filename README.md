@@ -16,6 +16,8 @@ rails db:migrate
 rails db:seed
 ```
 
+## ERD
+![](/public/images/ERD.png)
 ## <center>User Stories
 
 * TBD

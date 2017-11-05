@@ -48,27 +48,25 @@ rails db:seed
 
 # <center>Team Notes</center>
 * If you are using seed data please propagate the restaurants before seeding data for the staffs table as the restaurant ID is required for the staff table.
-
+___
 ## <center>Team Journal</center>
 Joseph | Description | Bug/Framework
 ------ | --- | ---
 1| Added working models | Framework
 2| Resolved non appearing data in tables | Bug
 
-___
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
 1| Copy paste this line to edit | Framework (choose if its a bug resolution or change to framework)
 2| text | text
 3| text | text
-___
 
 Liyuan | Description | Bug/Framework
 ------ | --- | ---
 1| Copy paste this line to edit | Framework (choose if its a bug resolution or change to framework)
 2| text | text
 3| text | text
-
+___
 ## <center> To Do List
 
 Description    | Importance | Type

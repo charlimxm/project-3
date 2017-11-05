@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103080124) do
+ActiveRecord::Schema.define(version: 20171105065025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,16 @@ ActiveRecord::Schema.define(version: 20171103080124) do
     t.string "opening_hours"
   end
 
+  create_table "staffs", force: :cascade do |t|
+    t.text "name"
+    t.string "password"
+    t.string "type"
+    t.bigint "restaurant_id"
+    t.index ["restaurant_id"], name: "index_staffs_on_restaurant_id"
+  end
+
   add_foreign_key "admins", "restaurants"
   add_foreign_key "bookings", "customers"
   add_foreign_key "bookings", "restaurants"
+  add_foreign_key "staffs", "restaurants"
 end

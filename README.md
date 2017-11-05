@@ -12,6 +12,8 @@ _____
 
 ```sh
 gem install
+rails db:migrate
+rails db:seed
 ```
 
 ## <center>User Stories

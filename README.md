@@ -51,20 +51,20 @@ rails db:seed
 
 ## <center>Team Journal</center>
 Joseph | Description | Bug/Framework
------- | ---
+------ | --- | ---
 1| Added working models | Framework
 2| Resolved non appearing data in tables | Bug
 
 ___
 Charmaine | Description | Bug/Framework
------- | ---
+------ | --- | ---
 1| Copy paste this line to edit | Framework (choose if its a bug resolution or change to framework)
 2| text | text
 3| text | text
 ___
 
 Liyuan | Description | Bug/Framework
------- | ---
+------ | --- | ---
 1| Copy paste this line to edit | Framework (choose if its a bug resolution or change to framework)
 2| text | text
 3| text | text
@@ -72,7 +72,7 @@ Liyuan | Description | Bug/Framework
 ## <center> To Do List
 
 Description    | Importance | Type
--------- | ---
+-------- | --- | ---
 Seed default data for bookings table | **HIGH** | Bug
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework

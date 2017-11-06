@@ -76,8 +76,8 @@ Charmaine | Description | Bug/Framework
 
 Liyuan | Description | Bug/Framework
 ------ | --- | ---
-1| Added Landing Pages: home/register/login | Framework
-2| Added User Stories| Framework
+1| Landing Pages: home/register/login | Framework
+2| User Stories| Framework
 3| text | text
 ___
 ## <center> To Do List

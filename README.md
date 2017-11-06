@@ -30,11 +30,6 @@ How Restaurant Owners/Staff would use this:
 1. Owners have to register and login to create/edit their restaurant details page (incl. restaurant number, address, max seats, opening hours)
 2. Both Owners and Staff(waiters) have access to restaurant details and customers’ booking details (incl. number of pax, time, date, comments)
 
-FOR NEXT TIME
-1. Customers has option to see menus and order food and beverages straight from the website only after they have been seated
-2. Customers can pay via credit card on the website
-
-
 ## <center> Use Cases
 
 * TBD
@@ -94,3 +89,5 @@ Seed default data for bookings table | **HIGH** | Bug
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework
 Add images/videos to restaurant page? | Low | Framework
+Add menus to allow customers to order food after they have seated? How to measure they are seated... | Low | Framework
+Add payment system to allow customers to pay | Low | Framework

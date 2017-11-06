@@ -89,6 +89,7 @@ ___
 Description    | Importance | Type
 -------- | --- | ---
 ~~Seed default data for bookings table~~ | **HIGH** | Bug
+Setup initial loading page with search function | Medium | Framework
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework
 Add images/videos to restaurant page? | Low | Framework

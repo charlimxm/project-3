@@ -20,14 +20,15 @@ rails db:seed
 ![](/public/images/ERD.png)
 ## <center>User Stories
 
-* Customers can make multiple bookings for different restaurants
-* Customers can see seating chart for different restaurants
-* Owners can control restaurant details (restaurant number, address, max-seats, opening hours)
-* Staff can only access restaurant details
-* Both Customers and Staff can access booking details
-* FOR NEXT TIME
-* Customers can only pay via credit card
-* Customers can see menus to order food and beverages
+How Customers would use this:
+1. When a Customer loads the landing page, they can search for restaurants to book either by cuisine and location OR by the restaurant name
+2. Customers can view different restaurant details and seating chart for availability
+3. However, Customers must register and login to actually make a booking
+4. Customers can make multiple bookings for different restaurants at any one time
+
+How Restaurant Owners/Staff would use this:
+1. Owners have to register and login to create/edit their restaurant details page (incl. restaurant number, address, max seats, opening hours)
+2. Both Owners and Staff(waiters) have access to restaurant details and customers’ booking details (incl. number of pax, time, date, comments)
 
 ## <center> Use Cases
 
@@ -55,7 +56,7 @@ rails db:seed
 
 ![](/public/images/wireframe5.jpeg)
 
-* Search By Restaurant Name page
+* Restaurant Booking Page
 
 ![](/public/images/wireframe6.jpeg)
 
@@ -70,11 +71,11 @@ Joseph | Description | Bug/Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Copy paste this line to edit | Framework (choose if its a bug resolution or change to framework)
+1| Added ERDs | Framework
 2| text | text
 3| text | text
 
-Liyuan | Description | Bug/Framework
+Li Yuan | Description | Bug/Framework
 ------ | --- | ---
 1| Landing Pages: home/register/login | Framework
 2| User Stories| Framework
@@ -88,3 +89,5 @@ Seed default data for bookings table | **HIGH** | Bug
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework
 Add images/videos to restaurant page? | Low | Framework
+Add menus to allow customers to order food after they have seated? How to measure they are seated... | Low | Framework
+Add payment system to allow customers to pay | Low | Framework

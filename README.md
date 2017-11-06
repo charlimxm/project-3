@@ -25,7 +25,8 @@ rails db:seed
 * Owners can control restaurant details (restaurant number, address, max-seats, opening hours)
 * Staff can only access restaurant details
 * Both Customers and Staff can access booking details
-* FOR NEXT TIME
+
+FOR NEXT TIME
 * Customers can only pay via credit card
 * Customers can see menus to order food and beverages
 
@@ -74,7 +75,7 @@ Charmaine | Description | Bug/Framework
 2| text | text
 3| text | text
 
-Liyuan | Description | Bug/Framework
+Li Yuan | Description | Bug/Framework
 ------ | --- | ---
 1| Landing Pages: home/register/login | Framework
 2| User Stories| Framework

@@ -20,15 +20,20 @@ rails db:seed
 ![](/public/images/ERD.png)
 ## <center>User Stories
 
-* Customers can make multiple bookings for different restaurants
-* Customers can see seating chart for different restaurants
-* Owners can control restaurant details (restaurant number, address, max-seats, opening hours)
-* Staff can only access restaurant details
-* Both Customers and Staff can access booking details
+How Customers would use this:
+1. When a Customer loads the landing page, they can search for restaurants to book either by cuisine and location OR by the restaurant name
+2. Customers can view different restaurant details and seating chart for availability
+3. However, Customers must register and login to actually make a booking
+4. Customers can make multiple bookings for different restaurants at any one time
+
+How Restaurant Owners/Staff would use this: 
+1. Owners have to register and login to create/edit their restaurant details page (incl. restaurant number, address, max seats, opening hours)
+2. Both Owners and Staff who are NOT owners have access to restaurant details and customers’ booking details (incl. number of pax, time, date, comments)
 
 FOR NEXT TIME
-* Customers can only pay via credit card
-* Customers can see menus to order food and beverages
+1. Customers has option to see menus and order food and beverages straight from the website only after they have been seated
+2. Customers can pay via credit card on the website
+
 
 ## <center> Use Cases
 

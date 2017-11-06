@@ -26,9 +26,9 @@ How Customers would use this:
 3. However, Customers must register and login to actually make a booking
 4. Customers can make multiple bookings for different restaurants at any one time
 
-How Restaurant Owners/Staff would use this: 
+How Restaurant Owners/Staff would use this:
 1. Owners have to register and login to create/edit their restaurant details page (incl. restaurant number, address, max seats, opening hours)
-2. Both Owners and Staff who are NOT owners have access to restaurant details and customers’ booking details (incl. number of pax, time, date, comments)
+2. Both Owners and Staff(waiters) have access to restaurant details and customers’ booking details (incl. number of pax, time, date, comments)
 
 FOR NEXT TIME
 1. Customers has option to see menus and order food and beverages straight from the website only after they have been seated

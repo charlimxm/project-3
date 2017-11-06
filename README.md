@@ -48,7 +48,7 @@ rails db:seed
 
 ![](/public/images/wireframe5.jpeg)
 
-* Search By Restaurant Name page
+* Restaurant Booking Page
 
 ![](/public/images/wireframe6.jpeg)
 
@@ -63,7 +63,7 @@ Joseph | Description | Bug/Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Copy paste this line to edit | Framework (choose if its a bug resolution or change to framework)
+1| Created ERDs | Framework
 2| text | text
 3| text | text
 

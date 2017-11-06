@@ -20,7 +20,14 @@ rails db:seed
 ![](/public/images/ERD.png)
 ## <center>User Stories
 
-* TBD
+* Customers can make multiple bookings for different restaurants
+* Customers can see seating chart for different restaurants
+* Owners can control restaurant details (restaurant number, address, max-seats, opening hours)
+* Staff can only access restaurant details
+* Both Customers and Staff can access booking details
+* FOR NEXT TIME
+* Customers can only pay via credit card
+* Customers can see menus to order food and beverages
 
 ## <center> Use Cases
 
@@ -63,14 +70,14 @@ Joseph | Description | Bug/Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Created ERDs | Framework
+1| Added ERDs | Framework
 2| text | text
 3| text | text
 
 Liyuan | Description | Bug/Framework
 ------ | --- | ---
-1| Copy paste this line to edit | Framework (choose if its a bug resolution or change to framework)
-2| text | text
+1| Added Landing Pages: home/register/login | Framework
+2| Added User Stories| Framework
 3| text | text
 ___
 ## <center> To Do List

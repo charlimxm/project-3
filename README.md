@@ -68,6 +68,9 @@ Joseph | Description | Bug/Framework
 ------ | --- | ---
 1| Added working models | Framework
 2| Resolved non appearing data in tables | Bug
+3| Resolved issue with Booking table | Bug
+4| Added working routes & changed home page route | Framework
+5| Loaded initial data | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -85,7 +88,7 @@ ___
 
 Description    | Importance | Type
 -------- | --- | ---
-Seed default data for bookings table | **HIGH** | Bug
+~~Seed default data for bookings table~~ | **HIGH** | Bug
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework
 Add images/videos to restaurant page? | Low | Framework

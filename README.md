@@ -43,7 +43,7 @@ rails db:seed
 
 ![](/public/images/wireframe2.jpeg)
 
-* Search Results page
+* Search by Location/Cuisine page
 
 ![](/public/images/wireframe3.jpeg)
 
@@ -51,9 +51,13 @@ rails db:seed
 
 ![](/public/images/wireframe4.jpeg)
 
-* Search by Location/Cuisine page
+* Search Results page
 
 ![](/public/images/wireframe5.jpeg)
+
+* Search By Restaurant Name page
+
+![](/public/images/wireframe6.jpeg)
 
 # <center>Team Notes</center>
 * If you are using seed data please propagate the restaurants before seeding data for the staffs table as the restaurant ID is required for the staff table.

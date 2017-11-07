@@ -17,7 +17,7 @@ rails db:seed
 ```
 
 ## ERD
-![](/public/images/ERD.png)
+![](/assets/images/readme/ERD.png)
 ## <center>User Stories
 
 How Customers would use this:

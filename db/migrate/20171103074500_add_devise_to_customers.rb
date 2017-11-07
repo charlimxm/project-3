@@ -1,6 +1,10 @@
 class AddDeviseToCustomers < ActiveRecord::Migration[5.1]
   def self.up
     create_table :customers do |t|
+      ##custom field for db
+      t.string :name
+
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

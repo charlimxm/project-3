@@ -88,8 +88,8 @@ ___
 Description    | Importance | Type
 -------- | --- | ---
 Create working buttons (7/11/12) | **HIGH** | Framework
+Implement CSS Framework and working form routes | **HIGH** | Framework
 Setup initial loading page with search function | Medium | Framework
-Change CSS Framework | Low | Framework
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework
 Add images/videos to restaurant page? | Low | Framework

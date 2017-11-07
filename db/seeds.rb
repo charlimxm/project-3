@@ -10,7 +10,7 @@ require 'faker'
 #Delete data before recreating data
 # Customer.destroy_all
 
-# 10.times do
+10.times do
 # cust = Customer.new
 # cust.name = Faker::Name.name
 # cust.password = Faker::Internet.password(10, 20)
@@ -18,7 +18,7 @@ require 'faker'
 # cust.email = Faker::Internet.email
 #
 # cust.save
-#
+
 # resto = Restaurant.new
 # resto.name = Faker::Company.name
 # resto.restaurant_number = rand(61234567..69999999)
@@ -28,7 +28,7 @@ require 'faker'
 # resto.opening_hours = "#{hours}AM - 10PM"
 #
 # resto.save
-#
+
 # staff = Staff.new
 # staff.name = Faker::Name.name
 # staff.password = Faker::Internet.password(10, 20)
@@ -36,12 +36,12 @@ require 'faker'
 # staff.restaurant_id = rand(1..10)
 #
 # staff.save
-# end
+end
 
 # TODO check with prima why it doesnt propagate over to bookings table
 10.times do
 booking = Booking.new
-booking.customer_id = rand(1..9)
+booking.customer_id = 1
 booking.restaurant_id = rand(1..9)
 booking.pax = rand(20)
 hours = rand(3..11)

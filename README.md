@@ -85,13 +85,14 @@ Li Yuan | Description | Bug/Framework
 3| text | text
 ___
 ## <center> To Do List
-
 Description    | Importance | Type
 -------- | --- | ---
-~~Seed default data for bookings table~~ | **HIGH** | Bug
+Create working buttons (7/11/12) | **HIGH** | Framework
 Setup initial loading page with search function | Medium | Framework
+Change CSS Framework | Low | Framework
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework
 Add images/videos to restaurant page? | Low | Framework
 Add menus to allow customers to order food after they have seated? How to measure they are seated... | Low | Framework
 Add payment system to allow customers to pay | Low | Framework
+~~Seed default data for bookings table~~ | **HIGH** | Bug

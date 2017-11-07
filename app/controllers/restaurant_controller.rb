@@ -6,4 +6,8 @@ class RestaurantController < ApplicationController
   def show
 
   end
+
+  def searchResults
+    @resto = Restaurant.find(params[:id])
+  end
 end

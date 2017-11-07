@@ -9,6 +9,23 @@
   </head>
 
   <body>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">FoodSpace</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <% if customer_signed_in? %>
+        <li><%= link_to "Logout", destroy_customer_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Login", new_customer_session_path%></li>
+        <li><%= link_to "Register", new_customer_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

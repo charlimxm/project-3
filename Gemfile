@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+# Devise Initialization
+gem 'devise'
 # CSS Frameworks
 gem 'materialize-sass'
 # faker for sample data

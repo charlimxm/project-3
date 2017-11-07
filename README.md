@@ -17,7 +17,7 @@ rails db:seed
 ```
 
 ## ERD
-![](/assets/images/readme/ERD.png)
+![](app/assets/images/readme/ERD.png)
 ## <center>User Stories
 
 How Customers would use this:
@@ -38,27 +38,27 @@ How Restaurant Owners/Staff would use this:
 
 * Registration page
 
-![](/public/images/wireframe1.jpeg)
+![](/app/assets/images/readme/wireframe1.jpeg)
 
 * Login page
 
-![](/public/images/wireframe2.jpeg)
+![](/app/assets/images/readme/wireframe2.jpeg)
 
 * Search by Location/Cuisine page
 
-![](/public/images/wireframe3.jpeg)
+![](/app/assets/images/readme/wireframe3.jpeg)
 
 * Search By Restaurant Name page
 
-![](/public/images/wireframe4.jpeg)
+![](/app/assets/images/readme/wireframe4.jpeg)
 
 * Search Results page
 
-![](/public/images/wireframe5.jpeg)
+![](/app/assets/images/readme/wireframe5.jpeg)
 
 * Restaurant Booking Page
 
-![](/public/images/wireframe6.jpeg)
+![](/app/assets/images/readme/wireframe6.jpeg)
 
 # <center>Team Notes</center>
 * If you are using seed data please propagate the restaurants before seeding data for the staffs table as the restaurant ID is required for the staff table.

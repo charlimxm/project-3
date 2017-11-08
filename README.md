@@ -86,22 +86,34 @@ Li Yuan | Description | Bug/Framework
 ___
 ## Ask During Consultation
 * Assistance in installing CSS Frameworks
-* Should we allocate one column per slot in our model tables? Is it practical?
-* Our admins/staff need to be linked to the restaurants and have custom access, can we check current_user.type?
 * How do i allow edit page to take in another field? Specifically how to do find out the names of the pages
-* How to resolve 1 restaurant having more than one outlet
+* ~~How to resolve 1 restaurant having more than one outlet~~
+* ~~Should we allocate one column per slot in our model tables? Is it practical?~~
+* ~~Our admins/staff need to be linked to the restaurants and have custom access, can we check current_user.type?~~
+
+## Assumptions
+* Owners may have more than one restaurant
 
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---
 Create working buttons (7/11/12) | **HIGH** | Framework
 Implement CSS Framework and working form routes | **HIGH** | Framework
-Come up with search page logic | **HIGH** | Framework
-Find out how to keep track of the available tables | **HIGH** | Framework
+Real-time view tables | **HIGH** | Framework
+Add columns and slots into our restaurant model | **HIGH** | Framework
+Add company group column into our restaurant/customer model to help keep track of how many restaurants are owned by one owner | **HIGH** | Framework
+Add customer type into our customer model to differentiate between staff/owner/user | **HIGH** | Framework
 Setup initial loading page with search function | Medium | Framework
-Come up with a plan as to how to seat customers and update the system   | Medium | Framework
+Come up with queue and waiting time logic which correlates with the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework
 Add images/videos to restaurant page? | Low | Framework
 Add menus to allow customers to order food after they have seated? How to measure they are seated... | Low | Framework
 Add payment system to allow customers to pay | Low | Framework
+~~Come up with search page logic~~ | **HIGH** | Framework
+~~Find out how to keep track of the available tables~~ | **HIGH** | Framework
 ~~Seed default data for bookings table~~ | **HIGH** | Bug
+
+## Potential Improvements
+* Different waiting time based on group size
+* Booking table in real-time
+* Auto assign seats at point of booking to maximise space

@@ -5,7 +5,18 @@
         <%= f.text_field :time %>
         <%= f.label("Restaurant ID:") %>
         <%= f.text_field :restaurant_id %>
+        <%= f.label("Special Requests:") %>
+        <%= f.text_field :comments %>
+        <%= f.label("Date: (YYYY-MM-DD)") %>
+        <%= f.text_field :restaurant_id %>
         <%= f.submit("Create New Booking", class: 'btn') %>
       <% end %>
 
+      <h1>SLOTS</h1>
+      <% @available_slots.each do |slot| %>
+      <li><%= slot.time%></li>
+      <% end %>
+
 </div>
+
+<pre><%= params %></pre>

@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_customer!, only: :new
+  before_action :authenticate_customer!
 
   def new
     @new_booking = Booking.new
+    @available_slots = Booking.where(restaurant_id: 5, time: "9AM", )
+
   end
 
   def index

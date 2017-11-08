@@ -19,15 +19,15 @@ require 'faker'
 #
 # cust.save
 
-# resto = Restaurant.new
-# resto.name = Faker::Company.name
-# resto.restaurant_number = rand(61234567..69999999)
-# resto.address = Faker::Address.street_address
-# resto.max_seats = rand(1..40)
-# hours = rand(8..11)
-# resto.opening_hours = "#{hours}AM - 10PM"
-#
-# resto.save
+resto = Restaurant.new
+resto.name = Faker::Company.name
+resto.restaurant_number = rand(61234567..69999999)
+resto.address = Faker::Address.street_address
+resto.max_seats = rand(1..40)
+hours = rand(8..11)
+resto.opening_hours = "#{hours}AM - 10PM"
+
+resto.save
 
 # staff = Staff.new
 # staff.name = Faker::Name.name

@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
-  devise_for :customers
-  root 'restaurant#show'
-  get 'restaurant/index'
+
+
+  root 'restaurants#index'
 
   # rresources :restaurant, only: [:index,:show]
 
-  get 'restaurant/show'
-  get 'restaurant/:id', to: 'restaurant#searchResults'
+  # get 'restaurants/:id', to: 'restaurants#searchResults'
 
 
-  resources :restaurant
+  resources :restaurants
 
-  # devise_for :customers, path: "", path_names: {
-  #     sign_in: 'login', sign_out: 'logout',
-  #     sign_up: 'register'
-  #   }
+  resources :customers do
+
+      resources :bookings
+  end
+  resources :bookings, only: [:index,:show]
+
+  devise_for :customers, path: "", path_names: {
+      sign_in: 'login', sign_out: 'logout',
+      sign_up: 'register'
+    }
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

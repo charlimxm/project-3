@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'jquery-turbolinks'
+gem 'jquery-rails'
 # Devise Initialization
 gem 'devise'
 # CSS Frameworks

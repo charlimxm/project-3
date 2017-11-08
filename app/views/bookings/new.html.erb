@@ -1,0 +1,11 @@
+
+<div class="container">
+  <%= form_for @new_booking do |f| %>
+        <%= f.label("Booking Slot:") %>
+        <%= f.text_field :time %>
+        <%= f.label("Restaurant ID:") %>
+        <%= f.text_field :restaurant_id %>
+        <%= f.submit("Create New Booking", class: 'btn') %>
+      <% end %>
+
+</div>

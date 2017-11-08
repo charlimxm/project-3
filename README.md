@@ -91,8 +91,6 @@ ___
 * How do i allow edit page to take in another field? Specifically how to do find out the names of the pages
 * How to resolve 1 restaurant having more than one outlet
 
-asuyefasdjgajhsdgfjhdsgfjhasdgfjhkasdgfjahsd
-
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---

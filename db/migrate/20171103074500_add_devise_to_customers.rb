@@ -1,5 +1,5 @@
 class AddDeviseToCustomers < ActiveRecord::Migration[5.1]
-  def self.up
+  def change #this was self.up previously
     create_table :customers do |t|
       ##custom field for db
       t.string :name
@@ -44,10 +44,10 @@ class AddDeviseToCustomers < ActiveRecord::Migration[5.1]
     # add_index :customers, :confirmation_token,   unique: true
     # add_index :customers, :unlock_token,         unique: true
   end
-
-  def self.down
-    # By default, we don't want to make any assumption about how to roll back a migration when your
-    # model already existed. Please edit below which fields you would like to remove in this migration.
-    raise ActiveRecord::IrreversibleMigration
-  end
+  #
+  # def self.down
+  #   # By default, we don't want to make any assumption about how to roll back a migration when your
+  #   # model already existed. Please edit below which fields you would like to remove in this migration.
+  #   raise ActiveRecord::IrreversibleMigration
+  # end
 end

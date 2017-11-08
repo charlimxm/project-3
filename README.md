@@ -84,11 +84,20 @@ Li Yuan | Description | Bug/Framework
 2| User Stories| Framework
 3| text | text
 ___
+## Ask During Consultation
+* Assistance in installing CSS Frameworks
+* Should we allocate one column per slot in our model tables? Is it practical?
+* Our admins/staff need to be linked to the restaurants and have custom access, can we check current_user.type?
+* How do i allow edit page to take in another field? Specifically how to do find out the names of the pages
+* How to resolve 1 restaurant having more than one outlet
+
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---
 Create working buttons (7/11/12) | **HIGH** | Framework
 Implement CSS Framework and working form routes | **HIGH** | Framework
+Come up with search page logic | **HIGH** | Framework
+Find out how to keep track of the available tables | **HIGH** | Framework
 Setup initial loading page with search function | Medium | Framework
 Come up with a plan as to how to seat customers and update the system   | Medium | Framework
 Come up with working POS and Queue system | Low | Framework

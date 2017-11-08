@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105065025) do
+ActiveRecord::Schema.define(version: 20171108052318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admins", force: :cascade do |t|
-    t.text "name"
-    t.string "password"
-    t.string "type"
-    t.bigint "restaurant_id"
-    t.index ["restaurant_id"], name: "index_admins_on_restaurant_id"
-  end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "customer_id"
@@ -35,7 +27,6 @@ ActiveRecord::Schema.define(version: 20171105065025) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -46,8 +37,13 @@ ActiveRecord::Schema.define(version: 20171105065025) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "customer_type"
+    t.bigint "restaurant_id"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+    t.index ["restaurant_id"], name: "index_customers_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -66,8 +62,8 @@ ActiveRecord::Schema.define(version: 20171105065025) do
     t.index ["restaurant_id"], name: "index_staffs_on_restaurant_id"
   end
 
-  add_foreign_key "admins", "restaurants"
   add_foreign_key "bookings", "customers"
   add_foreign_key "bookings", "restaurants"
+  add_foreign_key "customers", "restaurants"
   add_foreign_key "staffs", "restaurants"
 end

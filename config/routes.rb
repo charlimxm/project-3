@@ -10,11 +10,11 @@ Rails.application.routes.draw do
 
   resources :restaurants
 
-  resources :customers do
+  # resources :customers do
 
       resources :bookings
-  end
-  resources :bookings, only: [:index,:show]
+  # end
+  # resources :bookings, only: [:index,:show]
 
   devise_for :customers, path: "", path_names: {
       sign_in: 'login', sign_out: 'logout',

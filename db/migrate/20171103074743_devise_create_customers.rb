@@ -2,6 +2,10 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.1]
   def change
     create_table :customers do |t|
       t.string :name
+      t.integer :mobile_number
+      t.string :cust_type, default: "user"
+      t.string :company_name
+      t.references :restaurant, foreign_key: true
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

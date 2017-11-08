@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108052318) do
+ActiveRecord::Schema.define(version: 20171103075309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,14 +20,18 @@ ActiveRecord::Schema.define(version: 20171108052318) do
     t.bigint "restaurant_id"
     t.integer "pax"
     t.string "time"
-    t.string "comments"
     t.string "date"
+    t.string "comments"
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
     t.index ["restaurant_id"], name: "index_bookings_on_restaurant_id"
   end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
+    t.integer "mobile_number"
+    t.string "cust_type", default: "user"
+    t.string "company_name"
+    t.bigint "restaurant_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -40,8 +44,6 @@ ActiveRecord::Schema.define(version: 20171108052318) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "customer_type"
-    t.bigint "restaurant_id"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
     t.index ["restaurant_id"], name: "index_customers_on_restaurant_id"
@@ -50,21 +52,24 @@ ActiveRecord::Schema.define(version: 20171108052318) do
   create_table "restaurants", force: :cascade do |t|
     t.text "name"
     t.integer "restaurant_number"
+    t.string "company_name"
     t.string "address"
     t.integer "max_seats"
     t.string "opening_hours"
-  end
-
-  create_table "staffs", force: :cascade do |t|
-    t.text "name"
-    t.string "password"
-    t.string "type"
-    t.bigint "restaurant_id"
-    t.index ["restaurant_id"], name: "index_staffs_on_restaurant_id"
+    t.string "twelvepm"
+    t.string "onepm"
+    t.string "twopm"
+    t.string "threepm"
+    t.string "fourpm"
+    t.string "fivepm"
+    t.string "sixpm"
+    t.string "sevenpm"
+    t.string "eightpm"
+    t.string "ninepm"
+    t.string "tenpm"
   end
 
   add_foreign_key "bookings", "customers"
   add_foreign_key "bookings", "restaurants"
   add_foreign_key "customers", "restaurants"
-  add_foreign_key "staffs", "restaurants"
 end

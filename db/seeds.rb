@@ -21,11 +21,24 @@ require 'faker'
 
 resto = Restaurant.new
 resto.name = Faker::Company.name
+resto.company_name = Faker::University.greek_organization
 resto.restaurant_number = rand(61234567..69999999)
 resto.address = Faker::Address.street_address
 resto.max_seats = rand(1..40)
 hours = rand(8..11)
 resto.opening_hours = "#{hours}AM - 10PM"
+resto.twelvepm = rand(1..4)
+resto.onepm = rand(1..4)
+resto.twopm = rand(1..4)
+resto.threepm = rand(1..4)
+resto.fourpm = rand(1..4)
+resto.fivepm = rand(1..4)
+resto.sixpm = rand(1..4)
+resto.sevenpm = rand(1..4)
+resto.eightpm = rand(1..4)
+resto.ninepm = rand(1..4)
+resto.tenpm = rand(1..4)
+
 
 resto.save
 
@@ -47,7 +60,7 @@ booking.pax = rand(20)
 hours = rand(3..11)
 booking.time = "#{hours}PM"
 booking.comments = Faker::Robin.quote
-booking.date = Faker::Date.between(16.days.ago, Date.today)
+booking.date = Faker::Date.between(1.week.from_now, Date.today)
 
 booking.save
 end

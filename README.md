@@ -18,6 +18,8 @@ rails db:seed
 
 ## ERD
 ![](app/assets/images/readme/ERD.png)
+
+## 
 ## <center>User Stories
 
 How Customers would use this:

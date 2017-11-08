@@ -4,7 +4,8 @@ class BookingsController < ApplicationController
 
   def new
     @new_booking = Booking.new
-    @available_slots = Booking.where(restaurant_id: 5, time: "9AM", )
+    @available_slots = Booking.where(restaurant_id: 5, time: "9AM")
+    @current_customer = current_customer.name
 
   end
 
@@ -19,7 +20,7 @@ class BookingsController < ApplicationController
     # render json: params
 
 
-    current_customer.bookings.create(params.require(:booking).permit(:time, :restaurant_id))
+    current_customer.bookings.create(params.require(:booking).permit(:time, :restaurant_id, :comments, :date))
 
     redirect_to root_path
 

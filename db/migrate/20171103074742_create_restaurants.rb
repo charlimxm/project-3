@@ -5,6 +5,8 @@ class CreateRestaurants < ActiveRecord::Migration[5.1]
       t.integer :restaurant_number
       t.string :company_name
       t.string :address
+      t.string :area
+      t.string :cuisine
       t.integer :max_seats
       t.string :opening_hours
       t.string :twelvepm

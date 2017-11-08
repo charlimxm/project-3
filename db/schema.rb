@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20171103075309) do
     t.integer "restaurant_number"
     t.string "company_name"
     t.string "address"
+    t.string "area"
+    t.string "cuisine"
     t.integer "max_seats"
     t.string "opening_hours"
     t.string "twelvepm"

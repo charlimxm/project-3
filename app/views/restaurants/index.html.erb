@@ -1,5 +1,37 @@
-<h1>Restaurant#index</h1>
-<p>Find me in app/views/restaurant/index.html.erb</p>
-<% @resto.each do |resto| %>
-<p><%= resto.name %></p>
-<% end %>
+<main>
+  <div class="container">
+    <div class="row center">
+      <div class="col s12">
+        <a class="waves-effect waves-light btn">By Restaurant</a>
+        <a class="waves-effect waves-light btn">By Cuisine & Location</a>
+      </div>
+    </div>
+
+    <div class="row center">
+
+      <%= form_for('restaurant#index', :method => "get") do |f| %>
+        <div class="input-field col s2 m3 l3">
+          <%= f.text_field :date, class: "datepicker", placeholder: 'Select date'%>
+        </div>
+
+        <div class="input-field col s2 m3 l3">
+          <%= f.text_field :time, class: "timepicker", placeholder: 'Select time'%>
+        </div>
+
+        <div class="input-field col s2 m3 l3">
+          <%= f.select :cuisine, options_for_select(@allCuisines), include_blank: 'Select cuisine' %>
+        </div>
+
+        <div class="input-field col s2 m3 l3">
+          <%= f.select :area, options_for_select(@allAreas), include_blank: 'Select location' %>
+        </div>
+
+        <div class="input-field col s1 m2 l2">
+          <%= f.submit 'Search', name: nil, class: 'btn waves-effect waves-light' %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</main>

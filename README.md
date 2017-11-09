@@ -19,7 +19,7 @@ rails db:seed
 ## ERD
 ![](app/assets/images/readme/ERD.png)
 
-## 
+##
 ## <center>User Stories
 
 How Customers would use this:
@@ -89,9 +89,8 @@ ___
 ## Ask During Consultation
 * Assistance in installing CSS Frameworks
 * How do i allow edit page to take in another field? Specifically how to do find out the names of the pages
-* ~~How to resolve 1 restaurant having more than one outlet~~
-* ~~Should we allocate one column per slot in our model tables? Is it practical?~~
-* ~~Our admins/staff need to be linked to the restaurants and have custom access, can we check current_user.type?~~
+* How to track date and time for slots? How many tables
+* How to query from multiple tables and automatically update when the day changes
 
 ## Assumptions
 * Owners may have more than one restaurant

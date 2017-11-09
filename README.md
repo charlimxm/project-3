@@ -3,9 +3,7 @@
 ##### PROJECT 3
 
 ## Description
- Ever had problems deciding where to eat because you were not sure if your favourite restaurant was packed? We've got you covered, with FoodSpace you can now view available seats , book a reservation, pre-order your food as well as pay for your meal through one application!
-
- ### <center> Welcome to the future, welcome to FoodSpace
+Find the most popular dishes in town and vote to make your best dish famous! Restaurants may also offer discounts on our app!
 
 _____
 ## <center>Installation instructions

@@ -11,19 +11,21 @@ require 'faker'
 # Customer.destroy_all
 
 10.times do
-# cust = Customer.new
-# cust.name = Faker::Name.name
-# cust.password = Faker::Internet.password(10, 20)
-# cust.mobile_number = rand(81234567..99999999)
-# cust.email = Faker::Internet.email
-#
-# cust.save
+cust = Customer.new
+cust.name = Faker::Name.name
+cust.password = Faker::Internet.password(10, 20)
+cust.mobile_number = rand(81234567..99999999)
+cust.email = Faker::Internet.email
+
+cust.save
 
 resto = Restaurant.new
 resto.name = Faker::Company.name
 resto.company_name = Faker::University.greek_organization
 resto.restaurant_number = rand(61234567..69999999)
 resto.address = Faker::Address.street_address
+resto.area = Faker::Company.name
+resto.cuisine = Faker::Company.name
 resto.max_seats = rand(1..40)
 hours = rand(8..11)
 resto.opening_hours = "#{hours}AM - 10PM"
@@ -38,7 +40,6 @@ resto.sevenpm = rand(1..4)
 resto.eightpm = rand(1..4)
 resto.ninepm = rand(1..4)
 resto.tenpm = rand(1..4)
-
 
 resto.save
 

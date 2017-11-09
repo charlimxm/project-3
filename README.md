@@ -89,7 +89,8 @@ ___
 ## Ask During Consultation
 * Assistance in installing CSS Frameworks
 * How do i allow edit page to take in another field? Specifically how to do find out the names of the pages
-* How to track date and time for slots
+* How to track date and time for slots? How many tables
+* How to query from multiple tables and automatically update when the day changes
 
 ## Assumptions
 * Owners may have more than one restaurant

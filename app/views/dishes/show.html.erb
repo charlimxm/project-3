@@ -1,7 +1,7 @@
 
 <div class="container">
   <h1>Single Dish Page</h1>
-  <%=image_tag (@dish.photourl) %>
+  <%=image_tag @dish.photourl, class: "responsive-img" %>
   <h3><%= @dish.name %></h3>
   <p>Price: $<%= @dish.price %></p>
   <p>Restaurant: <%= @resto.name %><br>

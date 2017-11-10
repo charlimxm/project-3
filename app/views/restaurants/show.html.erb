@@ -5,6 +5,7 @@
   <h4><%= @resto.phone_number %></h4>
 
   <h1>Menu Items</h1>
+  <% if @menu %>
   <% @menu.each do |item| %>
 
   <ul>
@@ -12,6 +13,7 @@
     <li><%= item.name %> ---  $<%= item.price %></li>
   </ul>
 
+  <% end %>
   <% end %>
 
   </p>

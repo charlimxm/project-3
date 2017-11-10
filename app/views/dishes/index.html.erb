@@ -1,2 +1,11 @@
-<h1>Dishes#index</h1>
-<p>Find me in app/views/dishes/index.html.erb</p>
+<div class="container">
+  <h1>Dishes</h1>
+  <% @dishes.each do |dish|%>
+  <ul>
+
+
+<li><%= link_to "#{dish.name}", dish_path(dish.id) %></li>
+
+  <% end %>
+</ul>
+</div>

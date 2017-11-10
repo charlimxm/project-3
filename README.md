@@ -24,18 +24,6 @@ rails db:seed
 ### FoodSpace
 
 How Customers would use this:
-1. When a Customer loads the landing page, they can search for restaurants to book either by cuisine and location OR by the restaurant name
-2. Customers can view different restaurant details and seating chart for availability
-3. However, Customers must register and login to actually make a booking
-4. Customers can make multiple bookings for different restaurants at any one time
-
-How Restaurant Owners/Staff would use this:
-1. Owners have to register and login to create/edit their restaurant details page (incl. restaurant number, address, max seats, opening hours)
-2. Both Owners and Staff(waiters) have access to restaurant details and customers’ booking details (incl. number of pax, time, date, comments)
-
-### Voting Food App
-
-How Customers would use this:
 1. When a Customer loads the landing page, they can search for particular menu items they enjoy
 2. A list of various restaurants serving the menu item appears, allowing customers to see which restaurant is the most popular for that specific menu item
 3. Customers can upvote the menu items they prefer, allowing the public to control rankings of the menu items
@@ -46,6 +34,7 @@ How Restaurant Owners/Staff would use this:
 1. Owners can see where their menu items are located in the rankings and choose to give discounts on the specific menu items
 3. Owners can also gain valuable feedback in the form of user ratings and reviews to adapt their menu
 4. Owners are required to submit updated menus periodically to admins to confirm that dishes actually exist
+
 ## <center> Use Cases
 
 * TBD

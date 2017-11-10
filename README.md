@@ -75,6 +75,7 @@ ___
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---
+Scrape restaurant data | Medium | Framework
 Update README with latest wireframe images | Low | Framework
 Add working routes for default pages | **HIGH** | Framework
 Implement CSS Framework and working form routes | **HIGH** | Framework

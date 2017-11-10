@@ -3,32 +3,48 @@
 ##### PROJECT 3
 
 ## Description
- Ever had problems deciding where to eat because you were not sure if your favourite restaurant was packed? We've got you covered, with FoodSpace you can now view available seats , book a reservation, pre-order your food as well as pay for your meal through one application!
-
- ### <center> Welcome to the future, welcome to FoodSpace
+Find the most popular dishes in town and vote to make your best dish famous! Restaurants may also offer discounts on our app!
 
 _____
 ## <center>Installation instructions
 
 ```sh
 gem install
+rails db:create
 rails db:migrate
 rails db:seed
 ```
 
 ## ERD
 ![](app/assets/images/readme/ERD.png)
+
+## HomePage
+![](app/assets/images/readme/wireframe1.jpg)
+
+## Search Results Page
+![](app/assets/images/readme/wireframe2.jpg)
+
+## Register
+![](app/assets/images/readme/wireframe3.jpg)
+
+## Login
+![](app/assets/images/readme/wireframe4.jpg)
+
 ## <center>User Stories
 
+### FoodSpace
+
 How Customers would use this:
-1. When a Customer loads the landing page, they can search for restaurants to book either by cuisine and location OR by the restaurant name
-2. Customers can view different restaurant details and seating chart for availability
-3. However, Customers must register and login to actually make a booking
-4. Customers can make multiple bookings for different restaurants at any one time
+1. When a Customer loads the landing page, they can search for particular menu items they enjoy
+2. A list of various restaurants serving the menu item appears, allowing customers to see which restaurant is the most popular for that specific menu item
+3. Customers can upvote the menu items they prefer, allowing the public to control rankings of the menu items
+4. Customers can upload pictures of dishes they enjoy if they are not in the list, subject to verification by admins
+5. Customers must register and login to vote/upload
 
 How Restaurant Owners/Staff would use this:
-1. Owners have to register and login to create/edit their restaurant details page (incl. restaurant number, address, max seats, opening hours)
-2. Both Owners and Staff(waiters) have access to restaurant details and customers’ booking details (incl. number of pax, time, date, comments)
+1. Owners can see where their menu items are located in the rankings and choose to give discounts on the specific menu items
+3. Owners can also gain valuable feedback in the form of user ratings and reviews to adapt their menu
+4. Owners are required to submit updated menus periodically to admins to confirm that dishes actually exist
 
 ## <center> Use Cases
 
@@ -36,29 +52,8 @@ How Restaurant Owners/Staff would use this:
 
 ## <center> Wireframes
 
-* Registration page
-
-![](/app/assets/images/readme/wireframe1.jpeg)
-
-* Login page
-
-![](/app/assets/images/readme/wireframe2.jpeg)
-
-* Search by Location/Cuisine page
-
-![](/app/assets/images/readme/wireframe3.jpeg)
-
-* Search By Restaurant Name page
-
-![](/app/assets/images/readme/wireframe4.jpeg)
-
-* Search Results page
-
-![](/app/assets/images/readme/wireframe5.jpeg)
-
-* Restaurant Booking Page
-
-![](/app/assets/images/readme/wireframe6.jpeg)
+* Home page
+![](/app/assets/images/readme/wireframe1.jpg)
 
 # <center>Team Notes</center>
 * If you are using seed data please propagate the restaurants before seeding data for the staffs table as the restaurant ID is required for the staff table.
@@ -67,14 +62,11 @@ ___
 Joseph | Description | Bug/Framework
 ------ | --- | ---
 1| Added working models | Framework
-2| Resolved non appearing data in tables | Bug
-3| Resolved issue with Booking table | Bug
-4| Added working routes & changed home page route | Framework
-5| Loaded initial data | Framework
+2| Loaded initial data | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Added ERDs | Framework
+1| Added wireframes | Framework
 2| text | text
 3| text | text
 
@@ -86,22 +78,20 @@ Li Yuan | Description | Bug/Framework
 ___
 ## Ask During Consultation
 * Assistance in installing CSS Frameworks
-* Should we allocate one column per slot in our model tables? Is it practical?
-* Our admins/staff need to be linked to the restaurants and have custom access, can we check current_user.type?
-* How do i allow edit page to take in another field? Specifically how to do find out the names of the pages
-* How to resolve 1 restaurant having more than one outlet
+
+
+## Assumptions
+* Owners may have more than one restaurant
 
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---
-Create working buttons (7/11/12) | **HIGH** | Framework
+Scrape restaurant data | Medium | Framework
+Update README with latest wireframe images | Low | Framework
+Add working routes for default pages | **HIGH** | Framework
 Implement CSS Framework and working form routes | **HIGH** | Framework
-Come up with search page logic | **HIGH** | Framework
-Find out how to keep track of the available tables | **HIGH** | Framework
-Setup initial loading page with search function | Medium | Framework
-Come up with a plan as to how to seat customers and update the system   | Medium | Framework
-Come up with working POS and Queue system | Low | Framework
-Add images/videos to restaurant page? | Low | Framework
-Add menus to allow customers to order food after they have seated? How to measure they are seated... | Low | Framework
-Add payment system to allow customers to pay | Low | Framework
-~~Seed default data for bookings table~~ | **HIGH** | Bug
+~~Come up with search page logic~~ | **HIGH** | Framework
+
+## Potential Improvements
+* Add individual dish pages (with restaurant info)
+* Add reviews for each dish

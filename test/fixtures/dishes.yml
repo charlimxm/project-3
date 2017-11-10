@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyText
-  password: MyString
-  type: 
+  name: MyString
+  price: 1.5
   restaurant: one
+  discount: 1
+  photourl: MyString
 
 two:
-  name: MyText
-  password: MyString
-  type: 
+  name: MyString
+  price: 1.5
   restaurant: two
+  discount: 1
+  photourl: MyString

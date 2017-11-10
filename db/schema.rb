@@ -10,24 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108052318) do
+ActiveRecord::Schema.define(version: 20171109110623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: :cascade do |t|
-    t.bigint "customer_id"
+  create_table "dishes", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
     t.bigint "restaurant_id"
-    t.integer "pax"
-    t.string "time"
-    t.string "comments"
-    t.string "date"
-    t.index ["customer_id"], name: "index_bookings_on_customer_id"
-    t.index ["restaurant_id"], name: "index_bookings_on_restaurant_id"
+    t.integer "discount"
+    t.string "photourl"
+    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
-  create_table "customers", force: :cascade do |t|
+  create_table "ratings", force: :cascade do |t|
+    t.bigint "dishes_id"
+    t.bigint "user_id"
+    t.index ["dishes_id"], name: "index_ratings_on_dishes_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
     t.string "name"
+    t.string "address"
+    t.string "phone_number"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.boolean "owner", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -40,31 +54,12 @@ ActiveRecord::Schema.define(version: 20171108052318) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "customer_type"
-    t.bigint "restaurant_id"
-    t.index ["email"], name: "index_customers_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
-    t.index ["restaurant_id"], name: "index_customers_on_restaurant_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "restaurants", force: :cascade do |t|
-    t.text "name"
-    t.integer "restaurant_number"
-    t.string "address"
-    t.integer "max_seats"
-    t.string "opening_hours"
-  end
-
-  create_table "staffs", force: :cascade do |t|
-    t.text "name"
-    t.string "password"
-    t.string "type"
-    t.bigint "restaurant_id"
-    t.index ["restaurant_id"], name: "index_staffs_on_restaurant_id"
-  end
-
-  add_foreign_key "bookings", "customers"
-  add_foreign_key "bookings", "restaurants"
-  add_foreign_key "customers", "restaurants"
-  add_foreign_key "staffs", "restaurants"
+  add_foreign_key "dishes", "restaurants"
+  add_foreign_key "ratings", "dishes", column: "dishes_id"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "restaurants", "users"
 end

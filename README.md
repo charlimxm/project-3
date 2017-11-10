@@ -74,7 +74,8 @@ ___
 
 ## <center> To Do List
 Description    | Importance | Type
--------- | --- | ---
+-------- | --- | ---  
+Add OCR API & Facebook login | Medium | Framework
 Scrape restaurant data | Medium | Framework
 Update README with latest wireframe images | Low | Framework
 Add working routes for default pages | **HIGH** | Framework

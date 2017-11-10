@@ -51,7 +51,7 @@ Joseph | Description | Bug/Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Added ERDs | Framework
+1| Added wireframes | Framework
 2| text | text
 3| text | text
 

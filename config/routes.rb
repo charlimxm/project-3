@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'restaurants/index'
+
+  get 'restaurants/show'
+
+  get 'restaurants/search_results'
+
+  get 'ratings/index'
+
+  get 'dishes/index'
+
+  get 'dishes/show'
+
   # Register
 
   # Sign in

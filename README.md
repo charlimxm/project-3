@@ -18,7 +18,14 @@ rails db:seed
 ## ERD
 ![](app/assets/images/readme/ERD.png)
 
-##
+## HomePage
+![](app/assets/images/readme/wireframe1.jpg)
+## Search Results Page
+![](app/assets/images/readme/wireframe2.jpg)
+## Register
+![](app/assets/images/readme/wireframe3.jpg)
+## Login
+![](app/assets/images/readme/wireframe4.jpg)
 ## <center>User Stories
 
 ### FoodSpace

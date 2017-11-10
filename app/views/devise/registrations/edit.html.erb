@@ -7,12 +7,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <i class="material-icons prefix">assignment_ind</i>
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
-
   <div class="field">
+    <i class="material-icons prefix">email</i>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -22,6 +23,7 @@
   <% end %>
 
   <div class="field">
+    <i class="material-icons prefix">enhanced_encryption</i>
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
@@ -31,17 +33,19 @@
   </div>
 
   <div class="field">
+    <i class="material-icons prefix">enhanced_encryption</i>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
+    <i class="material-icons prefix">enhanced_encryption</i>
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
   </div>
 <% end %>
 

@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'nokogiri'
+gem 'rest-client'
 gem 'jquery-turbolinks'
 gem 'jquery-rails'
 # Devise Initialization

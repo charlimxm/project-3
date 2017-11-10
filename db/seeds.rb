@@ -12,23 +12,23 @@ require 'faker'
 
 10.times do
 
-resto = Restaurant.new
-resto.name = Faker::Company.name
-resto.phone_number = rand(61234567..69999999)
-resto.address = Faker::Address.street_address
-resto.user_id = 1
-
-resto.save
-
-
-dish = Dish.new
-dish.name = Faker::Food.dish
-dish.price = rand(20)
-dish.restaurant_id = rand(10)
-dish.discount = rand(100)
-dish.photourl= "photolink_here"
-
-dish.save
+# resto = Restaurant.new
+# resto.name = Faker::Company.name
+# resto.phone_number = rand(61234567..69999999)
+# resto.address = Faker::Address.street_address
+# resto.user_id = 1
+#
+# resto.save
+#
+#
+# dish = Dish.new
+# dish.name = Faker::Food.dish
+# dish.price = rand(20)
+# dish.restaurant_id = rand(10)
+# dish.discount = rand(100)
+# dish.photourl= "photolink_here"
+#
+# dish.save
 #
 new_rating = Rating.new
 new_rating.dish_id = rand(10)

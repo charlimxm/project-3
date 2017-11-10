@@ -5,6 +5,7 @@
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
+    <i class="material-icons prefix">enhanced_encryption</i>
     <%= f.label :password, "New password" %><br />
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
@@ -13,12 +14,13 @@
   </div>
 
   <div class="field">
+    <i class="material-icons prefix">enhanced_encryption</i>
     <%= f.label :password_confirmation, "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Change my password" %>
+    <%= f.submit "Change my password", class: 'btn waves-effect waves-light right formbttn' %>
   </div>
 <% end %>
 

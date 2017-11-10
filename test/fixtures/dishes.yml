@@ -2,12 +2,14 @@
 
 one:
   name: MyString
-  address: MyString
-  phone_number: MyString
-  user: one
+  price: 1.5
+  restaurant: one
+  discount: 1
+  photourl: MyString
 
 two:
   name: MyString
-  address: MyString
-  phone_number: MyString
-  user: two
+  price: 1.5
+  restaurant: two
+  discount: 1
+  photourl: MyString

@@ -7,12 +7,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <i class="material-icons prefix">email</i>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password instructions", class: 'btn waves-effect waves-light right formbttn' %>
   </div>
 <% end %>
 

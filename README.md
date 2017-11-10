@@ -3,15 +3,14 @@
 ##### PROJECT 3
 
 ## Description
- Ever had problems deciding where to eat because you were not sure if your favourite restaurant was packed? We've got you covered, with FoodSpace you can now view available seats , book a reservation, pre-order your food as well as pay for your meal through one application!
-
- ### <center> Welcome to the future, welcome to FoodSpace
+Find the most popular dishes in town and vote to make your best dish famous! Restaurants may also offer discounts on our app!
 
 _____
 ## <center>Installation instructions
 
 ```sh
 gem install
+rails db:create
 rails db:migrate
 rails db:seed
 ```
@@ -53,29 +52,8 @@ How Restaurant Owners/Staff would use this:
 
 ## <center> Wireframes
 
-* Registration page
-
-![](/app/assets/images/readme/wireframe1.jpeg)
-
-* Login page
-
-![](/app/assets/images/readme/wireframe2.jpeg)
-
-* Search by Location/Cuisine page
-
-![](/app/assets/images/readme/wireframe3.jpeg)
-
-* Search By Restaurant Name page
-
-![](/app/assets/images/readme/wireframe4.jpeg)
-
-* Search Results page
-
-![](/app/assets/images/readme/wireframe5.jpeg)
-
-* Restaurant Booking Page
-
-![](/app/assets/images/readme/wireframe6.jpeg)
+* Home page
+![](/app/assets/images/readme/wireframe1.jpg)
 
 # <center>Team Notes</center>
 * If you are using seed data please propagate the restaurants before seeding data for the staffs table as the restaurant ID is required for the staff table.
@@ -84,14 +62,11 @@ ___
 Joseph | Description | Bug/Framework
 ------ | --- | ---
 1| Added working models | Framework
-2| Resolved non appearing data in tables | Bug
-3| Resolved issue with Booking table | Bug
-4| Added working routes & changed home page route | Framework
-5| Loaded initial data | Framework
+2| Loaded initial data | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Added ERDs | Framework
+1| Added wireframes | Framework
 2| text | text
 3| text | text
 
@@ -103,9 +78,7 @@ Li Yuan | Description | Bug/Framework
 ___
 ## Ask During Consultation
 * Assistance in installing CSS Frameworks
-* How do i allow edit page to take in another field? Specifically how to do find out the names of the pages
-* How to track date and time for slots? How many tables
-* How to query from multiple tables and automatically update when the day changes
+
 
 ## Assumptions
 * Owners may have more than one restaurant
@@ -113,23 +86,11 @@ ___
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---
-Create working buttons (7/11/12) | **HIGH** | Framework
+Update README with latest wireframe images | Low | Framework
+Add working routes for default pages | **HIGH** | Framework
 Implement CSS Framework and working form routes | **HIGH** | Framework
-Real-time view tables | **HIGH** | Framework
-Add columns and slots into our restaurant model | **HIGH** | Framework
-Add company group column into our restaurant/customer model to help keep track of how many restaurants are owned by one owner | **HIGH** | Framework
-Add customer type into our customer model to differentiate between staff/owner/user | **HIGH** | Framework
-Setup initial loading page with search function | Medium | Framework
-Come up with queue and waiting time logic which correlates with the system   | Medium | Framework
-Come up with working POS and Queue system | Low | Framework
-Add images/videos to restaurant page? | Low | Framework
-Add menus to allow customers to order food after they have seated? How to measure they are seated... | Low | Framework
-Add payment system to allow customers to pay | Low | Framework
 ~~Come up with search page logic~~ | **HIGH** | Framework
-~~Find out how to keep track of the available tables~~ | **HIGH** | Framework
-~~Seed default data for bookings table~~ | **HIGH** | Bug
 
 ## Potential Improvements
-* Different waiting time based on group size
-* Booking table in real-time
-* Auto assign seats at point of booking to maximise space
+* Add individual dish pages (with restaurant info)
+* Add reviews for each dish

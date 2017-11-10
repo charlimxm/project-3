@@ -21,18 +21,18 @@ require 'faker'
 # resto.save
 #
 #
-# dish = Dish.new
-# dish.name = Faker::Food.dish
-# dish.price = rand(20)
-# dish.restaurant_id = rand(10)
-# dish.discount = rand(100)
-# dish.photourl= "photolink_here"
-#
-# dish.save
-#
-new_rating = Rating.new
-new_rating.dish_id = rand(10)
-new_rating.user_id = 1
+dish = Dish.new
+dish.name = Faker::Food.dish
+dish.price = rand(20)
+dish.restaurant_id = rand(10)
+dish.discount = rand(100)
+dish.photourl= "http://www.delonghi.com/Global/recipes/multifry/173.jpg"
 
-new_rating.save
+dish.save
+#
+# new_rating = Rating.new
+# new_rating.dish_id = rand(10)
+# new_rating.user_id = 1
+#
+# new_rating.save
 end

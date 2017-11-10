@@ -1,2 +1,19 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<div class="container">
+  <h1><%= @resto.name %></h1>
+  <p>
+  <h4><%= @resto.address %></h4>
+  <h4><%= @resto.phone_number %></h4>
+
+  <h1>Menu Items</h1>
+  <% @menu.each do |item| %>
+
+  <ul>
+    <li><%= image_tag item.photourl, class:"responsive-img" %></li>
+    <li><%= item.name %> ---  $<%= item.price %></li>
+  </ul>
+
+  <% end %>
+
+  </p>
+
+</div>

@@ -1,2 +1,9 @@
-<h1>Dishes#show</h1>
-<p>Find me in app/views/dishes/show.html.erb</p>
+
+<div class="container">
+  <h1>Single Dish Page</h1>
+  <%=image_tag (@dish.photourl) %>
+  <h3><%= @dish.name %></h3>
+  <p>Price: $<%= @dish.price %></p>
+  <p>Restaurant: <%= @resto.name %><br>
+  <%= link_to "View Restaurant", restaurant_path(@resto.id) %></p>
+</div>

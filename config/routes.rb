@@ -20,9 +20,6 @@ Rails.application.routes.draw do
 
   # Owner Profile
 
-  # Home with search bar, and display of dishes for upvote and downvote
-    ## ratings: index
-    ## /
 
   # Results (by dish or restaurant name)
     ## ratings: show
@@ -38,7 +35,7 @@ Rails.application.routes.draw do
 
   # Restaurant with ranking of its own dishes
     ## restaurants: index, show
-    ## /restaurant_name     
+    ## /restaurant_name
 
   root 'ratings#index'
 

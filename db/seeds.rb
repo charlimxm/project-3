@@ -12,13 +12,13 @@ require 'faker'
 
 10.times do
 
-# resto = Restaurant.new
-# resto.name = Faker::Company.name
-# resto.phone_number = rand(61234567..69999999)
-# resto.address = Faker::Address.street_address
-# resto.user_id = 1
-#
-# resto.save
+resto = Restaurant.new
+resto.name = Faker::Company.name
+resto.phone_number = rand(61234567..69999999)
+resto.address = Faker::Address.street_address
+resto.user_id = 1
+
+resto.save
 #
 #
 dish = Dish.new
@@ -30,9 +30,9 @@ dish.photourl= "http://www.delonghi.com/Global/recipes/multifry/173.jpg"
 
 dish.save
 #
-# new_rating = Rating.new
-# new_rating.dish_id = rand(10)
-# new_rating.user_id = 1
-#
-# new_rating.save
+new_rating = Rating.new
+new_rating.dish_id = rand(10)
+new_rating.user_id = 1
+
+new_rating.save
 end

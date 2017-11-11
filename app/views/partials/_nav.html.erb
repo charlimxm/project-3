@@ -3,7 +3,8 @@
     <a href="/" class="brand-logo">FoodSpace</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-      <li><%= link_to "Profile", edit_user_registration_path%></li>
+      <li><%= link_to "Profile", users_index_path(@user)%></li>
+      <li><%= link_to "Settings", edit_user_registration_path%></li>
       <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       <% else %>
       <li><%= link_to "Login", new_user_session_path%></li>

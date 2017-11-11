@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
+
   get 'restaurants/index'
 
   get 'restaurants/show'
@@ -41,7 +43,9 @@ Rails.application.routes.draw do
 
   get 'search_results', to: 'ratings#search_results'
 
+
   resources :ratings
+  resources :users
   resources :dishes
   resources :restaurants
 

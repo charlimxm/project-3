@@ -6,11 +6,13 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+
   <div class="field">
+    <%= image_tag current_user.photourl, height: "400px" %><br>
   <input
     type="hidden"
     role="uploadcare-uploader"
-    name="photourl"
+    name="user[photourl]"
     data-public-key="62b4ad6715b6c5f8bf25"
     data-tabs="file camera url facebook gdrive gphotos dropbox instagram evernote flickr skydrive"
     data-image-shrink=""
@@ -19,9 +21,9 @@
     data-clearable="true"
     data-multiple="false"
     data-system-dialog="false"
-    data-crop="250:450"
+    data-crop="250:300"
 />
-</div>
+</div><br>
 
   <div class="field">
     <i class="material-icons prefix">assignment_ind</i>

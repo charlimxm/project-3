@@ -6,7 +6,7 @@
       <li><%= link_to "Profile", users_update_path(@user)%></li>
       <li><%= link_to edit_user_registration_path do %>
         <div class="chip">
-          <%=image_tag "https://upload.wikimedia.org/wikipedia/commons/f/ff/Domestic_goat_kid_in_capeweed.jpg" %><%=current_user.name  %></div>
+          <%=image_tag current_user.photourl %><%=current_user.name  %></div>
         <% end %>
       </li>
       <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>

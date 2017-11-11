@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>Profile</h1>
+    <h3><i class="material-icons">account_circle</i> <%= @user.name %> </h3>
+    <h5><i class="material-icons">email</i> <%= @user.email %> </h5>
+
+  <br>
+
+  <h3>Company Details</h3>
+  <%= form_for @dish do |f| %>
+  <div class="row">
+    <div class="input-field col s5">
+
+    <% if @user.owner %>
+      <% @restos.each do |resto| %>
+
+      <ul>
+        <li><i class="material-icons">business</i><%= resto.name %></li>
+        <li><i class="material-icons">home</i><%= resto.address %></li>
+      </ul>
+          <% @dishes.each do |dish| %>
+      <ul>
+        <li>
+          <i class="material-icons">business</i><%= dish.name %>
+          <div class="field">
+            <%= f.text_field :name %>
+            <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
+          </div>
+          </li>
+
+          <br>
+          <br>
+
+        <li>
+          <i class="material-icons">home</i>$<%= dish.price %>0
+          <div class="field">
+            <%= f.text_field :price %>
+            <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
+          </div>
+        </li>
+
+        <br>
+        <br>
+
+        <li>
+          <%= image_tag(dish.photourl, height: '170') %>
+          <div class="field">
+            <%= f.text_field :photourl %>
+            <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
+          </div>
+        </li>
+
+        <br>
+        <br>
+
+      </ul>
+      <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
+  <% end %>
+</div>

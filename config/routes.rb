@@ -18,8 +18,10 @@ Rails.application.routes.draw do
 
   get 'search_results', to: 'ratings#search_results'
 
+  get 'users/update'
 
   resources :ratings
+  resources :users
   resources :dishes
   resources :restaurants
 

@@ -80,9 +80,7 @@ Li Yuan | Description | Bug/Framework
 3| text | text
 ___
 ## Ask During Consultation
-* Icons not working properly
-* Image tags / link tags causing problems during formatting
-
+* How to make search asynchronous
 
 ## Assumptions
 * Owners may have more than one restaurant
@@ -93,7 +91,7 @@ Description    | Importance | Type
 Add google maps to allow search function based on user location | Framework
 Make search function async | Medium | Framework
 Add images to user profile | Low | Framework
-Add OCR API & Facebook login | Medium | Framework
+Add OCR API to allow users to scan the menu| Medium | Framework
 Scrape restaurant data | Medium | Framework
 ~~Update README with latest wireframe images~~ | Low | Framework
 ~~Add working routes for default pages~~ | **HIGH** | Framework
@@ -101,5 +99,7 @@ Scrape restaurant data | Medium | Framework
 ~~Come up with search page logic~~ | **HIGH** | Framework
 
 ## Potential Improvements
-* Add individual dish pages (with restaurant info)
 * Add reviews for each dish
+* Facebook login and share
+* Additional promotions
+* OCR scanning of bill to split payment

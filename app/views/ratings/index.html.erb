@@ -5,7 +5,7 @@
 <h2>Search for a Dish</h2>
 <%= form_tag(ratings_path, method: :get) do %>
   <%= text_field_tag :term %>
-  <%= submit_tag 'Search' %>
+  <%= submit_tag 'Search', class: "btn right" %>
 <% end %>
 
 <% if @dishes.count < 10 %>

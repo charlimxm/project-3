@@ -62,7 +62,10 @@ ___
 Joseph | Description | Bug/Framework
 ------ | --- | ---
 1| Added working models | Framework
-2| Loaded initial data | Framework
+2| Loaded initial migration and seed data | Framework
+3| Added working pages and default routes | Framework
+4| Modified profile_edit page to contain & change more fields | Framework
+5| Created case insensitive search function for home page | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -77,7 +80,8 @@ Li Yuan | Description | Bug/Framework
 3| text | text
 ___
 ## Ask During Consultation
-* Assistance in installing CSS Frameworks
+* Icons not working properly
+* Image tags / link tags causing problems during formatting
 
 
 ## Assumptions
@@ -86,11 +90,14 @@ ___
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---  
+Add google maps to allow search function based on user location | Framework
+Make search function async | Medium | Framework
+Add images to user profile | Low | Framework
 Add OCR API & Facebook login | Medium | Framework
 Scrape restaurant data | Medium | Framework
-Update README with latest wireframe images | Low | Framework
-Add working routes for default pages | **HIGH** | Framework
-Implement CSS Framework and working form routes | **HIGH** | Framework
+~~Update README with latest wireframe images~~ | Low | Framework
+~~Add working routes for default pages~~ | **HIGH** | Framework
+~~Implement CSS Framework and working form routes~~ | **HIGH** | Framework
 ~~Come up with search page logic~~ | **HIGH** | Framework
 
 ## Potential Improvements

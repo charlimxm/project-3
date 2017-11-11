@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
 
   resources :ratings
-  resources :users
   resources :dishes
   resources :restaurants
 

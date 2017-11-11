@@ -7,6 +7,23 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+  <input
+    type="hidden"
+    role="uploadcare-uploader"
+    name="photourl"
+    data-public-key="62b4ad6715b6c5f8bf25"
+    data-tabs="file camera url facebook gdrive gphotos dropbox instagram evernote flickr skydrive"
+    data-image-shrink=""
+    data-images-only="true"
+    data-preview-step="false"
+    data-clearable="true"
+    data-multiple="false"
+    data-system-dialog="false"
+    data-crop="250:450"
+/>
+</div>
+
+  <div class="field">
     <i class="material-icons prefix">assignment_ind</i>
     <%= f.label :owner %><br />
     <%= f.text_field :owner, autofocus: true %>

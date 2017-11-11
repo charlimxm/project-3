@@ -1,9 +1,8 @@
 <div class="container">
 <h1>HOME PAGE</h1>
-
-
+ 
 <h2>Search for a Dish</h2>
-<%= form_tag(ratings_path, method: :get) do %>
+<%= form_for ratings_path, method: :get do %>
   <%= text_field_tag :term %>
   <%= submit_tag 'Search', class: "btn right" %>
 <% end %>

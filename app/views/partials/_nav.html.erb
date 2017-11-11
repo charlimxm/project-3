@@ -3,9 +3,11 @@
     <a href="/" class="brand-logo">FoodSpace</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-      <li><div class="chip">
-        <%=image_tag "https://upload.wikimedia.org/wikipedia/commons/f/ff/Domestic_goat_kid_in_capeweed.jpg" %><%=current_user.name  %></div></li>
-      <li><%= link_to "Edit Profile", edit_user_registration_path%></li>
+      <li><%= link_to edit_user_registration_path do %>
+        <div class="chip">
+          <%=image_tag "https://upload.wikimedia.org/wikipedia/commons/f/ff/Domestic_goat_kid_in_capeweed.jpg" %><%=current_user.name  %></div>
+        <% end %>
+      </li>
       <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       <% else %>
       <li><%= link_to "Login", new_user_session_path%></li>

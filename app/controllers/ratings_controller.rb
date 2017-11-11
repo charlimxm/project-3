@@ -23,7 +23,7 @@ class RatingsController < ApplicationController
 
 
   @dishes = if params[:term]
-      Dish.where('name LIKE ?', "%#{params[:term]}%")
+      Dish.where('lower(name) LIKE ?', "%#{params[:term]}%")
     else
       Dish.all
     end

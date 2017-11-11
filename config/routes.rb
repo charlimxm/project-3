@@ -1,31 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
-
-  get 'restaurants/index'
-
-  get 'restaurants/show'
-
   get 'restaurants/search_results'
 
-  get 'ratings/index'
 
-  get 'dishes/index'
-
-  get 'dishes/show'
-
-  # Register
-
-  # Sign in
-
-  # User Profile
 
   # Owner Profile
 
-
-  # Results (by dish or restaurant name)
-    ## ratings: show
-    ## /search_results
 
   # Add Rating (Picture uploading, and upvote and downvote)
     ## ratings: create
@@ -34,11 +14,6 @@ Rails.application.routes.draw do
   # Add Restaurants
     ## restaurants: create
     ## /add_restaurants
-
-  # Restaurant with ranking of its own dishes
-    ## restaurants: index, show
-    ## /restaurant_name
-
   root 'ratings#index'
 
   get 'search_results', to: 'ratings#search_results'

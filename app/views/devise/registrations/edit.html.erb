@@ -8,6 +8,12 @@
 
   <div class="field">
     <i class="material-icons prefix">assignment_ind</i>
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">assignment_ind</i>
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
@@ -51,7 +57,7 @@
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), class: 'btn waves-effect waves-light formbttn', data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back , class: 'btn waves-effect waves-light formbttn'%>
 </div>

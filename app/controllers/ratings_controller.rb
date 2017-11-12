@@ -22,7 +22,13 @@ class RatingsController < ApplicationController
   end
 
 
-  @dishes = Dish.search(params[:term])
+
   end
 
+  def search
+    @dishes = Dish.search(params[:term])
+    respond_to do |format|
+      format.js
+    end
+  end
 end

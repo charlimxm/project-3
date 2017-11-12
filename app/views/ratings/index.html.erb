@@ -1,18 +1,28 @@
 <div class="container">
 <h1>HOME PAGE</h1>
- 
+<div id="resultList">
+  <ul >
+
+  </ul>
+
+</div>
 <h2>Search for a Dish</h2>
-<%= form_for ratings_path, method: :get do %>
+<%= form_tag ratings_search_path, method: :put, remote:true do %>
   <%= text_field_tag :term %>
   <%= submit_tag 'Search', class: "btn right" %>
 <% end %>
 
+
+
+<%
+=begin %>
 <% if @dishes.count < 10 %>
 <% @dishes.each do |dish| %>
 <li> <%= dish.name %></li>
 <% end %>
 <% end %>
-
+<%
+=end %>
 
 <% @resultHash.each do |dish,rating| %>
       <div class="row ">
@@ -20,7 +30,7 @@
           <div class="card">
             <div class="card-image">
               <%= image_tag(dish.photourl) %>
-              <span class="card-title"><%= dish.name %></span>
+              <span class="card-title black-text"><%= dish.name %></span>
             </div>
             <div class="card-content">
               <p>Rating: <%= rating %></p>

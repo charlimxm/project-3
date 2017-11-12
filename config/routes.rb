@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'users/update'
 
+  put 'ratings/search', to: 'ratings#search'
+
   resources :ratings
   resources :users
   resources :dishes

@@ -1,0 +1,10 @@
+if (<%= @invalid %> === true){
+    alert("You can only vote once")
+}
+else if (<%= @invalid %> === false){
+
+  var $ratingPara = $(`#ratingPara${<%= @dish_id %>}`)
+  var currentRating = (<%= @rating %> +1).toString()
+  $ratingPara.text(`Rating: ${currentRating}`)
+  alert("Upvoted!")
+}

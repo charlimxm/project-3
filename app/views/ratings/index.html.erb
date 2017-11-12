@@ -33,7 +33,12 @@
               <span class="card-title black-text"><%= dish.name %></span>
             </div>
             <div class="card-content">
-              <p>Rating: <%= rating %></p>
+              <%= form_tag ratings_path, method: :post,remote:true do %>
+                <%= hidden_field_tag :dish_id, dish.id %>
+                <%= hidden_field_tag :rating, rating %>
+                <%=submit_tag :Upvote, class: "btn" %>
+              <% end %>
+              <p id = "ratingPara<%= dish.id %>">Rating: <%= rating %></p>
               <p>Dish description will be placed here once we add it</p>
             </div>
             <div class="card-action">

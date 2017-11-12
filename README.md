@@ -66,6 +66,7 @@ Joseph | Description | Bug/Framework
 3| Added working pages and default routes | Framework
 4| Modified profile_edit page to contain & change more fields | Framework
 5| Created case insensitive search function for home page | Framework
+6| Added voting system | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -81,6 +82,7 @@ Li Yuan | Description | Bug/Framework
 ___
 ## Ask During Consultation
 * How to make search asynchronous
+* Bug issue when trying to update data on /ratings/create.js.erb
 
 ## Assumptions
 * Owners may have more than one restaurant

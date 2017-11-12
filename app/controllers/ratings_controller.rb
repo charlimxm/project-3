@@ -1,5 +1,9 @@
 class RatingsController < ApplicationController
   def create
+if !current_user
+  flash[:notice] = "Please login to vote"
+    redirect_to root_path
+else
 
     @check_user_voted = Rating.where("dish_id=#{params[:dish_id]}")
     @hasUserVoted =  @check_user_voted.find{ |dish| dish["user_id"] == current_user.id}
@@ -21,6 +25,7 @@ class RatingsController < ApplicationController
         end
   end
   end
+end
   def index
     @all_ratings = Rating.all
 
@@ -42,8 +47,6 @@ class RatingsController < ApplicationController
   @dishesSortedByAsc.each do |name,user|
     @resultHash[Dish.find(name)] = user
   end
-
-
 
   end
 

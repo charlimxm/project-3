@@ -3,8 +3,9 @@ if (<%= @invalid %> === true){
 }
 else if (<%= @invalid %> === false){
 
-  var $ratingPara = $(`#ratingPara${<%= @dish_id %>}`)
-  var currentRating = (<%= @rating %> +1).toString()
-  $ratingPara.text(`Rating: ${currentRating}`)
+// enable codes below this to enable real time change of vote count. Need to check why it doesnt work
+  // var $ratingPara = $(`#ratingPara${<%= @dish_id %>}`)
+  // var currentRating = (<%= @rating %> +1).toString()
+  // $ratingPara.text(`Rating: ${currentRating}`)
   alert("Upvoted!")
 }

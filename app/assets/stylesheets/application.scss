@@ -7,7 +7,7 @@ nav {
 }
 
 .chip{
-  background-color: white;
+  background-color: rgba(255,255,255,0.5);
   color: black;
 }
 
@@ -17,10 +17,19 @@ nav {
 
 .mainHeader{
   background-image: image-url("sample3.jpg");
-  height: 400px;
+  height: 530px;
   background-position: center;
 }
-
+.tabs{
+  color: black !important;
+  background-color: rgba(255,255,255,0) !important;
+}
+ .tab a{
+   color: black !important;
+ }
+ .indicator{
+   background-color: black !important;
+ }
 .nav-wrapper {
   background-color: white;
   height: 20px;
@@ -28,9 +37,12 @@ nav {
 
 .searchBar{
   color: black;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.6);
   position: relative;
   top:100px;
   border-radius: 20px;
   padding: 20px;
 }
+// .searchInput{
+//   background-color: rgba(255,255,255,0.5) !important;
+// }

@@ -2,11 +2,35 @@
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 
+nav {
+  box-shadow: none !important;
+}
+
 .chip{
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .btn{
   background-color: black;
+}
+
+.mainHeader{
+  background-image: image-url("sample3.jpg");
+  height: 400px;
+  background-position: center;
+}
+
+.nav-wrapper {
+  background-color: white;
+  height: 20px;
+}
+
+.searchBar{
+  color: black;
+  background-color: rgba(255,255,255,0.5);
+  position: relative;
+  top:100px;
+  border-radius: 20px;
+  padding: 20px;
 }

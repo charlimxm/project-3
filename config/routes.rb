@@ -2,10 +2,7 @@ Rails.application.routes.draw do
 
   get 'restaurants/search_results'
 
-
-
   # Owner Profile
-
 
   # Add Rating (Picture uploading, and upvote and downvote)
     ## ratings: create
@@ -18,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'search_results', to: 'ratings#search_results'
 
-  get 'users/update'
+  get 'users/update', to: 'users#update'
 
   put 'ratings/search', to: 'ratings#search'
 

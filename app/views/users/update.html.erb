@@ -9,11 +9,9 @@
     <h3><i class="material-icons">business</i><%= @resto.name %></h3>
     <h3><i class="material-icons">home</i><%= @resto.address %></h3>
 
-    <div class="input-field col s5">
-
-
   <% @dishes.each do |dish| %>
       <%= form_for dish, :url => dish_path(dish.id), method: :put do |f| %>
+      <%= form_for dish, :url => dish_path(dish.id), method: :delete do |f| %>
 
         <ul>
           <li>
@@ -27,10 +25,20 @@
           <br>
 
         <li>
-          <i class="material-icons">home</i>Dish Price
+          <i class="material-icons">home</i>Dish Price (SGD$)
           <div class="field">
             <%= f.text_field :price %>
           </div>
+        </li>
+
+        <br>
+        <br>
+
+        <li>
+          <i class="material-icons">home</i>Dish Discount (%)
+            <div class="field">
+              <%= f.text_field :discount %>
+            </div>
         </li>
 
         <br>
@@ -62,6 +70,7 @@
 
         <div class="actions">
           <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
+          <%= f.submit "Delete", class: 'btn waves-effect waves-light right formbttn' %>
         </div>
 
         <br>
@@ -71,7 +80,10 @@
 
       <% end %>
       <% end %>
+      <% end %>
 
+    </div>
+    </div>
     </div>
     </div>
 

@@ -1,4 +1,6 @@
 class DishesController < ApplicationController
+
+
   def index
     @dishes = Dish.all
   end
@@ -29,10 +31,19 @@ class DishesController < ApplicationController
     redirect_to users_update_path
   end
 
+  def destroy
+    @dish = Dish.find(params[:id])
+    @dish.destroy
+    flash[:success] = "Dish was successfully deleted!"
+    redirect_to users_update_path
+  end
+
   private
 
   def dish_params
     params.require(:dish).permit(:name, :price, :photourl)
   end
+
+
 
 end

@@ -74,8 +74,9 @@ Joseph | Description | Bug/Framework
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
 1| Created edit page for dish details | Framework
-2| Created function to check if user is owner | Framework
-3| Added dish picture upload function | Framework
+2| Created delete page for dish details | Framework
+3| Created function to check if user is owner | Framework
+4| Added dish picture upload function | Framework
 
 Li Yuan | Description | Bug/Framework
 ------ | --- | ---

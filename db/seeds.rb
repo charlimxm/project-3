@@ -26,7 +26,7 @@ dish.name = Faker::Food.dish
 dish.price = rand(20)
 dish.restaurant_id = rand(10)
 dish.discount = rand(100)
-dish.photourl= "http://www.delonghi.com/Global/recipes/multifry/173.jpg"
+dish.photourl= "app/assets/images/dishPic.png"
 
 dish.save
 #

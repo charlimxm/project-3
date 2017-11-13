@@ -1,27 +1,27 @@
 <nav>
-  <div class="nav-wrapper black">
-    <a href="/" class="brand-logo">FoodSpace</a>
+  <div class="nav-wrapper white">
+    <a href="/" class="brand-logo center black-text">FoodSpace</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if user_signed_in? %>
       <% if current_user.owner %>
-      <li><%= link_to "Update Details", users_update_path%></li>
-      <li><%= link_to "Add Restaurant/Dishes", new_dish_path%></li>
+      <li><%= link_to "Update Details", users_update_path,class:"black-text"%></li>
+      <li><%= link_to "Add Restaurant/Dishes", new_dish_path,class:"black-text"%></li>
       <% end %>
       <li><%= link_to edit_user_registration_path do %>
         <div class="chip">
           <%=image_tag current_user.photourl %><%=current_user.name  %></div>
         <% end %>
       </li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, class:"black-text",  method: :delete %></li>
       <% else %>
-      <li><%= link_to "Login", new_user_session_path%></li>
-      <li><%= link_to "Register", new_user_registration_path %></li>
+      <li><%= link_to "Login", new_user_session_path,class:"black-text"%></li>
+      <li><%= link_to "Register", new_user_registration_path, class:"black-text"%></li>
       <% end %>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Browse<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button black-text" href="#!" data-activates="dropdown1">Browse<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
+  <ul id="dropdown1" class="dropdown-content">
+  <li><%= link_to "All Restaurants", restaurants_path %></li>
+  <li><%= link_to "All Dishes", dishes_path %></li>
+  </ul>
 </nav>
-<ul id="dropdown1" class="dropdown-content">
-<li><%= link_to "All Restaurants", restaurants_path %></li>
-<li><%= link_to "All Dishes", dishes_path %></li>
-</ul>

@@ -93,15 +93,19 @@ ___
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---  
-Add OCR API to allow users to scan the menu| Medium | Framework
+Add new dishes and delete dishes | **HIGH** | Framework
+Allow searching of individual dishes/restaurants | **HIGH** | Framework
+Owner console | **HIGH** | Framework
+Add OCR API to allow users to split the bill| Medium | Framework
 Scrape restaurant data | Medium | Framework
-Add google maps to allow search function based on user location | Framework
+Add google maps to allow show restaurant location| Low | Framework
+---- | ---- | ----
 ~~Make search function async~~ | Medium | Framework
 ~~Add images to user profile~~ | Low | Framework
 ~~Update README with latest wireframe images~~ | Low | Framework
 ~~Add working routes for default pages~~ | **HIGH** | Framework
 ~~Implement CSS Framework and working form routes~~ | **HIGH** | Framework
-~~Come up with search page logic~~ | **HIGH** | Framework 
+~~Come up with search page logic~~ | **HIGH** | Framework
 
 ## Potential Improvements
 * Add reviews for each dish

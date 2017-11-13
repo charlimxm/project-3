@@ -70,8 +70,6 @@ Joseph | Description | Bug/Framework
 7| Resolved ruby in js.erb code bug (Needs to be placed elsewhere) | Bug
 8| Resolved !user.owner bug | Bug
 9| Resolved bug for edit page | Bug
-10| Added search function for restaurants | Framework
-11| Removed search bar from unnecessary pages and edited minor css for front page | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -97,12 +95,12 @@ ___
 Description    | Importance | Type
 -------- | --- | ---  
 Add new dishes and delete dishes | **HIGH** | Framework
+Allow searching of individual dishes/restaurants | **HIGH** | Framework
 Owner console | **HIGH** | Framework
 Add OCR API to allow users to split the bill| Medium | Framework
 Scrape restaurant data | Medium | Framework
 Add google maps to allow show restaurant location| Low | Framework
-**COMPLETED** |  |
-~~Allow searching of individual dishes/restaurants~~ | **HIGH** | Framework
+---- | ---- | ----
 ~~Make search function async~~ | Medium | Framework
 ~~Add images to user profile~~ | Low | Framework
 ~~Update README with latest wireframe images~~ | Low | Framework

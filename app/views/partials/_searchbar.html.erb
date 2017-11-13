@@ -1,28 +1,7 @@
-<div class=" container searchBar center">
-
-  <div class="row">
-    <div class="col s12">
-      <ul class="tabs tabs-fixed-width">
-        <li class="tab col s3"><a class="active"href="#test1"><h5>Search For A Dish</h5></a></li>
-        <li class="tab col s3"><a href="#test2"><h5>Search For A Restaurant</h5></a></li>
-      </ul>
-    </div>
-    <div id="test1" class="col s12">
-      <div class="searchInput">
-        <h3>Please enter dish name:</h3>
-        <%= form_tag ratings_search_path, method: :put, remote:true do %>
-          <%= text_field_tag :term,"", autofocus: true %>
-        <% end %>
-      </div>
-    </div>
-    <div  id="test2" class="col s12">
-      <div class="searchInput">
-        <h3>Please enter restaurant name:</h3>
-        <%= form_tag restaurants_search_path, method: :put, remote:true do %>
-          <%= text_field_tag :term %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div class=" container searchBar">
+  <h2>Search for a Dish</h2>
+  <%= form_tag ratings_search_path, method: :put, remote:true do %>
+    <%= text_field_tag :term %>
+  <% end %>
 
 </div>

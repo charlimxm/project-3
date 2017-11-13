@@ -17,10 +17,7 @@ Rails.application.routes.draw do
 
   get 'users/update', to: 'users#update'
 
-  put 'restaurants/search', to: 'restaurants#search'
   put 'ratings/search', to: 'ratings#search'
-
-  get 'topdishes', to: 'ratings#top'
 
   resources :ratings
   resources :users

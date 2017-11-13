@@ -3,7 +3,9 @@
     <a href="/" class="brand-logo">FoodSpace</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-      <li><%= link_to "Profile", users_update_path(@user)%></li>
+      <% if current_user.owner %>
+      <li><%= link_to "Update Details", users_update_path(@user)%></li>
+      <% end %>
       <li><%= link_to edit_user_registration_path do %>
         <div class="chip">
           <%=image_tag current_user.photourl %><%=current_user.name  %></div>

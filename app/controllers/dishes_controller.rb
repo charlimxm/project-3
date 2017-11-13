@@ -21,4 +21,18 @@ class DishesController < ApplicationController
   end
   @dishRating = @ratingHash[@dish.id]
   end
+
+  def update
+    @dish = Dish.find(params[:id])
+    @dish.update_attributes(dish_params)
+    flash[:success] = "Dish was successfully updated!"
+    redirect_to users_update_path
+  end
+
+  private
+
+  def dish_params
+    params.require(:dish).permit(:name, :price, :photourl)
+  end
+
 end

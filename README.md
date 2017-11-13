@@ -68,18 +68,21 @@ Joseph | Description | Bug/Framework
 5| Created case insensitive search function for home page | Framework
 6| Added voting system | Framework
 7| Resolved ruby in js.erb code bug (Needs to be placed elsewhere) | Bug
+8| Resolved !user.owner bug | Bug
+9| Resolved bug for edit page | Bug
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Added wireframes | Framework
-2| text | text
-3| text | text
+1| Created edit page for dish details | Framework
+2| Created function to check if user is owner | Framework
+3| Added dish picture upload function | Framework
 
 Li Yuan | Description | Bug/Framework
 ------ | --- | ---
 1| Landing Pages: home/register/login | Framework
 2| User Stories| Framework
-3| text | text
+3| Data scraping for restaurants | Framework
+4| Added wireframes | Framework
 ___
 ## Ask During Consultation
 * How to make search asynchronous
@@ -90,11 +93,11 @@ ___
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---  
-Add google maps to allow search function based on user location | Framework
-Make search function async | Medium | Framework
-Add images to user profile | Low | Framework
 Add OCR API to allow users to scan the menu| Medium | Framework
 Scrape restaurant data | Medium | Framework
+Add google maps to allow search function based on user location | Framework
+~~Make search function async~~ | Medium | Framework
+~~Add images to user profile~~ | Low | Framework
 ~~Update README with latest wireframe images~~ | Low | Framework
 ~~Add working routes for default pages~~ | **HIGH** | Framework
 ~~Implement CSS Framework and working form routes~~ | **HIGH** | Framework

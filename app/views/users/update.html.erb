@@ -1,40 +1,35 @@
 <div class="container">
-  <h1>Profile</h1>
-    <h3><i class="material-icons">account_circle</i> <%= @user.name %> </h3>
-    <h5><i class="material-icons">email</i> <%= @user.email %> </h5>
+  <% if !@user.owner %>
+  PAGE DOES NOT EXIST
+  <% end %>
+  <% if @user.owner %>
+  <h1>Restaurant Details</h1>
 
-  <br>
-
-  <h3>Company Details</h3>
-  <%= form_for @dish do |f| %>
   <div class="row">
+    <h3><i class="material-icons">business</i><%= @resto.name %></h3>
+    <h3><i class="material-icons">home</i><%= @resto.address %></h3>
+
     <div class="input-field col s5">
 
-    <% if @user.owner %>
-      <% @restos.each do |resto| %>
 
-      <ul>
-        <li><i class="material-icons">business</i><%= resto.name %></li>
-        <li><i class="material-icons">home</i><%= resto.address %></li>
-      </ul>
-          <% @dishes.each do |dish| %>
-      <ul>
-        <li>
-          <i class="material-icons">business</i><%= dish.name %>
-          <div class="field">
-            <%= f.text_field :name %>
-            <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
-          </div>
+  <% @dishes.each do |dish| %>
+      <%= form_for dish, :url => dish_path(dish.id), method: :put do |f| %>
+
+        <ul>
+          <li>
+            <i class="material-icons">business</i> Dish Name
+            <div class="field">
+              <%= f.text_field :name %>
+            </div>
           </li>
 
           <br>
           <br>
 
         <li>
-          <i class="material-icons">home</i>$<%= dish.price %>0
+          <i class="material-icons">home</i>Dish Price
           <div class="field">
             <%= f.text_field :price %>
-            <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
           </div>
         </li>
 
@@ -42,21 +37,43 @@
         <br>
 
         <li>
-          <%= image_tag(dish.photourl, height: '170') %>
           <div class="field">
-            <%= f.text_field :photourl %>
-            <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
-          </div>
+            <%= image_tag dish.photourl, height: "100px" %><br>
+          <input
+            type="hidden"
+            role="uploadcare-uploader"
+            name="dish[photourl]"
+            data-public-key="62b4ad6715b6c5f8bf25"
+            data-tabs="file camera url facebook gdrive gphotos dropbox instagram evernote flickr skydrive"
+            data-image-shrink=""
+            data-images-only="true"
+            data-preview-step="false"
+            data-clearable="true"
+            data-multiple="false"
+            data-system-dialog="false"
+            data-crop="250:300"
+            value="<%= dish.photourl %>"
+          />
+          </div><br>
         </li>
 
         <br>
         <br>
 
+        <div class="actions">
+          <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
+        </div>
+
+        <br>
+        <br>
+
       </ul>
+
       <% end %>
-        <% end %>
       <% end %>
+
     </div>
     </div>
+
   <% end %>
 </div>

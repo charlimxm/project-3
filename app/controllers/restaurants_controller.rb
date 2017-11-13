@@ -10,4 +10,5 @@ class RestaurantsController < ApplicationController
 
   def search_results
   end
+
 end

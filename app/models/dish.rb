@@ -1,6 +1,6 @@
 class Dish < ApplicationRecord
   belongs_to :restaurant
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 
   def self.search(params)
     if params

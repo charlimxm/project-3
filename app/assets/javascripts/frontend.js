@@ -31,8 +31,9 @@ $(document).on('turbolinks:load', function () {
     ampmclickable: true, // make AM PM clickable
     aftershow: function(){} //Function for after opening timepicker
   })
-  $('#textarea1').val('New Text');
-  $('#textarea1').trigger('autoresize');
+   $('#textarea1').val('New Text');
+   $('#textarea1').trigger('autoresize');
    $('select').material_select();
    $('.parallax').parallax();
+   $('ul.tabs').tabs();
 })

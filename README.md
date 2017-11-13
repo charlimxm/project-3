@@ -101,7 +101,7 @@ Add google maps to allow search function based on user location | Framework
 ~~Update README with latest wireframe images~~ | Low | Framework
 ~~Add working routes for default pages~~ | **HIGH** | Framework
 ~~Implement CSS Framework and working form routes~~ | **HIGH** | Framework
-~~Come up with search page logic~~ | **HIGH** | Framework
+~~Come up with search page logic~~ | **HIGH** | Framework 
 
 ## Potential Improvements
 * Add reviews for each dish

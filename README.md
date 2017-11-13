@@ -72,6 +72,7 @@ Joseph | Description | Bug/Framework
 9| Resolved bug for edit page | Bug
 10| Added search function for restaurants | Framework
 11| Removed search bar from unnecessary pages and edited minor css for front page | Framework
+12| Added cards for individual dishes layout | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -88,7 +89,7 @@ Li Yuan | Description | Bug/Framework
 4| Added wireframes | Framework
 ___
 ## Ask During Consultation
-* How to make search asynchronous
+* Check with prima how to show those dishes without votes. Not sure about how to run the loop to compare against those that are already there(show all dishes page) - Jo
 
 ## Assumptions
 * Owners may have more than one restaurant

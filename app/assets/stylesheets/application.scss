@@ -29,6 +29,7 @@ nav {
  }
  .indicator{
    background-color: black !important;
+   width: 0px;
  }
 .nav-wrapper {
   background-color: white;
@@ -43,6 +44,17 @@ nav {
   border-radius: 20px;
   padding: 20px;
 }
-// .searchInput{
-//   background-color: rgba(255,255,255,0.5) !important;
-// }
+.dropdown-content li > a{
+  color: black;
+}
+input[type=text]:not(.browser-default){
+  border-bottom: 2px solid black;
+  width: 500px
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]){
+    border-bottom: 2px solid rgba(174,52,75,1);
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: black;
+}

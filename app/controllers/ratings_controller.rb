@@ -26,7 +26,7 @@ end
   end
   end
 
-  def index
+  def top
     @all_ratings = Rating.all
 
     @ratingHash = {}

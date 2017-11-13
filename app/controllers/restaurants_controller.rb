@@ -8,7 +8,11 @@ class RestaurantsController < ApplicationController
     @menu = Dish.where("restaurant_id=#{@resto.id}")
   end
 
-  def search_results
+  def search
+    @resto = Restaurant.search(params[:term])
+    respond_to do |format|
+      format.js
+    end
   end
 
 end

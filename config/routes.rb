@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
-
   get 'restaurants/search_results'
 
   # Owner Profile
 
   # Add Rating (Picture uploading, and upvote and downvote)
-    ## ratings: create
-    ## /add_ratings
+  ## ratings: create
+  ## /add_ratings
 
   # Add Restaurants
-    ## restaurants: create
-    ## /add_restaurants
+  ## restaurants: create
+  ## /add_restaurants
   root 'ratings#index'
 
   get 'search_results', to: 'ratings#search_results'
@@ -21,13 +20,14 @@ Rails.application.routes.draw do
   put 'ratings/search', to: 'ratings#search'
 
   get 'topdishes', to: 'ratings#top'
+  get 'dishes/scrape', to: 'dishes#scrape'
 
   resources :ratings
   resources :users
   resources :dishes
   resources :restaurants
 
-  devise_for :users, path: "", path_names: {
+  devise_for :users, path: '', path_names: {
     sign_in: 'login', sign_out: 'logout',
     sign_up: 'register'
   }

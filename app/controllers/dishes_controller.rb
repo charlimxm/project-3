@@ -3,6 +3,15 @@ class DishesController < ApplicationController
     @dishes = Dish.all
   end
 
+  def new
+    @restaurant = Restaurant.new
+    @dish = Dish.new
+  end
+
+  def create
+    @resto = Restaurant.new
+  end
+
   def show
     @dish = Dish.find(params[:id])
     @resto = Restaurant.find(@dish.restaurant_id)
@@ -23,40 +32,6 @@ class DishesController < ApplicationController
   end
 
   def scrape
-    # @siteURL = 'https://www.burpple.com/sg/hot'
-    # response = RestClient.get(@siteURL)
-    # html = response.body
-    # data = Nokogiri::HTML(html)
-    #
-    # @restaurants_url_list = []
-    # # get individual restaurant page urls from burpple
-    # data.css('.topVenue-details-info-details a:first-child').each do |restaurant_link|
-    #   query = restaurant_link['href'].sub('?bp_ref=%2Fsg%2Fhot', '')
-    #   @restaurants_url_list << 'https://www.burpple.com' + query
-    # end
-    #
-    # @restaurant_details = []
-    #
-    # @restaurants_url_list.each do |restaurant_url|
-    #   response = RestClient.get(restaurant_url)
-    #   html = response.body
-    #   data = Nokogiri::HTML(html)
-    #
-    #   restaurant_address = data.css('.venueInfo-details-header-item-body p')[0].text
-    #   restaurant_name = data.css('.venueInfo-profile-header-text h1')[0].text
-    #   restaurant_phone = data.css('.venueInfo-details-header-item:nth-child(3) p').text
-    #   restaurant_food1 = data.css('.food-description-title').text
-    #
-    #   restaurant_detail = {
-    #     address: restaurant_address,
-    #     name: restaurant_name,
-    #     phone: restaurant_phone,
-    #     food1: restaurant_food1
-    #   }
-    #
-    #   @restaurant_details << restaurant_detail
-    # end
-
     @siteURL = 'https://www.burpple.com/categories/sg/burpple-guides'
     response = RestClient.get(@siteURL)
     html = response.body

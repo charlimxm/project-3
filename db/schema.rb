@@ -10,57 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109110623) do
-
+ActiveRecord::Schema.define(version: 20_171_109_110_623) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "dishes", force: :cascade do |t|
-    t.string "name"
-    t.float "price"
-    t.bigint "restaurant_id"
-    t.integer "discount"
-    t.string "photourl", default: "https://www.eataly.com/wp/wp-content/uploads/2016/09/Tagliatelle-alla-Bolognese.jpg"
-    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
+  create_table 'dishes', force: :cascade do |t|
+    t.string 'name'
+    t.float 'price'
+    t.bigint 'restaurant_id'
+    t.integer 'discount'
+    t.string 'photourl', default: 'https://www.eataly.com/wp/wp-content/uploads/2016/09/Tagliatelle-alla-Bolognese.jpg'
+    t.index ['restaurant_id'], name: 'index_dishes_on_restaurant_id'
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.bigint "dish_id"
-    t.bigint "user_id"
-    t.index ["dish_id"], name: "index_ratings_on_dish_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
+  create_table 'ratings', force: :cascade do |t|
+    t.bigint 'dish_id'
+    t.bigint 'user_id'
+    t.index ['dish_id'], name: 'index_ratings_on_dish_id'
+    t.index ['user_id'], name: 'index_ratings_on_user_id'
   end
 
-  create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "phone_number"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_restaurants_on_user_id"
+  create_table 'restaurants', force: :cascade do |t|
+    t.string 'name'
+    t.string 'address'
+    t.string 'phone_number'
+    t.string 'photourl'
+    t.string 'description'
+    t.bigint 'user_id'
+    t.index ['user_id'], name: 'index_restaurants_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "photourl", default: "userPic.png"
-    t.boolean "owner", default: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'photourl', default: 'userPic.png'
+    t.boolean 'owner', default: false
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.integer 'sign_in_count', default: 0, null: false
+    t.datetime 'current_sign_in_at'
+    t.datetime 'last_sign_in_at'
+    t.inet 'current_sign_in_ip'
+    t.inet 'last_sign_in_ip'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "dishes", "restaurants"
-  add_foreign_key "ratings", "dishes"
-  add_foreign_key "ratings", "users"
-  add_foreign_key "restaurants", "users"
+  add_foreign_key 'dishes', 'restaurants'
+  add_foreign_key 'ratings', 'dishes'
+  add_foreign_key 'ratings', 'users'
+  add_foreign_key 'restaurants', 'users'
 end

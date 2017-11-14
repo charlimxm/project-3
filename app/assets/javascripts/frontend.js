@@ -37,4 +37,5 @@ $(document).on('turbolinks:load', function () {
    $('.parallax').parallax();
    $('ul.tabs').tabs();
    $('.slider').slider();
+   $('.scrollspy').scrollSpy();
 })

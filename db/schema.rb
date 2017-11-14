@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.float "price"
     t.bigint "restaurant_id"
     t.integer "discount"
-    t.string "photourl", , default: "dishPic.png"
+    t.string "photourl", default: "http://www.gophercon.in/images/food/default-food-image.jpg"
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 

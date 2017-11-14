@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pry'
+gem 'pry-rails'
 gem 'jquery-turbolinks'
 gem 'jquery-rails'
 # Devise Initialization

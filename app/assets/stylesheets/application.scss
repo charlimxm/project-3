@@ -58,3 +58,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]){
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: black;
 }
+
+.card-title{
+  color: black !important;
+}

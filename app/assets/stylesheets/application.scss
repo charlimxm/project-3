@@ -1,2 +1,60 @@
  @import "materialize";
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+
+nav {
+  box-shadow: none !important;
+}
+
+.chip{
+  background-color: rgba(255,255,255,0.5);
+  color: black;
+}
+
+.btn{
+  background-color: black;
+}
+
+.mainHeader{
+  background-image: image-url("sample3.jpg");
+  height: 530px;
+  background-position: center;
+}
+.tabs{
+  color: black !important;
+  background-color: rgba(255,255,255,0) !important;
+}
+ .tab a{
+   color: black !important;
+ }
+ .indicator{
+   background-color: black !important;
+   width: 0px;
+ }
+.nav-wrapper {
+  background-color: white;
+  height: 20px;
+}
+
+.searchBar{
+  color: black;
+  background-color: rgba(255,255,255,0.6);
+  position: relative;
+  top:100px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.dropdown-content li > a{
+  color: black;
+}
+input[type=text]:not(.browser-default){
+  border-bottom: 2px solid black;
+  width: 500px
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]){
+    border-bottom: 2px solid rgba(174,52,75,1);
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: black;
+}

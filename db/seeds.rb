@@ -11,57 +11,28 @@ require 'faker'
 # Customer.destroy_all
 
 10.times do
-cust = Customer.new
-cust.name = Faker::Name.name
-cust.password = Faker::Internet.password(10, 20)
-cust.mobile_number = rand(81234567..99999999)
-cust.email = Faker::Internet.email
-
-cust.save
 
 resto = Restaurant.new
 resto.name = Faker::Company.name
-resto.company_name = Faker::University.greek_organization
-resto.restaurant_number = rand(61234567..69999999)
+resto.phone_number = rand(61234567..69999999)
 resto.address = Faker::Address.street_address
-resto.area = Faker::Company.name
-resto.cuisine = Faker::Company.name
-resto.max_seats = rand(1..40)
-hours = rand(8..11)
-resto.opening_hours = "#{hours}AM - 10PM"
-resto.twelvepm = rand(1..4)
-resto.onepm = rand(1..4)
-resto.twopm = rand(1..4)
-resto.threepm = rand(1..4)
-resto.fourpm = rand(1..4)
-resto.fivepm = rand(1..4)
-resto.sixpm = rand(1..4)
-resto.sevenpm = rand(1..4)
-resto.eightpm = rand(1..4)
-resto.ninepm = rand(1..4)
-resto.tenpm = rand(1..4)
+resto.user_id = 1
 
 resto.save
-
-# staff = Staff.new
-# staff.name = Faker::Name.name
-# staff.password = Faker::Internet.password(10, 20)
-# staff.type = "Default"
-# staff.restaurant_id = rand(1..10)
 #
-# staff.save
-end
+#
+dish = Dish.new
+dish.name = Faker::Food.dish
+dish.price = rand(20)
+dish.restaurant_id = rand(10)
+dish.discount = rand(100)
+dish.photourl= "http://www.gophercon.in/images/food/default-food-image.jpg"
 
-# TODO check with prima why it doesnt propagate over to bookings table
-10.times do
-booking = Booking.new
-booking.customer_id = 1
-booking.restaurant_id = rand(1..9)
-booking.pax = rand(20)
-hours = rand(3..11)
-booking.time = "#{hours}PM"
-booking.comments = Faker::Robin.quote
-booking.date = Faker::Date.between(1.week.from_now, Date.today)
+dish.save
+#
+new_rating = Rating.new
+new_rating.dish_id = rand(10)
+new_rating.user_id = 1
 
-booking.save
+new_rating.save
 end

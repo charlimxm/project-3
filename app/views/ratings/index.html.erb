@@ -1,0 +1,21 @@
+<div class="mainHeader">
+  <%= render "partials/searchbar"%>
+</div>
+<div class="container">
+<div class="collection"id="resultList" >
+
+</div>
+
+
+<%
+=begin %>
+<% if @dishes.count < 10 %>
+<% @dishes.each do |dish| %>
+<li> <%= dish.name %></li>
+<% end %>
+<% end %>
+<%
+=end %>
+
+
+</div>

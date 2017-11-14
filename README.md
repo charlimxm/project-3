@@ -62,36 +62,57 @@ ___
 Joseph | Description | Bug/Framework
 ------ | --- | ---
 1| Added working models | Framework
-2| Loaded initial data | Framework
+2| Loaded initial migration and seed data | Framework
+3| Added working pages and default routes | Framework
+4| Modified profile_edit page to contain & change more fields | Framework
+5| Created case insensitive search function for home page | Framework
+6| Added voting system | Framework
+7| Resolved ruby in js.erb code bug (Needs to be placed elsewhere) | Bug
+8| Resolved !user.owner bug | Bug
+9| Resolved bug for edit page | Bug
+10| Added search function for restaurants | Framework
+11| Removed search bar from unnecessary pages and edited minor css for front page | Framework
+12| Added cards for individual dishes layout | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Added wireframes | Framework
-2| text | text
-3| text | text
+1| Created edit page for dish details | Framework
+2| Created delete page for dish details | Framework
+3| Created function to check if user is owner | Framework
+4| Added dish picture upload function | Framework
 
 Li Yuan | Description | Bug/Framework
 ------ | --- | ---
 1| Landing Pages: home/register/login | Framework
 2| User Stories| Framework
-3| text | text
+3| Data scraping for restaurants | Framework
+4| Added wireframes | Framework
 ___
 ## Ask During Consultation
-* Assistance in installing CSS Frameworks
-
+* Check with prima how to show those dishes without votes. Not sure about how to run the loop to compare against those that are already there(show all dishes page) - Jo
 
 ## Assumptions
 * Owners may have more than one restaurant
 
 ## <center> To Do List
 Description    | Importance | Type
--------- | --- | ---
+-------- | --- | ---  
+Add new dishes and delete dishes | **HIGH** | Framework
+Owner console | **HIGH** | Framework
+Add OCR API to allow users to split the bill| Medium | Framework
 Scrape restaurant data | Medium | Framework
-Update README with latest wireframe images | Low | Framework
-Add working routes for default pages | **HIGH** | Framework
-Implement CSS Framework and working form routes | **HIGH** | Framework
+Add google maps to allow show restaurant location| Low | Framework
+**COMPLETED** |  |
+~~Allow searching of individual dishes/restaurants~~ | **HIGH** | Framework
+~~Make search function async~~ | Medium | Framework
+~~Add images to user profile~~ | Low | Framework
+~~Update README with latest wireframe images~~ | Low | Framework
+~~Add working routes for default pages~~ | **HIGH** | Framework
+~~Implement CSS Framework and working form routes~~ | **HIGH** | Framework
 ~~Come up with search page logic~~ | **HIGH** | Framework
 
 ## Potential Improvements
-* Add individual dish pages (with restaurant info)
 * Add reviews for each dish
+* Facebook login and share
+* Additional promotions
+* OCR scanning of bill to split payment

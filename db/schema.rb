@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.float "price"
     t.bigint "restaurant_id"
     t.integer "discount"
-    t.string "photourl"
+    t.string "photourl", default: "http://www.gophercon.in/images/food/default-food-image.jpg"
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.bigint "dishes_id"
+    t.bigint "dish_id"
     t.bigint "user_id"
-    t.index ["dishes_id"], name: "index_ratings_on_dishes_id"
+    t.index ["dish_id"], name: "index_ratings_on_dish_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "photourl", default: "userPic.png"
     t.boolean "owner", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -59,7 +60,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
   end
 
   add_foreign_key "dishes", "restaurants"
-  add_foreign_key "ratings", "dishes", column: "dishes_id"
+  add_foreign_key "ratings", "dishes"
   add_foreign_key "ratings", "users"
   add_foreign_key "restaurants", "users"
 end

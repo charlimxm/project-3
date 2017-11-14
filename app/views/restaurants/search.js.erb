@@ -1,0 +1,9 @@
+$("#resultList").empty()
+<% if @resto.empty? %>
+alert("No records found")
+<% else %>
+<% @resto.each do |res| %>
+var $itemLink = $("<a class='collection-item'>").attr("href","/restaurants/<%= res.id %>").text("<%= res.name %>")
+$("#resultList").append($itemLink)
+<% end %>
+<% end %>

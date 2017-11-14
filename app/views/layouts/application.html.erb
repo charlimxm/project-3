@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.2.0/uploadcare.full.min.js"></script>
   </head>
 
   <body>
@@ -16,9 +17,12 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    <br>
 
-    <%= render "partials/footer"%>
-    
+
+
   </body>
+  <footer><%= render "partials/footer"%>
+  </footer>
 
 </html>

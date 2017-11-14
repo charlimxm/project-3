@@ -1,0 +1,91 @@
+<div class="container">
+  <% if !@user.owner %>
+  PAGE DOES NOT EXIST
+  <% end %>
+  <% if @user.owner %>
+  <h1>Restaurant Details</h1>
+
+  <div class="row">
+    <h3><i class="material-icons">business</i><%= @resto.name %></h3>
+    <h3><i class="material-icons">home</i><%= @resto.address %></h3>
+
+  <% @dishes.each do |dish| %>
+      <%= form_for dish, :url => dish_path(dish.id), method: :put do |f| %>
+
+        <ul>
+          <li>
+            <i class="material-icons">business</i> Dish Name
+            <div class="field">
+              <%= f.text_field :name %>
+            </div>
+          </li>
+
+          <br>
+          <br>
+
+        <li>
+          <i class="material-icons">home</i>Dish Price (SGD$)
+          <div class="field">
+            <%= f.text_field :price %>
+          </div>
+        </li>
+
+        <br>
+        <br>
+
+        <li>
+          <i class="material-icons">home</i>Dish Discount (%)
+            <div class="field">
+              <%= f.text_field :discount %>
+            </div>
+        </li>
+
+        <br>
+        <br>
+
+        <li>
+          <div class="field">
+            <%= image_tag dish.photourl, height: "100px" %><br>
+          <input
+            type="hidden"
+            role="uploadcare-uploader"
+            name="dish[photourl]"
+            data-public-key="62b4ad6715b6c5f8bf25"
+            data-tabs="file camera url facebook gdrive gphotos dropbox instagram evernote flickr skydrive"
+            data-image-shrink=""
+            data-images-only="true"
+            data-preview-step="false"
+            data-clearable="true"
+            data-multiple="false"
+            data-system-dialog="false"
+            data-crop="250:300"
+            value="<%= dish.photourl %>"
+          />
+          </div><br>
+        </li>
+
+        <br>
+        <br>
+
+        <div class="actions">
+          <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
+        </div>
+
+      <% end %>
+
+      <%= form_for dish, :url => dish_path(dish.id), method: :delete do |f| %>
+        <div class="actions">
+          <%= f.submit "Delete", class: 'btn waves-effect waves-light right formbttn' %>
+        </div>
+
+        <br>
+        <br>
+
+      </ul>
+
+      <% end %>
+      <% end %>
+      <% end %>
+
+    </div>
+    </div>

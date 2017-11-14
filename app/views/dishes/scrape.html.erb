@@ -2,33 +2,35 @@
   <h1>Scrape Test</h1>
   <ul>
     <% @restaurant_details.each do |restaurant| %>
-  
+
     <li><h3><%= restaurant[:name] %></h3></li>
     <li><p><%= restaurant[:address] %></p></li>
     <li><p><%= restaurant[:phone] %></p></li>
+    <li><p><%= restaurant[:description] %></p></li>
+    <li><%= image_tag restaurant[:photo_url] %></li>
     <br>
     <li><p><%= restaurant[:dish_one_title] %></p></li>
-    <li><p><%= restaurant[:dish_one_price] %></p></li>
+    <li><p>$<%= restaurant[:dish_one_price] %></p></li>
     <li><p><%= restaurant[:dish_one_url] %></p></li>
     <li><%= image_tag restaurant[:dish_one_picture], width: 200 %></li>
     <br>
     <li><p><%= restaurant[:dish_two_title] %></p></li>
-    <li><p><%= restaurant[:dish_two_price] %></p></li>
+    <li><p>$<%= restaurant[:dish_two_price] %></p></li>
     <li><p><%= restaurant[:dish_two_url] %></p></li>
     <li><%= image_tag restaurant[:dish_two_picture], width: 200 %></li>
     <br>
     <li><p><%= restaurant[:dish_three_title] %></p></li>
-    <li><p><%= restaurant[:dish_three_price] %></p></li>
+    <li><p>$<%= restaurant[:dish_three_price] %></p></li>
     <li><p><%= restaurant[:dish_three_url] %></p></li>
     <li><%= image_tag restaurant[:dish_three_picture], width: 200 %></li>
     <br>
     <li><p><%= restaurant[:dish_four_title] %></p></li>
-    <li><p><%= restaurant[:dish_four_price] %></p></li>
+    <li><p>$<%= restaurant[:dish_four_price] %></p></li>
     <li><p><%= restaurant[:dish_four_url] %></p></li>
     <li><%= image_tag restaurant[:dish_four_picture], width: 200 %></li>
     <br>
     <li><p><%= restaurant[:dish_five_title] %></p></li>
-    <li><p><%= restaurant[:dish_five_price] %></p></li>
+    <li><p>$<%= restaurant[:dish_five_price] %></p></li>
     <li><p><%= restaurant[:dish_five_url] %></p></li>
     <li><%= image_tag restaurant[:dish_five_picture], width: 200 %></li>
     <br><br>

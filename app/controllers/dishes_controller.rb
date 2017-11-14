@@ -54,10 +54,11 @@ class DishesController < ApplicationController
       restaurant_address = data.css('.venueInfo-details-header-item-body p')[0].text
       restaurant_name = data.css('.venueInfo-profile-header-text h1')[0].text
       restaurant_phone = data.css('.venueInfo-details-header-item:nth-child(3) p').text
-
+      restaurant_description = data.css('.venueInfo-profile-body').text
+      restaurant_photo_url = data.css('.venueInfo-profile-header-avatar img').attr('src')
       # dish one
       restaurant_dish_one_title = data.css('.food-description-title')[0].text
-      restaurant_dish_one_price = data.css('.food-image')[0].text
+      restaurant_dish_one_price = data.css('.food-image')[0].text.delete('$').to_f
       restaurant_dish_one_url = 'https://www.burpple.com' + data.css('.food--dish a').first.attr('href')
 
       response_two = RestClient.get(restaurant_dish_one_url)
@@ -67,7 +68,7 @@ class DishesController < ApplicationController
 
       # dish two
       restaurant_dish_two_title = data.css('.food-description-title')[1].text
-      restaurant_dish_two_price = data.css('.food-image')[1].text
+      restaurant_dish_two_price = data.css('.food-image')[1].text.delete('$').to_f
       restaurant_dish_two_url = 'https://www.burpple.com' + data.css('.collectionFeed-body .food--dish:nth-child(2) a').to_s.split('"')[1].to_s
 
       response_three = RestClient.get(restaurant_dish_two_url)
@@ -77,7 +78,7 @@ class DishesController < ApplicationController
 
       # dish three
       restaurant_dish_three_title = data.css('.food-description-title')[2].text
-      restaurant_dish_three_price = data.css('.food-image')[2].text
+      restaurant_dish_three_price = data.css('.food-image')[2].text.delete('$').to_f
       restaurant_dish_three_url = 'https://www.burpple.com' + data.css('.collectionFeed-body .food--dish:nth-child(3) a').to_s.split('"')[1].to_s
 
       response_four = RestClient.get(restaurant_dish_three_url)
@@ -87,7 +88,7 @@ class DishesController < ApplicationController
 
       # dish four
       restaurant_dish_four_title = data.css('.food-description-title')[3].text
-      restaurant_dish_four_price = data.css('.food-image')[3].text
+      restaurant_dish_four_price = data.css('.food-image')[3].text.delete('$').to_f
       restaurant_dish_four_url = 'https://www.burpple.com' + data.css('.collectionFeed-body .food--dish:nth-child(4) a').to_s.split('"')[1].to_s
 
       response_five = RestClient.get(restaurant_dish_four_url)
@@ -97,7 +98,7 @@ class DishesController < ApplicationController
 
       # dish five
       restaurant_dish_five_title = data.css('.food-description-title')[4].text
-      restaurant_dish_five_price = data.css('.food-image')[4].text
+      restaurant_dish_five_price = data.css('.food-image')[4].text.delete('$').to_f
       restaurant_dish_five_url = 'https://www.burpple.com' + data.css('.collectionFeed-body .food--dish:nth-child(5) a').to_s.split('"')[1].to_s
 
       response_six = RestClient.get(restaurant_dish_five_url)
@@ -109,6 +110,8 @@ class DishesController < ApplicationController
         address: restaurant_address,
         name: restaurant_name,
         phone: restaurant_phone,
+        description: restaurant_description,
+        photo_url: restaurant_photo_url,
         dish_one_title: restaurant_dish_one_title,
         dish_one_price: restaurant_dish_one_price,
         dish_one_url: restaurant_dish_one_url,
@@ -134,6 +137,45 @@ class DishesController < ApplicationController
         dish_five_url: restaurant_dish_five_url,
         dish_five_picture: restaurant_dish_five_picture
       }
+      # create new restaurant
+      new_restaurant = Restaurant.new do |r|
+        r.name = restaurant_name
+        r.address = restaurant_address
+        r.phone_number = restaurant_phone
+        r.photo_url = restaurant_photo_url
+        r.description = restaurant_description
+      end
+      new_restaurant.save
+
+      new_restaurant.dishes.create do |d|
+        d.name = restaurant_dish_one_title
+        d.price = restaurant_dish_one_price
+        d.photourl = restaurant_dish_one_picture
+      end
+
+      new_restaurant.dishes.create do |d|
+        d.name = restaurant_dish_two_title
+        d.price = restaurant_dish_two_price
+        d.photourl = restaurant_dish_two_picture
+      end
+
+      new_restaurant.dishes.create do |d|
+        d.name = restaurant_dish_three_title
+        d.price = restaurant_dish_three_price
+        d.photourl = restaurant_dish_three_picture
+      end
+
+      new_restaurant.dishes.create do |d|
+        d.name = restaurant_dish_four_title
+        d.price = restaurant_dish_four_price
+        d.photourl = restaurant_dish_four_picture
+      end
+
+      new_restaurant.dishes.create do |d|
+        d.name = restaurant_dish_five_title
+        d.price = restaurant_dish_five_price
+        d.photourl = restaurant_dish_five_picture
+      end
 
       @restaurant_details << restaurant_detail
     end

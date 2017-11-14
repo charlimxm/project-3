@@ -26,7 +26,7 @@ dish.name = Faker::Food.dish
 dish.price = rand(20)
 dish.restaurant_id = rand(10)
 dish.discount = rand(100)
-dish.photourl= "http://www.gophercon.in/images/food/default-food-image.jpg"
+dish.photourl= "dishPic.png"
 
 dish.save
 #

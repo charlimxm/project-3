@@ -56,9 +56,16 @@ input[type=text]:not(.browser-default):focus:not([readonly]){
     border-bottom: 2px solid rgba(174,52,75,1);
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: black;
+  color: white;
+}
+.card{
+  background-color: black !important;
+  color: white !important;
 }
 
-.card-title{
-  color: black !important;
+.ratingPara{
+  color: white !important;
 }
+// .card-title{
+//   color: !important;
+// }

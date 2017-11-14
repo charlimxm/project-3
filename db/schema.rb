@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.float "price"
     t.bigint "restaurant_id"
     t.integer "discount"
-    t.string "photourl", default: "http://www.gophercon.in/images/food/default-food-image.jpg"
+    t.string "photourl", default: "dishPic.png"
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.string "name"
     t.string "photourl", default: "userPic.png"
     t.boolean "owner", default: false
+    t.boolean "admin", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

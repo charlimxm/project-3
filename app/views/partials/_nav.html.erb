@@ -14,7 +14,7 @@
       <li><%= link_to "Update Details", users_update_path,class:"black-text"%></li>
       <li><%= link_to "Add Restaurant/Dishes", new_dish_path,class:"black-text"%></li>
       <% end %>
-      <li><%= link_to edit_user_registration_path do %>
+      <li><%= link_to edit_user_registration_path, class:"dropdown-button black-text", data: { activates: "dropdown2" }  do %>
         <div class="chip">
           <%=image_tag current_user.photourl %><%=current_user.name  %></div>
         <% end %>
@@ -30,4 +30,7 @@
   <li><%= link_to "All Restaurants", restaurants_path %></li>
   <li><%= link_to "All Dishes", dishes_path %></li>
   </ul>
+  <ul id="dropdown2" class="dropdown-content">
+  <li><%= link_to "Console", admin_console_path %></li>
+</ul>
 </nav>

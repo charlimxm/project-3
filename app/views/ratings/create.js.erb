@@ -1,12 +1,12 @@
 var string = '<%= @dish_id %>'
 
 if (<%= @invalid %> === true){
-    Materialize.toast('You can only vote once per dish!', 1000)
+    Materialize.toast('You can only vote once per dish!', 2000)
 }
 else if (<%= @invalid %> === false){
 
   var $ratingPara = $(`#ratingPara${string}`)
   var currentRating = (<%= @rating %> +1).toString()
-  $ratingPara.text(`Rating: ${currentRating}`)
+  $ratingPara.text(`${currentRating} vote(s)`)
   Materialize.toast('Upvoted!', 1000)
 }

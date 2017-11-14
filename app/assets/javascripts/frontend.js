@@ -36,4 +36,5 @@ $(document).on('turbolinks:load', function () {
    $('select').material_select();
    $('.parallax').parallax();
    $('ul.tabs').tabs();
+   $('.slider').slider();
 })

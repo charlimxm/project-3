@@ -1,9 +1,15 @@
 <div class="container">
   <h1><%= @resto.name %></h1>
   <p>
-  <h4><%= @resto.address %></h4>
   <h4><%= @resto.phone_number %></h4>
 
+  <iframe
+    width="600"
+    height="450"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDdncbhJJHEPEwp_avrLpzJlPYdzWNG6m0
+      &q=<%= @name %>,<%= @address %>" allowfullscreen>
+  </iframe>
 
   </p>
   <h1>Menu Items</h1>
@@ -50,5 +56,5 @@
        </ul>
      </div>
    </div>
-         
+
 </div>

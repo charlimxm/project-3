@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.float "price"
     t.bigint "restaurant_id"
     t.integer "discount"
-    t.string "photourl", default: "http://www.gophercon.in/images/food/default-food-image.jpg"
+    t.string "photourl", default: "https://www.eataly.com/wp/wp-content/uploads/2016/09/Tagliatelle-alla-Bolognese.jpg"
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 

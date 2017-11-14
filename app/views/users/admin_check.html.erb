@@ -1,0 +1,8 @@
+<div class="container">
+Enter Admin Code to change account settings
+  <%= form_tag verify_path, method: :put do %>
+<%= text_field_tag :adminCode,"", autofocus: true %>
+<%= submit_tag 'Submit' %>
+  <% end %>
+
+</div>

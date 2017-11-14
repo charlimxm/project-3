@@ -73,13 +73,18 @@ Joseph | Description | Bug/Framework
 10| Added search function for restaurants | Framework
 11| Removed search bar from unnecessary pages and edited minor css for front page | Framework
 12| Added cards for individual dishes layout | Framework
+13| Solved new dish page bug | Bug
+14| Added admin console and verification | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
-1| Created edit page for dish details | Framework
-2| Created delete page for dish details | Framework
-3| Created function to check if user is owner | Framework
+1| Added edit page for dish details | Framework
+2| Added delete page for dish | Framework
+3| Added function to check if user is owner | Framework
 4| Added dish picture upload function | Framework
+5| Added create/new page for dish | Framework
+6| Added google map for individual dish page | Framework
+
 
 Li Yuan | Description | Bug/Framework
 ------ | --- | ---
@@ -102,7 +107,7 @@ Owner console | **HIGH** | Framework
 Add OCR API to allow users to split the bill| Medium | Framework
 Scrape restaurant data | Medium | Framework
 Add google maps to allow show restaurant location| Low | Framework
-**COMPLETED** |  |
+**COMPLETED** | ---- | ----
 ~~Allow searching of individual dishes/restaurants~~ | **HIGH** | Framework
 ~~Make search function async~~ | Medium | Framework
 ~~Add images to user profile~~ | Low | Framework

@@ -4,6 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :photourl, default: "userPic.png"
       t.boolean :owner, default: false
+      t.boolean :admin, default: false
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

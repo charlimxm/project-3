@@ -1,11 +1,11 @@
 class DishesController < ApplicationController
   def index
     @dishes = Dish.all
-    @resultsHash ={}
+    @resultsHash = {}
     @dishes.each do |dish|
       @resultsHash[dish] = dish.ratings.count
     end
-    @dishesSorted = @resultsHash.sort_by { |name, rating| rating}.reverse
+    @dishesSorted = @resultsHash.sort_by { |_name, rating| rating }.reverse
   end
 
   def show
@@ -23,13 +23,13 @@ class DishesController < ApplicationController
     @dish.price = params[:dish][:price]
     @dish.restaurant_id = @resto.id
     @dish.discount = params[:dish][:discount]
-    if !params[:dish][:photourl].present?
-      @dish.photourl = "dishPic.png"
-    else
-      @dish.photourl = params[:dish][:photourl]
-    end
+    @dish.photourl = if !params[:dish][:photourl].present?
+                       'dishPic.png'
+                     else
+                       params[:dish][:photourl]
+                     end
     @dish.save
-    flash[:success] = "Dish was successfully added!"
+    flash[:success] = 'Dish was successfully added!'
     redirect_to new_dish_path
   end
 
@@ -44,6 +44,8 @@ class DishesController < ApplicationController
     data.css('.topVenue-details-info-details a:first-child').each do |restaurant_link|
       query = restaurant_link['href'].sub('?bp_ref=%2Fcategories%2Fsg%2Fcafes-and-coffee', '')
       @restaurants_url_list << 'https://www.burpple.com' + query
+    end
+
     @restaurant_details = []
 
     @restaurants_url_list.each do |restaurant_url|
@@ -197,7 +199,7 @@ class DishesController < ApplicationController
   def destroy
     @dish = Dish.find(params[:id])
     @dish.destroy
-    flash[:success] = "Dish was successfully deleted!"
+    flash[:success] = 'Dish was successfully deleted!'
     redirect_to users_update_path
   end
 

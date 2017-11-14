@@ -10,13 +10,17 @@
       </div>
       <div class="card-content">
         <span class="card-title"><%= dish.name %></span>
-        <p>I am a very simple card. I am good at containing small bits of information.</p>
+        <p>restaurant name </p>
+        <p> at location</p>
 
         <div class="card-action">
           <%= form_tag ratings_path, method: :post, remote:true do %>
             <%= hidden_field_tag :dish_id, dish.id %>
             <%= hidden_field_tag :rating, rating %>
-            <%=submit_tag :mood, class: "material-icons prefix"%> <label id="ratingPara<%= dish.id %>"> <%= rating %>vote(s)</label>
+            <%= button_tag( class: "btn") do %>
+            <i class="material-icons">thumb_up</i>
+            <% end %>
+            <label class="ratingPara" id="ratingPara<%= dish.id %>"> <%= rating %> vote(s)</label>
           <% end %>
         </div>
         </div>

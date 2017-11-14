@@ -1,30 +1,31 @@
 <div class="container">
 
 
-
 <% @resultHash.each do |dish,rating| %>
-      <div class="row ">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <%= image_tag(dish.photourl) %>
-              <span class="card-title black-text"><%= dish.name %></span>
-            </div>
-            <div class="card-content">
-              <%= form_tag ratings_path, method: :post,remote:true do %>
-                <%= hidden_field_tag :dish_id, dish.id %>
-                <%= hidden_field_tag :rating, rating %>
-                <%=submit_tag :Upvote, class: "btn" %>
-              <% end %>
-              <p id = "ratingPara<%= dish.id %>">Rating: <%= rating %></p>
-              <p>Dish description will be placed here once we add it</p>
-            </div>
-            <div class="card-action">
-            <%= link_to "View Dish", dish_path(dish.id) %>
-            </div>
-          </div>
-        </div>
-      </div>
+
+  <div class="col s12 m7">
+     <h2 class="header"><%= dish.name %></h2>
+     <div class="card horizontal">
+       <div class="card-image">
+         <%= image_tag dish.photourl, height: "200" %>
+       </div>
+       <div class="card-stacked">
+         <div class="card-content">
+           <%= form_tag ratings_path, method: :post,remote:true do %>
+             <%= hidden_field_tag :dish_id, dish.id %>
+             <%= hidden_field_tag :rating, rating %>
+             <%=submit_tag :Upvote, class: "btn" %>
+           <% end %>
+           <br>
+           <h5 class="right" id = "ratingPara<%= dish.id %>">Rating: <%= rating %></h5>
+           <p>Dish description will be placed here once we add it</p>
+         </div>
+         <div class="card-action">
+           <%= link_to "View Dish", dish_path(dish.id) %>
+         </div>
+       </div>
+     </div>
+   </div>
 
 <% end %>
 </div>

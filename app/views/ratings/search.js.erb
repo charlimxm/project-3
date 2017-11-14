@@ -3,9 +3,7 @@ $("#resultList").empty()
 alert("No records found")
 <% else %>
 <% @dishes.each do |dish| %>
-var $listItem = $("<li>")
-var $itemLink = $("<a>").attr("href","/dishes/<%= dish.id %>").text("<%= dish.name %>")
-$listItem.append($itemLink)
-$("#resultList").append($listItem)
+var $itemLink = $("<a class='collection-item'>").attr("href","/dishes/<%= dish.id %>").text("<%= dish.name %>")
+$("#resultList").append($itemLink)
 <% end %>
 <% end %>

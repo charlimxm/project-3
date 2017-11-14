@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.string "name"
     t.string "photourl", default: "userPic.png"
     t.boolean "owner", default: false
+    t.boolean "admin", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

@@ -1,6 +1,14 @@
  @import "materialize";
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+body {
+      display: flex !important;
+      min-height: 100vh !important;
+      flex-direction: column !important;
+}
+main {
+      flex: 1 0 auto !important;
+}
 
 nav {
   box-shadow: none !important;
@@ -49,7 +57,6 @@ nav {
 }
 input[type=text]:not(.browser-default){
   border-bottom: 2px solid black;
-  width: 500px
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]){

@@ -1,34 +1,36 @@
 class DishesController < ApplicationController
   def index
     @dishes = Dish.all
-  end
-
-  def new
-    @restaurant = Restaurant.new
-    @dish = Dish.new
-  end
-
-  def create
-    @resto = Restaurant.new
+    @resultsHash ={}
+    @dishes.each do |dish|
+      @resultsHash[dish] = dish.ratings.count
+    end
+    @dishesSorted = @resultsHash.sort_by { |name, rating| rating}.reverse
   end
 
   def show
     @dish = Dish.find(params[:id])
     @resto = Restaurant.find(@dish.restaurant_id)
-    @all_ratings = Rating.all
+    @dishRating = @dish.ratings.count
+  end
 
-    @ratingHash = {}
+  def create
+    @user = current_user
+    @resto = Restaurant.where("user_id=#{@user.id}").first
 
-    @all_ratings.each do |rating|
-      if @ratingHash[rating.dish_id]
-        @ratingHash[rating.dish_id] += 1
-
-      else
-        @ratingHash[rating.dish_id] = 1
-
-      end
+    @dish = Dish.new
+    @dish.name = params[:dish][:name]
+    @dish.price = params[:dish][:price]
+    @dish.restaurant_id = @resto.id
+    @dish.discount = params[:dish][:discount]
+    if !params[:dish][:photourl].present?
+      @dish.photourl = "dishPic.png"
+    else
+      @dish.photourl = params[:dish][:photourl]
     end
-    @dishRating = @ratingHash[@dish.id]
+    @dish.save
+    flash[:success] = "Dish was successfully added!"
+    redirect_to new_dish_path
   end
 
   def scrape
@@ -42,8 +44,6 @@ class DishesController < ApplicationController
     data.css('.topVenue-details-info-details a:first-child').each do |restaurant_link|
       query = restaurant_link['href'].sub('?bp_ref=%2Fcategories%2Fsg%2Fcafes-and-coffee', '')
       @restaurants_url_list << 'https://www.burpple.com' + query
-    end
-
     @restaurant_details = []
 
     @restaurants_url_list.each do |restaurant_url|
@@ -181,10 +181,23 @@ class DishesController < ApplicationController
     end
   end
 
+  def new
+    @dish = Dish.new
+    @user = current_user
+    @resto = Restaurant.where("user_id=#{@user.id}").first
+  end
+
   def update
     @dish = Dish.find(params[:id])
     @dish.update_attributes(dish_params)
     flash[:success] = 'Dish was successfully updated!'
+    redirect_to users_update_path
+  end
+
+  def destroy
+    @dish = Dish.find(params[:id])
+    @dish.destroy
+    flash[:success] = "Dish was successfully deleted!"
     redirect_to users_update_path
   end
 

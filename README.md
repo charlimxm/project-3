@@ -76,7 +76,6 @@ Joseph | Description | Bug/Framework
 13| Solved new dish page bug | Bug
 14| Added admin console and verification | Framework
 
-
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
 1| Added edit page for dish details | Framework
@@ -109,11 +108,9 @@ Description    | Importance | Type
 Add new dishes and delete dishes | **HIGH** | Framework
 Owner console | **HIGH** | Framework
 Add OCR API to allow users to split the bill| Medium | Framework
-Saving scraped data | Framework
-**COMPLETED** |  |
-~~Add google maps to allow restaurant location to be shown| Low | Framework
-~~Data scraping for restaurants | Medium | Framework
-~~Data scraping for dishes | Medium | Framework
+Scrape restaurant data | Medium | Framework
+Add google maps to allow show restaurant location| Low | Framework
+**COMPLETED** | ---- | ----
 ~~Allow searching of individual dishes/restaurants~~ | **HIGH** | Framework
 ~~Make search function async~~ | Medium | Framework
 ~~Add images to user profile~~ | Low | Framework

@@ -18,7 +18,7 @@
         <li>
           <i class="material-icons">business</i> Dish Name
             <div class="field">
-              <%= f.text_field :name %>
+              <%= f.text_field :name, required: true %>
             </div>
           </li>
 
@@ -28,7 +28,7 @@
         <li>
           <i class="material-icons">home</i>Dish Price (SGD$)
           <div class="field">
-            <%= f.text_field :price %>
+            <%= f.text_field :price, required: true%>
           </div>
         </li>
 
@@ -38,7 +38,7 @@
         <li>
           <i class="material-icons">home</i>Dish Discount (%)
             <div class="field">
-              <%= f.text_field :discount %>
+              <%= f.text_field :discount, required: true %>
             </div>
         </li>
 

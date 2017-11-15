@@ -63,16 +63,30 @@
 
     </div>
     <div id="modifyDishes" class="col s12">
+      <h4>Delete Dishes</h4>
+        <table>
+          <thead>
+            <tr>
+                <th>Dish Name</th>
+                <th>Dish Price</th>
+                <th>Dish Discount</th>
+            </tr>
+          </thead>
+        <%= form_tag test_params_path, data: {confirm: "Are you sure you want to delete these dishes? This action cannot be reversed"}, remote:true do %>
 
       <% @dishes.each do |dish| %>
-      <%= label_tag dish.name %>
-      <%= check_box_tag dish.name, dish.id %>
-
-        <%= label_tag "dishes[]" %>
-        <%= check_box_tag "dishes[]", dish.id %>
-
+      <tr>
+      <td>
+          <%= check_box_tag "dishes[]"+dish.name, dish.id, class: "deleteCheckBox"%>
+          <%= label_tag "dishes[]"+dish.name, dish.name %>
+        </td>
+        <td>$<%= dish.price %>0</td>
+        <td><%= dish.discount %> %</td>
+      </tr>
+          <% end %>
+          <%= submit_tag "Delete Selected", class: "btn"  %>
       <% end %>
-
+    </table>
     </div>
     <div id="tbd" class="col s12">Test 3</div>
   </div>

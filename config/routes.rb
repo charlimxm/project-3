@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get 'topdishes', to: 'ratings#top'
   get 'dishes/scrape', to: 'dishes#scrape'
-
+  post 'test_params', to: 'dishes#test'
   resources :ratings
   resources :users
   resources :dishes

@@ -1,34 +1,36 @@
 class DishesController < ApplicationController
   def index
     @dishes = Dish.all
-  end
-
-  def new
-    @restaurant = Restaurant.new
-    @dish = Dish.new
-  end
-
-  def create
-    @resto = Restaurant.new
+    @resultsHash = {}
+    @dishes.each do |dish|
+      @resultsHash[dish] = dish.ratings.count
+    end
+    @dishesSorted = @resultsHash.sort_by { |_name, rating| rating }.reverse
   end
 
   def show
     @dish = Dish.find(params[:id])
     @resto = Restaurant.find(@dish.restaurant_id)
-    @all_ratings = Rating.all
+    @dishRating = @dish.ratings.count
+  end
 
-    @ratingHash = {}
+  def create
+    @user = current_user
+    @resto = Restaurant.where("user_id=#{@user.id}").first
 
-    @all_ratings.each do |rating|
-      if @ratingHash[rating.dish_id]
-        @ratingHash[rating.dish_id] += 1
-
-      else
-        @ratingHash[rating.dish_id] = 1
-
-      end
-    end
-    @dishRating = @ratingHash[@dish.id]
+    @dish = Dish.new
+    @dish.name = params[:dish][:name]
+    @dish.price = params[:dish][:price]
+    @dish.restaurant_id = @resto.id
+    @dish.discount = params[:dish][:discount]
+    @dish.photourl = if !params[:dish][:photourl].present?
+                       'dishPic.png'
+                     else
+                       params[:dish][:photourl]
+                     end
+    @dish.save
+    flash[:success] = 'Dish was successfully added!'
+    redirect_to new_dish_path
   end
 
   def scrape
@@ -181,11 +183,24 @@ class DishesController < ApplicationController
     end
   end
 
+  def new
+    @dish = Dish.new
+    @user = current_user
+    @resto = Restaurant.where("user_id=#{@user.id}").first
+  end
+
   def update
     @dish = Dish.find(params[:id])
     @dish.update_attributes(dish_params)
     flash[:success] = 'Dish was successfully updated!'
     redirect_to users_update_path
+  end
+
+  def destroy
+    @dish = Dish.find(params[:id])
+    @dish.destroy
+    flash[:alert] = 'Dish was successfully deleted!'
+    redirect_to root_path
   end
 
   private

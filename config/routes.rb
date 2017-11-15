@@ -12,9 +12,12 @@ Rails.application.routes.draw do
   ## /add_restaurants
   root 'ratings#index'
 
+  put "verify", to: "users#admin_check"
+  get "verify", to: "users#admin_check"
+  get 'admin_console', to: 'users#admin_console'
   get 'search_results', to: 'ratings#search_results'
 
-  get 'users/update', to: 'users#update'
+  get 'users/update', to: 'users#update_details'
 
   put 'restaurants/search', to: 'restaurants#search'
   put 'ratings/search', to: 'ratings#search'

@@ -75,7 +75,7 @@ Joseph | Description | Bug/Framework
 12| Added cards for individual dishes layout | Framework
 13| Solved new dish page bug | Bug
 14| Added admin console and verification | Framework
-
+15| Added delete function for restaurant and dishes to admin console | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -94,7 +94,9 @@ Li Yuan | Description | Bug/Framework
 3| Added wireframes | Framework
 4| Data scraping for restaurants | Framework
 5| Data scraping for dishes | Framework
-6| CSS homepage how to use website and promotions | Framework
+6| Saved scraped data to database | Framework
+7| CSS homepage how to use website and promotions | Framework
+8| CSS show restaurant page | Framework
 
 ___
 ## Ask During Consultation
@@ -109,11 +111,9 @@ Description    | Importance | Type
 Add new dishes and delete dishes | **HIGH** | Framework
 Owner console | **HIGH** | Framework
 Add OCR API to allow users to split the bill| Medium | Framework
-Saving scraped data | Framework
-**COMPLETED** |  |
-~~Add google maps to allow restaurant location to be shown| Low | Framework
-~~Data scraping for restaurants | Medium | Framework
-~~Data scraping for dishes | Medium | Framework
+Scrape restaurant data | Medium | Framework
+Add google maps to allow show restaurant location| Low | Framework
+**COMPLETED** | ---- | ----
 ~~Allow searching of individual dishes/restaurants~~ | **HIGH** | Framework
 ~~Make search function async~~ | Medium | Framework
 ~~Add images to user profile~~ | Low | Framework

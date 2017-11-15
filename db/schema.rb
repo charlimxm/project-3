@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.string "name"
     t.string "address"
     t.string "phone_number"
-    t.string "photo_url"
-    t.string "description"
+    t.string "photo_url", default: "defaultRestoPic.jpg"
+    t.string "description", default: "No Description Provided"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.string "name"
     t.string "photourl", default: "userPic.png"
     t.boolean "owner", default: false
+    t.boolean "admin", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

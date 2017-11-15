@@ -3,6 +3,8 @@
     <div class="col s12 m9 l10">
       <div id="introduction" class="section scrollspy">
         <h1><%= @resto.name %></h1>
+        <%= image_tag @resto.photo_url%>
+        <p><%= @resto.description %></p>
       </div>
 
       <div id="structure" class="section scrollspy">

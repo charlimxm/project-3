@@ -1,4 +1,16 @@
 class DishesController < ApplicationController
+
+  def test
+
+    @dishes = params[:dishes][0]
+    @dishes.each do |dish, id|
+      Dish.find(id).destroy
+    end
+
+    respond_to do |format|
+      format.html{ redirect_to users_update_path}
+    end
+  end
   def index
     @dishes = Dish.all
     @resultsHash = {}

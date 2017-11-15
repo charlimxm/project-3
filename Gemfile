@@ -9,6 +9,8 @@ gem 'pry'
 gem 'pry-rails'
 gem 'jquery-turbolinks'
 gem 'jquery-rails'
+gem 'nokogiri'
+gem 'rest-client'
 # Devise Initialization
 gem 'devise'
 # CSS Frameworks

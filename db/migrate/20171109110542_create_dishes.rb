@@ -5,8 +5,7 @@ class CreateDishes < ActiveRecord::Migration[5.1]
       t.float :price
       t.references :restaurant, foreign_key: true
       t.integer :discount
-      t.string :photourl, default: "dishPic.png"
-
+      t.string :photourl, default: 'dishPic.png'
     end
   end
 end

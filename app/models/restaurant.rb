@@ -1,7 +1,6 @@
 class Restaurant < ApplicationRecord
   belongs_to :user, optional: true
-  has_many :dishes
-  has_many :reviews, through: :dishes
+  has_many :dishes, through: :dishes, dependent: :destroy
 
   def self.search(params)
     if params

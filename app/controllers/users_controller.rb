@@ -13,15 +13,15 @@ class UsersController < ApplicationController
     else
       @dishes = Dish.all
       @restaurants = Restaurant.all
-      @users = User.all.sort_by {|user| user.id}
+      @users = User.all.sort_by(&:id)
     end
-
   end
+
   def admin_check
     @user = User.find(current_user.id)
-    if params[:adminCode] == "adminTest"
+    if params[:adminCode] == 'adminTest'
       @user.update_attribute(:admin, true)
-          redirect_to admin_console_path
+      redirect_to admin_console_path
     end
   end
 
@@ -29,7 +29,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attributes(user_params)
     redirect_to admin_console_path
-
   end
 
   def user_params

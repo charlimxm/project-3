@@ -36,18 +36,6 @@ $(document).on('turbolinks:load', function () {
    $('select').material_select();
    $('.parallax').parallax();
    $('ul.tabs').tabs();
-
-  //  $("#restaurant").on('change', function(){
-  //    $ajax({
-  //      url: 'reviews_new',
-  //      type: 'GET',
-  //      data: {restaurant_id: $(this).val()},
-  //      // Callbacks that will be explained
-  //    })
-  //  });
-
-
-    // #first_select is the id of our first select box, if the ajax request has been successful,
-    // an ajax:success event is triggered.
-
+   $('.slider').slider();
+   $('.scrollspy').scrollSpy();
 })

@@ -75,6 +75,7 @@ Joseph | Description | Bug/Framework
 12| Added cards for individual dishes layout | Framework
 13| Solved new dish page bug | Bug
 14| Added admin console and verification | Framework
+15| Added delete function for restaurant and dishes to admin console | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -92,8 +93,13 @@ Li Yuan | Description | Bug/Framework
 ------ | --- | ---
 1| Landing Pages: home/register/login | Framework
 2| User Stories| Framework
-3| Data scraping for restaurants | Framework
-4| Added wireframes | Framework
+3| Added wireframes | Framework
+4| Data scraping for restaurants | Framework
+5| Data scraping for dishes | Framework
+6| Saved scraped data to database | Framework
+7| CSS homepage how to use website and promotions | Framework
+8| CSS show restaurant page | Framework
+
 ___
 ## Ask During Consultation
 * Check with prima how to show those dishes without votes. Not sure about how to run the loop to compare against those that are already there(show all dishes page) - Jo

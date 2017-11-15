@@ -6,17 +6,21 @@
 <% else %>
 
 <div class="container">
+
 <ul class="tabs center">
-  <li class="tab col s3"><a href="#dishesList">Dishes</a></li>
-  <li class="tab col s3"><a  href="#restoList">Restaurants</a></li>
-  <li class="tab col s3"><a href="#userList">Users</a></li>
+  <li class="tab col s3"><a href="#dishesList">Dishes (<%= @dishes.count %>)</a></li>
+  <li class="tab col s3"><a  href="#restoList">Restaurants (<%= @restaurants.count %>)</a></li>
+  <li class="tab col s3"><a href="#userList">Users (<%= @users.count %>)</a></li>
 </ul>
 <div id="dishesList" class="col s12">
 
   <ul class="collapsible" data-collapsible="accordion">
+
     <% @dishes.each do |dish| %>
     <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i><%= dish.name %></div>
+      <div class="collapsible-header">
+        <i class="material-icons">local_dining</i><%= dish.name %>
+      </div>
       <div class="collapsible-body">
 
             <%= form_for dish, :url => dish_path(dish.id), method: :put do |f| %>
@@ -24,7 +28,7 @@
             <%= f.text_field :name %>
             <%= f.label :Price, class: "brown-text text-darken-4"  %>
             <%= f.text_field :price %>
-            <%= f.label :Discount, class: "brown-text text-darken-4"  %>
+            <%= f.label :Discount, value: "Discount(%)", class: "brown-text text-darken-4"  %>
             <%= f.text_field :discount %>
             <%= f.label :Image, class: "brown-text text-darken-4" %><br>
             <input
@@ -44,6 +48,13 @@
             />
             <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
               <% end %>
+              <br>
+              <div class="">
+                <%= form_for dish, :url => dish_path(dish.id), method: :delete do |f| %>
+                <%= f.submit "Delete Dish", class: 'btn red waves-effect waves-light formbttn' %>
+                <% end %>
+              </div>
+
     </li>
     <% end %>
   </ul>
@@ -52,7 +63,7 @@
   <ul class="collapsible" data-collapsible="accordion">
     <% @restaurants.each do |resto| %>
     <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i><%= resto.name %></div>
+      <div class="collapsible-header"><i class="material-icons">local_convenience_store</i><%= resto.name %></div>
       <div class="collapsible-body">
         <%= form_for resto, :url => restaurant_path(resto.id), method: :put do |f| %>
         <%= f.label :Name, class: "brown-text text-darken-4"  %>
@@ -64,6 +75,12 @@
         <%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: true %>
           <%= f.submit "Update", class: 'btn waves-effect waves-light formbttn' %>
         <% end %>
+        <br>
+        <div class="">
+          <%= form_for resto, :url => restaurant_path(resto.id), method: :delete, data: {confirm: "Are you sure? Deleting this restaurant will delete all its dishes as well (CANNOT BE UNDONE)"} do |f| %>
+          <%= f.submit "Delete Restaurant", class: 'btn red waves-effect waves-light formbttn' %>
+          <% end %>
+        </div>
       </div>
     </li>
     <% end %>
@@ -74,7 +91,7 @@
   <ul class="collapsible" data-collapsible="accordion">
     <% @users.each do |user| %>
   <li>
-    <div class="collapsible-header"><i class="material-icons">filter_drama</i><%= user.name %></div>
+    <div class="collapsible-header"><i class="material-icons">directions_walk</i><%= user.name %></div>
     <div class="collapsible-body">
       <%= form_for user, :url => user_path(user.id), method: :put do |f| %>
       <%= f.label :Name, class: "brown-text text-darken-4"  %>
@@ -101,6 +118,7 @@
       <%= f.select :owner, [['true', "true"], ['false', "false"]] %>
 
       <%= f.submit "Update", class: 'btn waves-effect waves-light formbttn' %>
+
 
       <% end %>
     </div>

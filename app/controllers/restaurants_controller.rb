@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restos = Restaurant.all
+    @resto = Restaurant.all
   end
 
   def show
@@ -23,6 +23,17 @@ class RestaurantsController < ApplicationController
     @resto.update_attributes(res_params)
     flash[:success] = "Dish was successfully updated!"
     redirect_to restaurant_path(params[:id])
+  end
+
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    if @restaurant.user_id != false
+      @user = User.find(@restaurant.user_id)
+      @user.update_attribute(:owner, false)
+    end
+    @restaurant.destroy
+    flash[:alert] = "Restaurant was successfully deleted!"
+    redirect_to root_path
   end
 
   def res_params

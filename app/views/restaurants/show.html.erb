@@ -1,60 +1,55 @@
 <div class="container">
-  <h1><%= @resto.name %></h1>
-  <p>
-  <h4><%= @resto.phone_number %></h4>
+  <div class="row">
+    <div class="col s12 m9 l10">
+      <div id="introduction" class="section scrollspy">
+        <h1><%= @resto.name %></h1>
+        <%= image_tag @resto.photo_url%>
+        <p><%= @resto.description %></p>
+      </div>
 
-  <iframe
-    width="600"
-    height="450"
-    frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDdncbhJJHEPEwp_avrLpzJlPYdzWNG6m0
-      &q=<%= @name %>,<%= @address %>" allowfullscreen>
-  </iframe>
+      <div id="structure" class="section scrollspy">
+        <h4>Phone Number</h4>
+        <h5><%= @resto.phone_number %></h5>
+        <h4>Location</h4>
+        <iframe
+           width="600"
+           height="450"
+           frameborder="0" style="border:0"
+           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDdncbhJJHEPEwp_avrLpzJlPYdzWNG6m0
+             &q=<%= @name %>,<%= @address %>" allowfullscreen>
+        </iframe>
+      </div>
 
-  </p>
-  <h1>Menu Items</h1>
-  <ul class="collection">
-  <% if @menu %>
-  <% @menu.each do |item| %>
+      <div id="initialization" class="section scrollspy">
+        <h1>Menu Items</h1>
+        <ul class="collection">
+        <% if @menu %>
+        <% @menu.each do |item| %>
 
-     <li class="collection-item avatar">
-       <%= image_tag item.photourl, class:"circle" %>
-       <span class="title"><%= item.name %></span>
-       <p><%= item.price %> <br>
-          ITEM DESCRIPTION
-       </p>
-       <%= link_to dish_path(item.id), class:"secondary-content" do %>
-       View Dish
-       <i class="material-icons">home</i>
-       <% end %>
-     </li>
-   <% end %>
-   <% end %>
- </ul>
+          <li class="collection-item avatar">
+            <%= image_tag item.photourl, class:"circle" %>
+            <span class="title"><%= item.name %></span>
+            <p><%= item.price %> <br>
+              ITEM DESCRIPTION
+            </p>
+            <%= link_to dish_path(item.id), class:"secondary-content" do %>
+            View Dish
+            <i class="material-icons">home</i>
+            <% end %>
+           </li>
+        <% end %>
+        <% end %>
+        </ul>
+      </div>
+    </div>
 
-
-
- <div class="row">
-     <div class="col s12 m9 l10">
-       <div id="introduction" class="section scrollspy">
-         <p>Content </p>
-       </div>
-
-       <div id="structure" class="section scrollspy">
-         <p>Content </p>
-       </div>
-
-       <div id="initialization" class="section scrollspy">
-         <p>Content </p>
-       </div>
-     </div>
-     <div class="col hide-on-small-only m3 l2">
-       <ul class="section table-of-contents">
-         <li><a href="#introduction">Introduction</a></li>
-         <li><a href="#structure">Structure</a></li>
-         <li><a href="#initialization">Intialization</a></li>
-       </ul>
-     </div>
+    <div class="col hide-on-small-only m3 l2 fixed">
+      <ul class="section table-of-contents">
+        <li><a class="active" href="#introduction"><%= @resto.name %></a></li>
+        <li><a href="#structure">Details</a></li>
+        <li><a href="#initialization">Dishes</a></li>
+      </ul>
+    </div>
    </div>
 
 </div>

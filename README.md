@@ -75,6 +75,7 @@ Joseph | Description | Bug/Framework
 12| Added cards for individual dishes layout | Framework
 13| Solved new dish page bug | Bug
 14| Added admin console and verification | Framework
+15| Added delete function for restaurant and dishes to admin console | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---

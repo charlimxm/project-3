@@ -44,6 +44,13 @@
             />
             <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
               <% end %>
+              <br>
+              <div class="">
+                <%= form_for dish, :url => dish_path(dish.id), method: :delete do |f| %>
+                <%= f.submit "Delete Dish", class: 'btn red waves-effect waves-light formbttn' %>
+                <% end %>
+              </div>
+
     </li>
     <% end %>
   </ul>
@@ -64,6 +71,12 @@
         <%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: true %>
           <%= f.submit "Update", class: 'btn waves-effect waves-light formbttn' %>
         <% end %>
+        <br>
+        <div class="">
+          <%= form_for resto, :url => restaurant_path(resto.id), method: :delete, data: {confirm: "Are you sure? Deleting this restaurant will delete all its dishes as well (CANNOT BE UNDONE)"} do |f| %>
+          <%= f.submit "Delete Restaurant", class: 'btn red waves-effect waves-light formbttn' %>
+          <% end %>
+        </div>
       </div>
     </li>
     <% end %>
@@ -101,6 +114,7 @@
       <%= f.select :owner, [['true', "true"], ['false', "false"]] %>
 
       <%= f.submit "Update", class: 'btn waves-effect waves-light formbttn' %>
+
 
       <% end %>
     </div>

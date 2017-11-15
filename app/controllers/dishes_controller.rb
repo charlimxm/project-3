@@ -51,8 +51,8 @@ class DishesController < ApplicationController
   def destroy
     @dish = Dish.find(params[:id])
     @dish.destroy
-    flash[:success] = "Dish was successfully deleted!"
-    redirect_to users_update_path
+    flash[:alert] = "Dish was successfully deleted!"
+    redirect_to root_path
   end
 
   private

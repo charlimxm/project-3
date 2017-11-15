@@ -65,6 +65,9 @@ input[type=text]:not(.browser-default):focus:not([readonly]){
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: white;
 }
+.card-image{
+  max-height: 228px !important;
+}
 .card{
   background-color: black !important;
   color: white !important;

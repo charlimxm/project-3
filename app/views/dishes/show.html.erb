@@ -1,10 +1,56 @@
-
 <div class="container">
   <h1>Single Dish Page</h1>
-  <%=image_tag @dish.photourl, class: "responsive-img" %>
+  <%= image_tag @dish.photourl, class: "responsive-img" %>
+
   <h3><%= @dish.name %> </h3>
+
   <h4>Rating: <%= @dishRating %></h4>
+
   <p>Price: $<%= @dish.price %></p>
+
   <p>Restaurant: <%= @resto.name %><br>
   <%= link_to "View Restaurant", restaurant_path(@resto.id) %></p>
+
+  <% if user_signed_in? %>
+
+  <h4>Review(s):</h4>
+    <h5>Add new review</h5>
+    <%= form_for @new_review do |f| %>
+
+    <%= f.fields_for :dish do |dish| %>
+      <%= f.hidden_field :dish_id  %>
+    <% end %>
+
+    <%= f.fields_for :dish do |dish| %>
+      <%= f.hidden_field :created_on  %>
+    <% end %>
+
+    <div class="input-field col s12">
+      <i class="material-icons">home</i>Feedback
+      <%= f.text_area :feedback %>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Create", class: 'btn waves-effect waves-light right formbttn' %>
+    </div>
+
+    <% end %>
+    
+    <% end %>
+
+    <ul>
+      <% @reviews.each do |review| %>
+        <li><div class="chip">
+          <%= image_tag review.user.photourl %><%= review.user.name %>
+        </div></li>
+        <li><%= review.created_on %></li>
+        <li><%= review.feedback %></li>
+      <br>
+      <% end %>
+    </ul>
+
+
 </div>

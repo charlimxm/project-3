@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'reviews/new'
+
   get 'restaurants/search_results'
 
   # Owner Profile
@@ -29,6 +31,7 @@ Rails.application.routes.draw do
   resources :users
   resources :dishes
   resources :restaurants
+  resources :reviews, only: [:new, :create]
 
   devise_for :users, path: "", path_names: {
     sign_in: 'login', sign_out: 'logout',

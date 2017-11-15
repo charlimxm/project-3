@@ -13,6 +13,8 @@ class DishesController < ApplicationController
   def show
     @dish = Dish.find(params[:id])
     @resto = Restaurant.find(@dish.restaurant_id)
+    @reviews = Review.where("dish_id=#{@dish.id}")
+    @new_review = @dish.reviews.build
     @dishRating = @dish.ratings.count
   end
 

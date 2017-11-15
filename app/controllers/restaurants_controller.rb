@@ -23,7 +23,6 @@ class RestaurantsController < ApplicationController
     @resto.update_attributes(res_params)
     flash[:success] = "Dish was successfully updated!"
     redirect_to restaurant_path(params[:id])
-
   end
 
   def res_params

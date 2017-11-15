@@ -6,14 +6,23 @@
 
   <h4>Rating: <%= @dishRating %></h4>
 
-  <p>Price: $<%= @dish.price %></p>
+  <p>Price: $<%= @dish.price %>0</p>
 
   <p>Restaurant: <%= @resto.name %><br>
   <%= link_to "View Restaurant", restaurant_path(@resto.id) %></p>
 
-  <% if user_signed_in? %>
-
   <h4>Review(s):</h4>
+
+    <% if !user_signed_in? %>
+    <h5>Sign in to add review(s)</h5>
+    <% end %>
+
+    <% if user_signed_in? && @resto.user_id == current_user.id %>
+    <h5>Cannot add review for your own restaurant</h5>
+    <% end %>
+
+    <% if user_signed_in? && !(@resto.user_id == current_user.id) %>
+
     <h5>Add new review</h5>
     <%= form_for @new_review do |f| %>
 
@@ -27,7 +36,7 @@
 
     <div class="input-field col s12">
       <i class="material-icons">home</i>Feedback
-      <%= f.text_area :feedback %>
+      <%= f.text_area :feedback, :required => 'required' %>
     </div>
 
     <br>
@@ -38,7 +47,6 @@
     </div>
 
     <% end %>
-    
     <% end %>
 
     <ul>
@@ -51,6 +59,5 @@
       <br>
       <% end %>
     </ul>
-
 
 </div>

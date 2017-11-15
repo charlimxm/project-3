@@ -30,6 +30,7 @@ require 'faker'
   dish.photourl= "dishPic.png"
 
   dish.save
+
   new_review = Review.new
   new_review.feedback = Faker::Lorem.paragraph
   new_review.dish_id = rand(10)

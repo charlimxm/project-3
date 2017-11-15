@@ -193,7 +193,7 @@ class DishesController < ApplicationController
     @dish = Dish.find(params[:id])
     @dish.update_attributes(dish_params)
     flash[:success] = 'Dish was successfully updated!'
-    redirect_to users_update_path
+    redirect_to dish_path(params[:id])
   end
 
   def destroy

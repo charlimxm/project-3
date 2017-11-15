@@ -11,17 +11,17 @@ require 'faker'
 # Customer.destroy_all
 
 10.times do
-  # resto = Restaurant.new
-  # resto.name = Faker::Company.name
-  # resto.phone_number = rand(61_234_567..69_999_999)
-  # resto.address = Faker::Address.street_address
-  # resto.user_id = 1
-  # # resto.photourl = 'dishPic.png'
-  # # resto.description = Faker::Company.name
+  resto = Restaurant.new
+  resto.name = Faker::Company.name
+  resto.phone_number = rand(61_234_567..69_999_999)
+  resto.address = Faker::Address.street_address
+  resto.user_id = 1
+  # resto.photourl = 'dishPic.png'
+  # resto.description = Faker::Company.name
+
+  resto.save
   #
-  # resto.save
-  # #
-  #
+
   dish = Dish.new
   dish.name = Faker::Food.dish
   dish.price = rand(20)

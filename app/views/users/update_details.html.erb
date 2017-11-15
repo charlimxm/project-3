@@ -4,88 +4,97 @@
   <% end %>
   <% if @user.owner %>
   <h1>Restaurant Details</h1>
-
-  <div class="row">
     <h3><i class="material-icons">business</i><%= @resto.name %></h3>
     <h3><i class="material-icons">home</i><%= @resto.address %></h3>
 
-  <% @dishes.each do |dish| %>
-      <%= form_for dish, :url => dish_path(dish.id), method: :put do |f| %>
+    <div class="row">
+    <div class="col s12">
+      <ul class="tabs center">
+        <li class="tab col s4"><a href="#allDishes">Dishes</a></li>
+        <li class="tab col s4"><a href="#modifyDishes">Modify Dish Settings</a></li>
+        <li class="tab col s4"><a href="#tbd">TBD</a></li>
+      </ul>
+    </div>
+    <div id="allDishes" class="col s12">
+      <ul class="collapsible" data-collapsible="accordion">
 
-        <ul>
-          <li>
-            <i class="material-icons">business</i> Dish Name
-            <div class="field">
-              <%= f.text_field :name %>
-            </div>
-          </li>
-
-          <br>
-          <br>
-
+        <% @dishes.each do |dish| %>
         <li>
-          <i class="material-icons">home</i>Dish Price (SGD$)
-          <div class="field">
-            <%= f.text_field :price %>
+          <div class="collapsible-header">
+            <i class="material-icons">local_dining</i><%= dish.name %> (Click to Edit)
           </div>
+          <div class="collapsible-body">
+
+                <%= form_for dish, :url => dish_path(dish.id), method: :put do |f| %>
+                <%= f.label :Name, class: "brown-text text-darken-4"  %>
+                <%= f.text_field :name %>
+                <%= f.label :Price, class: "brown-text text-darken-4"  %>
+                <%= f.text_field :price %>
+                <%= f.label :Discount, value: "Discount(%)", class: "brown-text text-darken-4"  %>
+                <%= f.text_field :discount %>
+                <%= f.label :Image, class: "brown-text text-darken-4" %><br>
+                <input
+                  type="hidden"
+                  role="uploadcare-uploader"
+                  name="dish[photourl]"
+                  data-public-key="62b4ad6715b6c5f8bf25"
+                  data-tabs="file camera url facebook gdrive gphotos dropbox instagram evernote flickr skydrive"
+                  data-image-shrink=""
+                  data-images-only="true"
+                  data-preview-step="false"
+                  data-clearable="true"
+                  data-multiple="false"
+                  data-system-dialog="false"
+                  data-crop="400:300"
+                  value="<%= dish.photourl %>"
+                />
+                <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
+                  <% end %>
+                  <br>
+                  <div class="">
+                    <%= form_for dish, :url => dish_path(dish.id), method: :delete do |f| %>
+                    <%= f.submit "Delete Dish", class: 'btn red waves-effect waves-light formbttn' %>
+                    <% end %>
+                  </div>
+
         </li>
-
-        <br>
-        <br>
-
-        <li>
-          <i class="material-icons">home</i>Dish Discount (%)
-            <div class="field">
-              <%= f.text_field :discount %>
-            </div>
-        </li>
-
-        <br>
-        <br>
-
-        <li>
-          <div class="field">
-            <%= image_tag dish.photourl, height: "100px" %><br>
-          <input
-            type="hidden"
-            role="uploadcare-uploader"
-            name="dish[photourl]"
-            data-public-key="62b4ad6715b6c5f8bf25"
-            data-tabs="file camera url facebook gdrive gphotos dropbox instagram evernote flickr skydrive"
-            data-image-shrink=""
-            data-images-only="true"
-            data-preview-step="false"
-            data-clearable="true"
-            data-multiple="false"
-            data-system-dialog="false"
-            data-crop="400:300"
-            value="<%= dish.photourl %>"
-          />
-          </div><br>
-        </li>
-
-        <br>
-        <br>
-
-        <div class="actions">
-          <%= f.submit "Update", class: 'btn waves-effect waves-light right formbttn' %>
-        </div>
-
-      <% end %>
-
-      <%= form_for dish, :url => dish_path(dish.id), method: :delete do |f| %>
-        <div class="actions">
-          <%= f.submit "Delete", class: 'btn waves-effect waves-light right formbttn' %>
-        </div>
-
-        <br>
-        <br>
-
+        <% end %>
       </ul>
 
+    </div>
+    <div id="modifyDishes" class="col s12">
+
+      <% @dishes.each do |dish| %>
+      <%= label_tag dish.name %>
+      <%= check_box_tag dish.name, dish.id %>
+
+        <%= label_tag "dishes[]" %>
+        <%= check_box_tag "dishes[]", dish.id %>
+
       <% end %>
-      <% end %>
+      <% form_tag delete_mutiple_items_path do %>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @dishes.each do |dish| %>
+            <tr>
+              <td><%= label_tag dish.name %></td>
+              <td><%= check_box_tag dish.name, dish.id %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= submit_tag "delete Checked" %>
       <% end %>
 
     </div>
-    </div>
+    <div id="tbd" class="col s12">Test 3</div>
+  </div>
+
+
+<% end %>
+</div>

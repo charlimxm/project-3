@@ -76,9 +76,12 @@ input[type=text]:not(.browser-default):focus:not([readonly]){
 .ratingPara{
   color: white !important;
 }
-// .card-title{
-//   color: !important;
-// }
+.fixed
+{
+    position: fixed;
+    top: 200px;
+    left: 1320px !important ;
+}
 
 .info{
   font-size: 20px;

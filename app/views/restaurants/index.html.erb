@@ -2,7 +2,7 @@
 
 <h1> All Restaurants</h1>
 <div class="collection">
-  <% @restos.each do |resto| %>
+  <% @resto.each do |resto| %>
     <%= link_to "#{resto.name}", restaurant_path(resto.id), class: "collection-item" %>
 <% end %>
   </div>

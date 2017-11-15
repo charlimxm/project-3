@@ -22,8 +22,6 @@ require 'faker'
   resto.save
   #
 
-<<<<<<< HEAD
-resto.save
 
 dish = Dish.new
 dish.name = Faker::Food.dish
@@ -33,34 +31,26 @@ dish.discount = rand(100)
 dish.photourl= "dishPic.png"
 
 dish.save
-
-new_rating = Rating.new
-new_rating.dish_id = rand(10)
-new_rating.user_id = 1
-
-new_rating.save
-
-new_review = Review.new
-new_review.feedback = Faker::Lorem.paragraph
-new_review.dish_id = rand(10)
-new_review.user_id = rand(4)
-new_review.created_on = Time.now.strftime("%Y-%m-%d %H:%M:%S")
-
-new_review.save
-=======
-  dish = Dish.new
-  dish.name = Faker::Food.dish
-  dish.price = rand(20)
-  dish.restaurant_id = rand(10)
-  dish.discount = rand(100)
-  dish.photourl = 'dishPic.png'
-
-  dish.save
-  #
-  new_rating = Rating.new
-  new_rating.dish_id = rand(10)
-  new_rating.user_id = 1
-
-  new_rating.save
->>>>>>> 1c9b0f701cb7650f8918daad4c464fc23b74e9a7
+# new_review = Review.new
+# new_review.feedback = Faker::Lorem.paragraph
+# new_review.dish_id = rand(10)
+# new_review.user_id = rand(4)
+# new_review.created_on = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+#
+# new_review.save
+#
+#   dish = Dish.new
+#   dish.name = Faker::Food.dish
+#   dish.price = rand(20)
+#   dish.restaurant_id = rand(10)
+#   dish.discount = rand(100)
+#   dish.photourl = 'dishPic.png'
+#
+#   dish.save
+#   #
+#   new_rating = Rating.new
+#   new_rating.dish_id = rand(10)
+#   new_rating.user_id = 1
+#
+#   new_rating.save
 end

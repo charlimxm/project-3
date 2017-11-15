@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag "favicon.ico" %>
     <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.2.0/uploadcare.full.min.js"></script>
   </head>
 
@@ -13,8 +14,13 @@
     <main>
     <%= render "partials/nav" %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container center">
+        <p class="notice flashMsg"><%= notice %></p>
+    </div>
+    <div class="container center">
+        <p class="alert flashMsg"><%= alert %></p>
+    </div>
+
     <%= yield %>
     <br>
 

@@ -110,9 +110,7 @@ ___
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---  
-
 Add OCR API to allow users to split the bill| Medium | Framework
-
 **COMPLETED** | ---- | ----
 ~~Allow searching of individual dishes/restaurants~~ | **HIGH** | Framework
 ~~Make search function async~~ | Medium | Framework
@@ -121,13 +119,13 @@ Add OCR API to allow users to split the bill| Medium | Framework
 ~~Add working routes for default pages~~ | **HIGH** | Framework
 ~~Implement CSS Framework and working form routes~~ | **HIGH** | Framework
 ~~Come up with search page logic~~ | **HIGH** | Framework
-~~Add new dishes and delete dishes | **HIGH** | Framework
-~~Owner console | **HIGH** | Framework
-~~Scrape restaurant data | Medium | Framework
-~~Add google maps to allow show restaurant location| Low | Framework
+~~Add new dishes and delete dishes~~ | **HIGH** | Framework
+~~Owner console~~ | **HIGH** | Framework
+~~Scrape restaurant data~~ | Medium | Framework
+~~Add google maps to allow show restaurant location~~| Low | Framework
 
 ## Potential Improvements
-~~ Add reviews for each dish
+* ~~Add reviews for each dish~~
 * Facebook login and share
 * Additional promotions
 * OCR scanning of bill to split payment

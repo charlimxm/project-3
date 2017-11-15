@@ -1,8 +1,29 @@
 class UsersController < ApplicationController
   def update_details
+    @dish = Dish.new
     @user = current_user
     @resto = Restaurant.where("user_id=#{@user.id}").first
     @dishes = Dish.where("restaurant_id=#{@resto.id}")
+
+    @all_dishes = Dish.all
+    @resultsHash = {}
+    @all_dishes.each do |dish|
+      @resultsHash[dish] = dish.ratings.count
+    end
+    @resto_total_ratings = 0
+    @resultsHash.each do |key, value|
+       @resto_total_ratings += value
+    end
+
+    @reviewsHash = {}
+    @all_dishes.each do |dish|
+      @reviewsHash[dish] = dish.reviews.count
+    end
+    @resto_total_reviews = 0
+    @reviewsHash.each do |key, value|
+       @resto_total_reviews += value
+    end
+
   end
 
   def admin_console

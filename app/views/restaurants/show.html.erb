@@ -1,28 +1,31 @@
-<div class="container">
-  <div class="row">
-    <h1><%= @resto.name %></h1>
-  </div>
-  <div class="row">
-    <div class="col s7">
-      <%= image_tag @resto.photo_url%>
-      <p><%= @resto.description %></p>
+<div class="container showRestaurant">
+  <div class="row restaurantTitle">
+    <div class="col s6">
+      <%= image_tag @resto.photo_url, class: "restophoto circle"%>
+      <h2><%= @resto.name %></h2>
+      <p class="bold"><%= @resto.phone_number %></p>
+      <p class="bold"><%= @resto.address %></p>
     </div>
-
-    <div class="col s5">
-      <h5>Phone Number</h5>
-      <p><%= @resto.phone_number %></p>
-      <h5>Location</h5>
+    <div class="col s6">
       <iframe
-         width="300"
-         height="225"
+         width="400"
+         height="300"
+         style="border-radius: 15px;"
          frameborder="0" style="border:0"
          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDdncbhJJHEPEwp_avrLpzJlPYdzWNG6m0
            &q=<%= @name %>,<%= @address %>" allowfullscreen>
       </iframe>
     </div>
   </div>
+
   <div class="row">
-    <h1>Menu Items</h1>
+    <div class="valign-wrapper col s12">
+      <p><%= @resto.description %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <h3 class="restaurantTitle">Menu Items</h3>
     <ul class="collection">
     <% if @menu %>
     <% @menu.each do |item| %>

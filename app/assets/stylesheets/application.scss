@@ -29,17 +29,21 @@ nav {
   height: 500px;
   background-position: center;
 }
+
 .tabs{
   color: black !important;
   background-color: rgba(255,255,255,0) !important;
 }
+
  .tab a{
    color: black !important;
  }
+
  .indicator{
    background-color: black !important;
    width: 0px;
  }
+
 .nav-wrapper {
   background-color: white;
   height: 20px;
@@ -57,13 +61,6 @@ nav {
 .searchtabs {
   background-color: rgba(255,255,255,0.8);
   border-radius: 15px;
-}
-
-textarea:focus {
-  border-bottom: 1px solid #03a9f4;
-  -webkit-box-shadow: 0 1px 0 0 #03a9f4;
-  -moz-box-shadow: 0 1px 0 0 #03a9f4;
-  box-shadow: 0 1px 0 0 #03a9f4;
 }
 
 .dropdown-content li > a{
@@ -97,4 +94,17 @@ input[type=text]:not(.browser-default):focus:not([readonly]){
 .info{
   font-size: 20px;
   font-weight: bold;
+}
+
+.restaurantTitle {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.restophoto {
+  align-items: center;
+  border: 2px solid black;
 }

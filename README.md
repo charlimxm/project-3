@@ -48,7 +48,11 @@ How Restaurant Owners/Staff would use this:
 
 ## <center> Use Cases
 
-* TBD
+* User
+1. Users use the website to find popular dishes rated by public and then rate the dishes if they feel the food was good. They can also leave reviews for each dish.
+
+* Owners
+1. Owners can see set discounts and prices based on ratings of dishes
 
 ## <center> Wireframes
 

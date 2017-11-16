@@ -136,6 +136,7 @@
                 <th>Dish Name</th>
                 <th>Dish Price</th>
                 <th>Dish Discount</th>
+                <th>Dish Rating</th>
             </tr>
           </thead>
         <%= form_tag mass_delete_path, data: {confirm: "Are you sure you want to delete these dishes? This action cannot be reversed"}, remote:true do %>
@@ -148,6 +149,7 @@
         </td>
         <td>$<%= dish.price %>0</td>
         <td><%= dish.discount %> %</td>
+        <td><%= dish.ratings.count%> </td>
         <% end %>
       </tr>
 
@@ -163,6 +165,7 @@
               <th>Dish Name</th>
               <th>Dish Price</th>
               <th>Dish Discount</th>
+              <th>Dish Rating</th>
           </tr>
         </thead>
       <%= form_tag mass_update_path, data: {confirm: "Are you sure you want to update these dishes?"}, remote: true do %>
@@ -174,6 +177,7 @@
       </td>
       <td>$<%= dish.price %>0</td>
       <td><%= dish.discount %> %</td>
+      <td><%= dish.ratings.count%> </td>
     </tr>
     <% end %>
     <td><%= label_tag "Please enter new discount percentage" %>
@@ -192,6 +196,7 @@
           <th>Dish Name</th>
           <th>Dish Price</th>
           <th>Dish Discount</th>
+          <th>Dish Rating</th>
       </tr>
     </thead>
   <%= form_tag mass_price_update_path, data: {confirm: "Are you sure you want to update these dishes?"}, remote: true do %>
@@ -203,6 +208,7 @@
   </td>
   <td>$<%= dish.price %>0</td>
   <td><%= dish.discount %> %</td>
+  <td><%= dish.ratings.count%> </td>
 </tr>
 <% end %>
 <td><%= label_tag "Please enter new price" %>

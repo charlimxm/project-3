@@ -1,10 +1,63 @@
-
 <div class="container">
   <h1>Single Dish Page</h1>
-  <%=image_tag @dish.photourl, class: "responsive-img" %>
+  <%= image_tag @dish.photourl, class: "responsive-img" %>
+
   <h3><%= @dish.name %> </h3>
+
   <h4>Rating: <%= @dishRating %></h4>
-  <p>Price: $<%= @dish.price %></p>
+
+  <p>Price: $<%= @dish.price %>0</p>
+
   <p>Restaurant: <%= @resto.name %><br>
   <%= link_to "View Restaurant", restaurant_path(@resto.id) %></p>
+
+  <h4>Review(s):</h4>
+
+    <% if !user_signed_in? %>
+    <h5>Sign in to add review(s)</h5>
+    <% end %>
+
+    <% if user_signed_in? && @resto.user_id == current_user.id %>
+    <h5>Cannot add review for your own restaurant</h5>
+    <% end %>
+
+    <% if user_signed_in? && !(@resto.user_id == current_user.id) %>
+
+    <h5>Add new review</h5>
+    <%= form_for @new_review do |f| %>
+
+    <%= f.fields_for :dish do |dish| %>
+      <%= f.hidden_field :dish_id  %>
+    <% end %>
+
+    <%= f.fields_for :dish do |dish| %>
+      <%= f.hidden_field :created_on  %>
+    <% end %>
+
+    <div class="input-field col s12">
+      <i class="material-icons">home</i>Feedback
+      <%= f.text_area :feedback, :required => 'required' %>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Create", class: 'btn waves-effect waves-light right formbttn' %>
+    </div>
+
+    <% end %>
+    <% end %>
+
+    <ul>
+      <% @reviews.each do |review| %>
+        <li><div class="chip">
+          <%= image_tag review.user.photourl %><%= review.user.name %>
+        </div></li>
+        <li><%= review.created_on %></li>
+        <li><%= review.feedback %></li>
+      <br>
+      <% end %>
+    </ul>
+
 </div>

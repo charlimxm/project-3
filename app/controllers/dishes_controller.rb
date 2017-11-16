@@ -1,4 +1,25 @@
 class DishesController < ApplicationController
+
+  def mass_delete
+    @dishes = params[:dishes][0]
+    @dishes.each do |dish, id|
+      Dish.find(id).destroy
+    end
+    respond_to do |format|
+      format.html{ redirect_to users_update_path}
+    end
+  end
+
+  def mass_update
+    @dishes = params[:dishes2][0]
+    @dishes.each do |dish, id|
+      Dish.find(id).update_attribute(:discount, params[:discount])
+    end
+    respond_to do |format|
+      format.html{ redirect_to users_update_path}
+    end
+  end
+
   def index
     @dishes = Dish.all
     @resultsHash = {}
@@ -11,6 +32,8 @@ class DishesController < ApplicationController
   def show
     @dish = Dish.find(params[:id])
     @resto = Restaurant.find(@dish.restaurant_id)
+    @reviews = Review.where("dish_id=#{@dish.id}")
+    @new_review = @dish.reviews.build
     @dishRating = @dish.ratings.count
   end
 
@@ -183,17 +206,11 @@ class DishesController < ApplicationController
     end
   end
 
-  def new
-    @dish = Dish.new
-    @user = current_user
-    @resto = Restaurant.where("user_id=#{@user.id}").first
-  end
-
   def update
     @dish = Dish.find(params[:id])
     @dish.update_attributes(dish_params)
     flash[:success] = 'Dish was successfully updated!'
-    redirect_to users_update_path
+    redirect_to dish_path(params[:id])
   end
 
   def destroy

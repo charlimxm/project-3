@@ -14,7 +14,7 @@
       <div class="searchInput">
         <h3>Dish Name</h3>
         <%= form_tag ratings_search_path, method: :put, remote:true do %>
-          <%= text_field_tag :term,"", autofocus: true%>
+          <%= text_field_tag :term,"", autofocus: true, class:"searchBarBorder" %>
         <% end %>
       </div>
     </div>
@@ -22,7 +22,7 @@
       <div class="searchInput">
         <h3>Restaurant Name</h3>
         <%= form_tag restaurants_search_path, method: :put, remote:true do %>
-          <%= text_field_tag :term %>
+          <%= text_field_tag :term, "", class:"searchBarBorder" %>
         <% end %>
       </div>
     </div>

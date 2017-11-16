@@ -76,6 +76,7 @@ Joseph | Description | Bug/Framework
 13| Solved new dish page bug | Bug
 14| Added admin console and verification | Framework
 15| Added delete function for restaurant and dishes to admin console | Framework
+16| Modified flash messages and added favicon and cleaned up owner console page | Framework
 
 Charmaine | Description | Bug/Framework
 ------ | --- | ---
@@ -85,7 +86,9 @@ Charmaine | Description | Bug/Framework
 4| Added dish picture upload function | Framework
 5| Added create/new page for dish | Framework
 6| Added google map for individual dish page | Framework
-
+7| Added review model | Framework
+8| Added review form in individual dish pages | Framework
+9| Displaying reviews in individual dish pages | Framework
 
 Li Yuan | Description | Bug/Framework
 ------ | --- | ---
@@ -108,11 +111,7 @@ ___
 ## <center> To Do List
 Description    | Importance | Type
 -------- | --- | ---  
-Add new dishes and delete dishes | **HIGH** | Framework
-Owner console | **HIGH** | Framework
 Add OCR API to allow users to split the bill| Medium | Framework
-Scrape restaurant data | Medium | Framework
-Add google maps to allow show restaurant location| Low | Framework
 **COMPLETED** | ---- | ----
 ~~Allow searching of individual dishes/restaurants~~ | **HIGH** | Framework
 ~~Make search function async~~ | Medium | Framework
@@ -121,9 +120,13 @@ Add google maps to allow show restaurant location| Low | Framework
 ~~Add working routes for default pages~~ | **HIGH** | Framework
 ~~Implement CSS Framework and working form routes~~ | **HIGH** | Framework
 ~~Come up with search page logic~~ | **HIGH** | Framework
+~~Add new dishes and delete dishes~~ | **HIGH** | Framework
+~~Owner console~~ | **HIGH** | Framework
+~~Scrape restaurant data~~ | Medium | Framework
+~~Add google maps to allow show restaurant location~~| Low | Framework
 
 ## Potential Improvements
-* Add reviews for each dish
+* ~~Add reviews for each dish~~
 * Facebook login and share
 * Additional promotions
 * OCR scanning of bill to split payment

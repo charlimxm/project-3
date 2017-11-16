@@ -1,15 +1,6 @@
 Rails.application.routes.draw do
   get 'restaurants/search_results'
 
-  # Owner Profile
-
-  # Add Rating (Picture uploading, and upvote and downvote)
-  ## ratings: create
-  ## /add_ratings
-
-  # Add Restaurants
-  ## restaurants: create
-  ## /add_restaurants
   root 'ratings#index'
 
   put "verify", to: "users#admin_check"
@@ -24,11 +15,15 @@ Rails.application.routes.draw do
 
   get 'topdishes', to: 'ratings#top'
   get 'dishes/scrape', to: 'dishes#scrape'
+  post 'mass_delete', to: 'dishes#mass_delete'
+  post 'mass_update', to: 'dishes#mass_update'
+
 
   resources :ratings
   resources :users
   resources :dishes
   resources :restaurants
+  resources :reviews, only: [:new, :create]
 
   devise_for :users, path: '', path_names: {
     sign_in: 'login', sign_out: 'logout',

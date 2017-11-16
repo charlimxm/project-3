@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109110623) do
+ActiveRecord::Schema.define(version: 20171114235224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 20171109110623) do
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "feedback"
+    t.bigint "user_id"
+    t.bigint "dish_id"
+    t.string "created_on"
+    t.index ["dish_id"], name: "index_reviews_on_dish_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "photourl", default: "userPic.png"
@@ -66,4 +75,6 @@ ActiveRecord::Schema.define(version: 20171109110623) do
   add_foreign_key "ratings", "dishes"
   add_foreign_key "ratings", "users"
   add_foreign_key "restaurants", "users"
+  add_foreign_key "reviews", "dishes"
+  add_foreign_key "reviews", "users"
 end

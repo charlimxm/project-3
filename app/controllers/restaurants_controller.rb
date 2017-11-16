@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @resto = Restaurant.all
+    @resto = Restaurant.all.sort
   end
 
   def show

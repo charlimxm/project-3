@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'dishes/scrape', to: 'dishes#scrape'
   post 'mass_delete', to: 'dishes#mass_delete'
   post 'mass_update', to: 'dishes#mass_update'
-
+  post 'mass_price_update', to: 'dishes#mass_price_update'
 
   resources :ratings
   resources :users

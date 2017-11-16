@@ -27,9 +27,10 @@
     <div class="col s12">
       <ul class="tabs center">
         <li class="tab col s3"><a href="#addDish">Add New</a></li>
-        <li class="tab col s3"><a href="#allDishes">Dishes</a></li>
-        <li class="tab col s3"><a href="#deleteDishes">Bulk Delete Dishes</a></li>
-        <li class="tab col s3"><a href="#setDiscounts">Set Discounts</a></li>
+        <li class="tab col s2"><a href="#allDishes">Dishes</a></li>
+        <li class="tab col s2"><a href="#deleteDishes">Bulk Delete Dishes</a></li>
+        <li class="tab col s2"><a href="#setDiscounts">Set Discounts</a></li>
+        <li class="tab col s3"><a href="#setPrices">Set Prices</a></li>
       </ul>
     </div>
     <div id="addDish" class="col s12">
@@ -135,6 +136,7 @@
                 <th>Dish Name</th>
                 <th>Dish Price</th>
                 <th>Dish Discount</th>
+                <th>Dish Rating</th>
             </tr>
           </thead>
         <%= form_tag mass_delete_path, data: {confirm: "Are you sure you want to delete these dishes? This action cannot be reversed"}, remote:true do %>
@@ -147,6 +149,7 @@
         </td>
         <td>$<%= dish.price %>0</td>
         <td><%= dish.discount %> %</td>
+        <td><%= dish.ratings.count%> </td>
         <% end %>
       </tr>
 
@@ -162,6 +165,7 @@
               <th>Dish Name</th>
               <th>Dish Price</th>
               <th>Dish Discount</th>
+              <th>Dish Rating</th>
           </tr>
         </thead>
       <%= form_tag mass_update_path, data: {confirm: "Are you sure you want to update these dishes?"}, remote: true do %>
@@ -173,6 +177,7 @@
       </td>
       <td>$<%= dish.price %>0</td>
       <td><%= dish.discount %> %</td>
+      <td><%= dish.ratings.count%> </td>
     </tr>
     <% end %>
     <td><%= label_tag "Please enter new discount percentage" %>
@@ -181,6 +186,37 @@
         <%= submit_tag "Update Selected", class: "btn"  %></td>
     <% end %>
   </table>
+
+</div>
+<div id="setPrices" class="col s12">
+  <h5 class="center">Select Dishes to apply new price to</h5>
+  <table>
+    <thead>
+      <tr>
+          <th>Dish Name</th>
+          <th>Dish Price</th>
+          <th>Dish Discount</th>
+          <th>Dish Rating</th>
+      </tr>
+    </thead>
+  <%= form_tag mass_price_update_path, data: {confirm: "Are you sure you want to update these dishes?"}, remote: true do %>
+<% @dishes.each do |dish| %>
+<tr>
+<td>
+    <%= check_box_tag "dishes3[]"+dish.name, dish.id, false%>
+    <%= label_tag "dishes3[]"+dish.name, dish.name %>
+  </td>
+  <td>$<%= dish.price %>0</td>
+  <td><%= dish.discount %> %</td>
+  <td><%= dish.ratings.count%> </td>
+</tr>
+<% end %>
+<td><%= label_tag "Please enter new price" %>
+<%= text_field_tag :price,"", required: true %>
+
+    <%= submit_tag "Update Selected", class: "btn"  %></td>
+<% end %>
+</table>
 
 </div>
 

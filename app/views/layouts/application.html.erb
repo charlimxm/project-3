@@ -15,12 +15,11 @@
     <main>
     <%= render "partials/nav" %>
 
-    <div class="container center">
-        <p class="notice flashMsg"><%= notice %></p>
-    </div>
-    <div class="container center">
-        <p class="alert flashMsg"><%= alert %></p>
-    </div>
+
+        <p class="notice flashMsg center"><%= notice %></p>
+
+        <p class="alert flashMsg center"><%= alert %></p>
+
 
     <%= yield %>
     <br>

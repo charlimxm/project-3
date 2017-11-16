@@ -88,3 +88,21 @@ nav {
   font-size: 20px;
   font-weight: bold;
 }
+
+.food_image{
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+  z-index: -5000;
+}
+
+.food_grid{
+  width: 90%;
+  top: 0;
+  left: 0;
+}
+
+.dish_font{
+  font-family: Oswald;
+  font-weight: Bold;
+}

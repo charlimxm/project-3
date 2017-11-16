@@ -36,23 +36,15 @@ rails db:seed
 
 How Customers would use this:
 1. When a Customer loads the landing page, they can search for particular menu items they enjoy
-2. A list of various restaurants serving the menu item appears, allowing customers to see which restaurant is the most popular for that specific menu item
-3. Customers can upvote the menu items they prefer, allowing the public to control rankings of the menu items
-4. Customers can upload pictures of dishes they enjoy if they are not in the list, subject to verification by admins
-5. Customers must register and login to vote/upload
+2. Customers can upvote the menu items they prefer, allowing the public to control rankings of the menu items
+3. Customers must register and login to vote/upload
+4. Customers can leave reviews on dishes
 
 How Restaurant Owners/Staff would use this:
 1. Owners can see where their menu items are located in the rankings and choose to give discounts on the specific menu items
+2. Owners can add new menu items or take over existing restaurants in our database if the restaurant currently doesn't have any owner account. (Subject to approval)
 3. Owners can also gain valuable feedback in the form of user ratings and reviews to adapt their menu
 4. Owners are required to submit updated menus periodically to admins to confirm that dishes actually exist
-
-## <center> Use Cases
-
-* User
-1. Users use the website to find popular dishes rated by public and then rate the dishes if they feel the food was good. They can also leave reviews for each dish.
-
-* Owners
-1. Owners can see set discounts and prices based on ratings of dishes
 
 ## <center> Wireframes
 

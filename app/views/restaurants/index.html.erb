@@ -1,25 +1,12 @@
-<div class="container center">
-
-<h1> All Restaurants</h1>
-<div class="collection">
-  <% @resto.each do |resto| %>
-    <%= link_to "#{resto.name}", restaurant_path(resto.id), class: "collection-item" %>
-<% end %>
-  </div>
-</div>
-
 <div class="container">
-  <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
+<h1 class="center">All Restaurants</h1>
+<div class="row">
+  <% @resto.each do |resto| %>
+      <div class="col s12 m6 l3 center-align" style="height: 250px;">
+        <%= image_tag resto.photo_url, style:"height:150px;width:150px;border:2px solid black;border-radius:15px;" %><br>
+        <%= link_to "#{resto.name}", restaurant_path(resto.id), class: "topDish bold black-text" %>
+      </div>
+  <% end %>
     </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-    </div>
-  </div>
-</div>            
+
+</div>

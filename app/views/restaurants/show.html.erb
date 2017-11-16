@@ -2,8 +2,8 @@
   <div class="row restaurantTitle">
 
     <div class="col s6">
-      <%= image_tag @resto.photo_url, class: "restophoto circle"%>
-      <h4 class="orange-text"><%= @resto.name %></h4>
+      <%= image_tag @resto.photo_url, class: "restophoto", style:"height:150px;width:150px;border:2px solid black;border-radius:15px;"%>
+      <h3 class="orange-text"><%= @resto.name %></h3>
       <p class="bold">
         <i class="material-icons icons">phone</i>
         <%= @resto.phone_number %>
@@ -13,7 +13,7 @@
 
     <div class="col s6 ">
       <iframe
-         width="425"
+         width="450"
          height="319"
          style="border-radius: 15px;"
          frameborder="0"

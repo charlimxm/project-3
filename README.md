@@ -2,7 +2,7 @@
 # FoodSpace
 ##### PROJECT 3
 
- ![Live Link:](https://foodspace.herokuapp.com/)
+ [Live Link (Heroku)](https://foodspace.herokuapp.com/)
 ## Description
 Find the most popular dishes in town and vote to make your best dish famous! Restaurants may also offer discounts on our app!
 

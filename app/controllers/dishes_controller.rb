@@ -65,8 +65,8 @@ class DishesController < ApplicationController
                        params[:dish][:photourl]
                      end
     @dish.save
-    flash[:success] = 'Dish was successfully added!'
-    redirect_to new_dish_path
+    flash[:alert] = 'Dish was successfully added!'
+    redirect_to users_update_path
   end
 
   def scrape

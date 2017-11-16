@@ -5,9 +5,8 @@ class UsersController < ApplicationController
     @resto = Restaurant.where("user_id=#{@user.id}").first
     @dishes = Dish.where("restaurant_id=#{@resto.id}")
 
-    @all_dishes = Dish.all
     @resultsHash = {}
-    @all_dishes.each do |dish|
+    @dishes.each do |dish|
       @resultsHash[dish] = dish.ratings.count
     end
     @resto_total_ratings = 0
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
     end
 
     @reviewsHash = {}
-    @all_dishes.each do |dish|
+    @dishes.each do |dish|
       @reviewsHash[dish] = dish.reviews.count
     end
     @resto_total_reviews = 0

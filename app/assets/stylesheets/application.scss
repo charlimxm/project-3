@@ -68,13 +68,7 @@ nav {
 .searchBarBorder{
   border-bottom: 0px !important;
 }
-// input[type=text]:not(.browser-default){
-//   border-bottom: 2px solid black;
-// }
-//
-// input[type=text]:not(.browser-default):focus:not([readonly]){
-//     border-bottom: 2px solid rgba(174,52,75,1);
-// }
+
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: white;
 }
@@ -115,6 +109,15 @@ nav {
   font-weight: bold;
 }
 
+.greyBorder {
+  border: solid 3px grey;
+}
+
+.icons {
+  padding-right: 5px;
+  font-size: 25px;
+  vertical-align: middle;
+}
 .restophoto {
   align-items: center;
   border: 2px solid black;

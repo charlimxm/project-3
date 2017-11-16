@@ -35,6 +35,7 @@ class DishesController < ApplicationController
     @resultsHash = {}
     @dishes.each do |dish|
       @resultsHash[dish] = dish.ratings.count
+      @resto = Restaurant.find(dish.restaurant_id)
     end
     @dishesSorted = @resultsHash.sort_by { |_name, rating| rating }.reverse
   end
@@ -45,6 +46,8 @@ class DishesController < ApplicationController
     @reviews = Review.where("dish_id=#{@dish.id}")
     @new_review = @dish.reviews.build
     @dishRating = @dish.ratings.count
+    @dishes = Dish.where("restaurant_id=#{@resto.id}").where.not(id: @dish.id).limit(8)
+
   end
 
   def create

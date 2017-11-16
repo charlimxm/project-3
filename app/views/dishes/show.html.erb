@@ -1,29 +1,73 @@
 <div class="container">
-  <h1>Single Dish Page</h1>
-  <%= image_tag @dish.photourl, class: "responsive-img" %>
 
-  <h3><%= @dish.name %> </h3>
+  <div class = "row">
+    <div class = "col s7">
+      <%= image_tag @dish.photourl, :class => "food_image" %>
+    </div>
 
-  <h4>Rating: <%= @dishRating %></h4>
+    <div class = "col s5">
+      <h2 class = "dish_font"><%= @dish.name %></h2>
+      <h5 class = "dish_font">by</h6>
+      <h2 class = "dish_font"><%= @resto.name %></h2>
+      <br>
+      <h5>Price:
+        <% if @dish.discount == "" || @dish.discount == "0" %>
+          $<%= @dish.price %>0
+        <% else %>
+          <strike>$<%= @dish.price %>0</strike>  $<%= (@dish.price * (100-@dish.discount))/100 %>0</h5>
+        <% end %>
+      </h5>
+      <br>
+      <h5>Vote(s): <%= @dishRating %></h5>
+      <br>
+    </div>
 
-  <p>Price: $<%= @dish.price %>0</p>
+  </div>
 
-  <p>Restaurant: <%= @resto.name %><br>
-  <%= link_to "View Restaurant", restaurant_path(@resto.id) %></p>
+  <div class="divider"></div>
 
-  <h4>Review(s):</h4>
+  <br>
+
+  <h6><%= link_to "See more food here", restaurant_path(@resto.id) %></h6>
+
+  <br>
+
+  <div class="row center">
+    <% @dishes.each do |dish| %>
+    <div class="col s3"><%= image_tag dish.photourl, :class => "food_grid"%></div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="divider"></div>
 
     <% if !user_signed_in? %>
-    <h5>Sign in to add review(s)</h5>
+      <div class="row">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Sign in to add review(s)</span>
+          </div>
+        </div>
+      </div>
     <% end %>
 
     <% if user_signed_in? && @resto.user_id == current_user.id %>
-    <h5>Cannot add review for your own restaurant</h5>
+    <div class="row">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Cannot add review for your own restaurant</span>
+        </div>
+      </div>
+    </div>
     <% end %>
 
     <% if user_signed_in? && !(@resto.user_id == current_user.id) %>
 
-    <h5>Add new review</h5>
+    <div class="divider"></div>
+
+    <h5>Add new review:</h5>
+
     <%= form_for @new_review do |f| %>
 
     <%= f.fields_for :dish do |dish| %>
@@ -49,15 +93,38 @@
     <% end %>
     <% end %>
 
-    <ul>
-      <% @reviews.each do |review| %>
-        <li><div class="chip">
-          <%= image_tag review.user.photourl %><%= review.user.name %>
-        </div></li>
-        <li><%= review.created_on %></li>
-        <li><%= review.feedback %></li>
-      <br>
-      <% end %>
-    </ul>
+    <br>
+    <br>
+    <br>
 
-</div>
+    <div class="divider"></div>
+
+    <h5>Review(s):</h5>
+
+    <br>
+
+    <% @reviews.each do |review| %>
+    <div class = "row">
+      <div  class = "col s3">
+        <ul>
+        <li class="center"><%= image_tag review.user.photourl, :height=>"120px" %><br>
+          <b><%= review.user.name %></b>
+        </li>
+      </ul>
+    </div>
+
+      <div class = "col s9">
+        <ul >
+          <div class = "card-panel #ffb74d orange lighten-2 ">
+            <li><%= review.created_on %></li>
+            <li><%= review.feedback %></li>
+            <br>
+          </div>
+        </ul>
+      </div>
+
+      </div>
+  <% end %>
+
+
+    </div>

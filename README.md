@@ -102,7 +102,8 @@ ___
 * Check with prima how to show those dishes without votes. Not sure about how to run the loop to compare against those that are already there(show all dishes page) - Jo
 
 ## Assumptions
-* Owners may have more than one restaurant
+* Each owner only has one restaurant
+* One dish has many reviews/ratings
 
 ## <center> To Do List
 Description    | Importance | Type

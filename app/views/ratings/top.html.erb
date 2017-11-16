@@ -1,31 +1,38 @@
 <div class="container">
+<div class="row">
+  <% @dishesSortedByAsc.each do |dish,rating| %>
+
+  <div class="col s4 center-align topResto" style="height: 400px;">
+    <div>
+      <%= image_tag dish.photourl, height: "310", style:"height:200px; width:200px;border-radius:15px;" %>
+      <div class="row">
+        <%= link_to dish_path(dish.id) do %>
+        <h5 class="header black-text center-align topDish bold"><%= dish.name %></h5>
+        <% end %>
+      </div>
+      <div class="row valign-wrapper">
+        <div class="col s6">
+          <h5 class="topDish" id = "ratingPara<%= dish.id %>"><%= rating %>Vote(s)</h5>
+        </div>
+        <div class="col s6">
+          <%= form_tag ratings_path, method: :post,remote:true do %>
+            <%= hidden_field_tag :dish_id, dish.id %>
+            <%= hidden_field_tag :rating, rating %>
+            <%= button_tag( class: "btn orange-text white") do %>
+              <i class="material-icons">thumb_up</i>
+            <% end %>
+          <% end %>
+        </div>
+        <!-- <div class="col s6 center-align valign-wrapper">
+        </div>
+        <div class="col s6 center-align valign-wrapper">
+        </div> -->
+      </div>
+    </div>
 
 
-<% @dishesSortedByAsc.each do |dish,rating| %>
+  </div>
+  <% end %>
+</div>
 
-  <div class="col s12 m7">
-     <h2 class="header"><%= dish.name %></h2>
-     <div class="card horizontal">
-       <div class="card-image">
-         <%= image_tag dish.photourl, height: "200" %>
-       </div>
-       <div class="card-stacked">
-         <div class="card-content">
-           <%= form_tag ratings_path, method: :post,remote:true do %>
-             <%= hidden_field_tag :dish_id, dish.id %>
-             <%= hidden_field_tag :rating, rating %>
-             <%=submit_tag :Upvote, class: "btn" %>
-           <% end %>
-           <br>
-           <h5 class="right" id = "ratingPara<%= dish.id %>">Rating: <%= rating %></h5>
-           <p>Dish description will be placed here once we add it</p>
-         </div>
-         <div class="card-action">
-           <%= link_to "View Dish", dish_path(dish.id) %>
-         </div>
-       </div>
-     </div>
-   </div>
-
-<% end %>
 </div>

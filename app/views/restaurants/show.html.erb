@@ -3,7 +3,7 @@
 
     <div class="col s6">
       <%= image_tag @resto.photo_url, class: "restophoto circle"%>
-      <h2 class="orange-text"><%= @resto.name %></h2>
+      <h4 class="orange-text"><%= @resto.name %></h4>
       <p class="bold">
         <i class="material-icons icons">phone</i>
         <%= @resto.phone_number %>
@@ -17,7 +17,6 @@
          height="319"
          style="border-radius: 15px;"
          frameborder="0"
-         class=greyBorder
          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDdncbhJJHEPEwp_avrLpzJlPYdzWNG6m0
            &q=<%= @name %>,<%= @address %>" allowfullscreen>
       </iframe>
@@ -27,7 +26,7 @@
 
   <div class="row">
     <div class="valign-wrapper col s12">
-      <p><%= @resto.description %></p>
+      <p style="text-align:justify"><%= @resto.description %></p>
     </div>
   </div>
 
@@ -39,9 +38,9 @@
     <%= link_to dish_path(item.id), class:"secondary-content" do %>
     <div class="col s2.5 hoverable">
       <div>
-        <%= image_tag item.photourl, class:"circle center-align greyBorder", style:"height: 150px; width: 150px;" %>
+        <%= image_tag item.photourl, class:"center-align", style:"height: 150px; width: 150px;border-radius:15px;" %>
         <p class="title center-align black-text bold"><%= item.name %></p>
-        <p class="title center-align black-text bold">$<%= item.price %></p>
+        <p class="title center-align black-text bold">$<%= item.price %>0</p>
       </div>
       <% end %>
     </div>

@@ -6,6 +6,10 @@
     <ul>
 
       <ul class="left hide-on-med-and-down">
+        <li><%= link_to admin_console_path do %>
+        <i class="material-icons blackIcon">adb</i>
+        <% end %>
+        </li>
         <li><a class="dropdown-button black-text" href="#!" data-activates="dropdown1">Browse<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><%= link_to "Top 100 Dishes", topdishes_path,class:"black-text"%></li>
       </ul>
@@ -41,9 +45,6 @@
           <i class="material-icons">settings</i>Console
         <% end %>
       </li>
-        <li><%= link_to admin_console_path do %>
-        <i class="material-icons">chrome_reader_mode</i>
-      <% end %></li>
 
         <% end %>
         <% end %>

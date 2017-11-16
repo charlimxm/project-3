@@ -34,19 +34,18 @@ rails db:seed
 
 ### FoodSpace
 
+## <center> User Stories
+
 How Customers would use this:
-1. When a Customer loads the landing page, they can search for particular menu items they enjoy
-2. A list of various restaurants serving the menu item appears, allowing customers to see which restaurant is the most popular for that specific menu item
-3. Customers can upvote the menu items they prefer, allowing the public to control rankings of the menu items
-4. Customers can upload pictures of dishes they enjoy if they are not in the list, subject to verification by admins
-5. Customers must register and login to vote/upload
+1. When a customer loads the landing page, they can search for particular dishes or restaurants
+2. A list of various dishes or restaurants appears allowing customers to click on the links to see reviews for particular dishes or the various dishes in a restaurant
+3. By clicking on the link for the top100 dishes, customers can upvote the dishes they prefer
+4. Users must register and login to vote and write reviews
 
-How Restaurant Owners/Staff would use this:
-1. Owners can see where their menu items are located in the rankings and choose to give discounts on the specific menu items
-3. Owners can also gain valuable feedback in the form of user ratings and reviews to adapt their menu
-4. Owners are required to submit updated menus periodically to admins to confirm that dishes actually exist
+How Restaurant Owners would use this:
+1. Owners can see their restaurant details and their dishes’ ratings, customers’ reviews
+2. Owners can add/edit/delete dishes, discounts and prices
 
-## <center> Use Cases
 
 * User
 1. Users use the website to find popular dishes rated by public and then rate the dishes if they feel the food was good. They can also leave reviews for each dish.

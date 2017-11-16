@@ -6,9 +6,8 @@
     </div>
 
     <div class = "col s5">
-      <h2 class = "dish_font"><%= @dish.name %></h2>
-      <h5 class = "dish_font">by</h6>
-      <h2 class = "dish_font"><%= @resto.name %></h2>
+      <h3><%= @dish.name %></h3>
+      <h5>by <%= @resto.name %></h5>
       <br>
       <h5>Price:
         <% if @dish.discount == "" || @dish.discount == 0 %>
@@ -18,7 +17,7 @@
         <% end %>
       </h5>
       <br>
-      <h5>Vote(s): <%= @dishRating %></h5>
+      <h5><%= @dishRating %> Vote(s)</h5>
       <br>
     </div>
 
@@ -28,13 +27,16 @@
 
   <br>
 
-  <h6><%= link_to "See more food here", restaurant_path(@resto.id) %></h6>
+  <h6><%= link_to restaurant_path(@resto.id) do %>
+    See more food from <%= @resto.name %>
+    <% end %>
+  </h6>
 
   <br>
 
   <div class="row center">
     <% @dishes.each do |dish| %>
-    <div class="col s3"><%= image_tag dish.photourl, :class => "food_grid"%></div>
+    <div class="col s3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="<%= dish.name %>"><%= image_tag dish.photourl, :class => "food_grid"%></div>
     <% end %>
   </div>
 

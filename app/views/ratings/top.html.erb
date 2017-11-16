@@ -11,7 +11,7 @@
           </div>
           <div class="row valign-wrapper">
             <div class="col s6">
-              <h5 class="topDish" id = "ratingPara<%= dish.id %>"><%= rating %>Vote(s)</h5>
+              <h5 class="topDish" id = "ratingPara<%= dish.id %>"><%= rating %> Vote(s)</h5>
             </div>
             <div class="col s6">
               <%= form_tag ratings_path, method: :post,remote:true do %>

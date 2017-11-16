@@ -107,17 +107,14 @@ nav {
   width: 100%;
   margin: auto;
   z-index: -5000;
+  border-radius: 15px;
 }
 
 .food_grid{
   width: 90%;
   top: 0;
   left: 0;
-}
-
-.dish_font{
-  font-family: Oswald;
-  font-weight: Bold;
+  border-radius: 15px;
 }
 
 .restaurantTitle {
@@ -141,4 +138,8 @@ nav {
 
 .topDish {
   font-size: 19px;
+}
+
+.roundedBorder {
+  border-radius: 15px;
 }

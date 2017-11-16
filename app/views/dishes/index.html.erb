@@ -4,8 +4,8 @@
 <% @dishesSorted.each do |dish, rating| %>
 
   <div class="col s12 m6 l3">
-    <div class="card medium">
-      <div class="card-image">
+    <div class="card medium roundedBorder">
+      <div class="card-image roundedBorder">
         <%= link_to image_tag(dish.photourl), dish_path(dish.id) %>
       </div>
       <div class="card-content">

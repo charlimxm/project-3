@@ -19,4 +19,5 @@ $(document).on('turbolinks:load', function () {
    $('.slider').slider();
    $('.scrollspy').scrollSpy();
    $(".button-collapse").sideNav();
+  $('.tooltipped').tooltip({delay: 50});
 })

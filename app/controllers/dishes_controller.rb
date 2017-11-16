@@ -20,6 +20,16 @@ class DishesController < ApplicationController
     end
   end
 
+  def mass_price_update
+    @dishes = params[:dishes3][0]
+    @dishes.each do |dish, id|
+      Dish.find(id).update_attribute(:price, params[:price])
+    end
+    respond_to do |format|
+      format.html{ redirect_to users_update_path}
+    end
+  end
+
   def index
     @dishes = Dish.all
     @resultsHash = {}

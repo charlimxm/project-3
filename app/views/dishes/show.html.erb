@@ -11,7 +11,7 @@
       <h2 class = "dish_font"><%= @resto.name %></h2>
       <br>
       <h5>Price:
-        <% if @dish.discount == "" || @dish.discount == "0" %>
+        <% if @dish.discount == "" || @dish.discount == 0 %>
           $<%= @dish.price %>0
         <% else %>
           <strike>$<%= @dish.price %>0</strike>  $<%= (@dish.price * (100-@dish.discount))/100 %>0</h5>

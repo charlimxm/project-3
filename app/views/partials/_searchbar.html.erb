@@ -12,7 +12,7 @@
     </div>
     <div id="test1" class="col s12">
       <div class="searchInput">
-        <h3>Dish Name</h3>
+        <h3>Enter Dish Name</h3>
         <%= form_tag ratings_search_path, method: :put, remote:true do %>
           <%= text_field_tag :term,"", autofocus: true, class:"searchBarBorder" %>
         <% end %>
@@ -20,7 +20,7 @@
     </div>
     <div  id="test2" class="col s12">
       <div class="searchInput">
-        <h3>Restaurant Name</h3>
+        <h3>Enter Restaurant Name</h3>
         <%= form_tag restaurants_search_path, method: :put, remote:true do %>
           <%= text_field_tag :term, "", class:"searchBarBorder" %>
         <% end %>

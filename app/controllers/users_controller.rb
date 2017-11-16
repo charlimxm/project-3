@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     elsif !current_user.admin
       redirect_to verify_path
     else
-      @dishes = Dish.all
+      @dishes = Dish.all.sort
       @restaurants = Restaurant.all
       @users = User.all.sort_by(&:id)
     end

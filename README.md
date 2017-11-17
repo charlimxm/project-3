@@ -106,8 +106,9 @@ Li Yuan | Description | Bug/Framework
 4| Data scraping for restaurants | Framework
 5| Data scraping for dishes | Framework
 6| Saved scraped data to database | Framework
-7| CSS homepage how to use website and promotions | Framework
-8| CSS show restaurant page | Framework
+7| Homepage how to use website and promotions css | Framework
+8| Restaurant and dishes css | Framework
+9| Added cards and dialogs for pages | Framework
 
 ___
 ## Ask During Consultation

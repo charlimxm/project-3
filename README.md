@@ -3,6 +3,10 @@
 ##### PROJECT 3
 
  [Live Link (Heroku)](https://foodspace.herokuapp.com/)
+## Group Members
+[Charmaine (GitHub)](https://github.com/charlimxm)
+[Li Yuan (GitHub)](https://github.com/liyuan23)
+[Joseph (GitHub)](https://github.com/josephpung)
 ## Description
 Find the most popular dishes in town and vote to make your best dish famous! Restaurants may also offer discounts on our app!
 

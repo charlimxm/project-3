@@ -13,7 +13,7 @@
         <% if @dish.discount == "" || @dish.discount == 0 %>
           $<%= @dish.price %>0
         <% else %>
-          <strike>$<%= @dish.price %>0</strike>  $<%= (@dish.price * (100-@dish.discount))/100 %>0</h5>
+          <strike class="red-text">$<%= @dish.price %>0</strike>  $<%= (@dish.price * (100-@dish.discount))/100 %>0</h5>
         <% end %>
       </h5>
       <br>
@@ -36,7 +36,9 @@
 
   <div class="row center">
     <% @dishes.each do |dish| %>
+    <%= link_to dish_path(dish.id) do %>
     <div class="col s3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="<%= dish.name %>"><%= image_tag dish.photourl, :class => "food_grid"%></div>
+    <% end %>
     <% end %>
   </div>
 

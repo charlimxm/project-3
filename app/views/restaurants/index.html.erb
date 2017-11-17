@@ -3,8 +3,10 @@
 <div class="row">
   <% @resto.each do |resto| %>
       <div class="col s12 m6 l3 center-align" style="height: 250px;">
+        <%= link_to restaurant_path(resto.id) do %>
         <%= image_tag resto.photo_url, style:"height:150px;width:150px;border:2px solid black;border-radius:15px;" %><br>
         <%= link_to "#{resto.name}", restaurant_path(resto.id), class: "topDish bold black-text" %>
+        <% end %>
       </div>
   <% end %>
     </div>

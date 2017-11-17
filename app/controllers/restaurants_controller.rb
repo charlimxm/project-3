@@ -21,8 +21,16 @@ class RestaurantsController < ApplicationController
   def update
     @resto = Restaurant.find(params[:id])
     @resto.update_attributes(res_params)
-    flash[:success] = "Dish was successfully updated!"
+    if params[:restaurant][:user_id] == ""
+    flash[:alert] = "Restaurant was successfully updated!"
     redirect_to restaurant_path(params[:id])
+  else
+    @resto.update_attribute(:user_id, params[:restaurant][:user_id])
+    @user = User.find(params[:restaurant][:user_id])
+    @user.update_attribute(:owner, true)
+    flash[:alert] = "Restaurant was successfully updated!"
+    redirect_to restaurant_path(params[:id])
+  end
   end
 
   def destroy

@@ -3,11 +3,11 @@
     <% @dishesSortedByAsc.each do |dish,rating| %>
       <div class="col s4 center-align" style="height: 400px;">
         <div>
+          <%= link_to dish_path(dish.id) do %>
           <%= image_tag dish.photourl, height: "310", style:"height:200px; width:200px;border-radius:15px;" %>
+          <% end %>
           <div class="row">
-            <%= link_to dish_path(dish.id) do %>
             <h5 class="header black-text center-align topDish bold"><%= dish.name %></h5>
-            <% end %>
           </div>
           <div class="row valign-wrapper">
             <div class="col s6">

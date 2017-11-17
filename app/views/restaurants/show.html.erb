@@ -33,12 +33,12 @@
   <div class="row restaurantTitle">
     <h3 class="orange-text">Top Dishes</h3>
   </div>
-  <div class="row">
+  <div class="row center">
     <% @menu.each do |item| %>
-    <%= link_to dish_path(item.id), class:"secondary-content" do %>
-    <div class="col s2.5 hoverable">
+    <%= link_to dish_path(item.id) do %>
+    <div class="col s2.5 ">
       <div>
-        <%= image_tag item.photourl, class:"center-align", style:"height: 150px; width: 150px;border-radius:15px;" %>
+        <%= image_tag item.photourl, style:"height: 150px; width: 150px;border-radius:15px;" %>
         <p class="title center-align black-text bold"><%= item.name %></p>
         <p class="title center-align black-text bold">$<%= item.price %>0</p>
       </div>

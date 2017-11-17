@@ -35,7 +35,6 @@ class DishesController < ApplicationController
     @resultsHash = {}
     @dishes.each do |dish|
       @resultsHash[dish] = dish.ratings.count
-      @resto = Restaurant.find(dish.restaurant_id)
     end
     @dishesSorted = @resultsHash.sort_by { |_name, rating| rating }.reverse
   end
